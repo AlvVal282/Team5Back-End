@@ -64,6 +64,6 @@ CREATE TABLE Book_Ratings (
 );
 
 COPY books
-FROM '/docker-entrypoint-initdb.d/books.csv'
+FROM '/docker-entrypoint-initdb.d/output_cleaned_books.csv'
 DELIMITER ','
 CSV HEADER;

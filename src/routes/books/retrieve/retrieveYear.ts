@@ -94,11 +94,11 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
     let offset = Number(request.query.offset);
 
     if (isNaN(limit) || limit <= 0) {
-        limit = 10; // Default limit
+        limit = 10;
     }
 
     if (isNaN(offset) || offset < 0) {
-        offset = 0; // Default offset
+        offset = 0;
     }
 
     request.query.limit = limit.toString();
@@ -108,29 +108,46 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
 }
 
 /**
- * @api {get} /books/year Retrieve Books by Publication Year
+ * @api {get} /books/year Retrieve Books by Publication Year Range
  * @apiName GetBooksByYear
  * @apiGroup Books
- * 
- * @apiDescription Retrieve a list of books published within a specific year range.
- * 
- * @apiParam {Number} startYear The starting year for the publication range (required)
- * @apiParam {Number} endYear The ending year for the publication range (required)
- * @apiQuery {number} limit The number of entry objects to return, defaults to 10 if not provided or invalid.
- * @apiQuery {number} offset The number to offset the lookup, defaults to 0 if not provided or invalid.
- * 
- * @apiSuccess {Object[]} books List of books that fall within the specified publication year range.
- * Each book entry is formatted with the fields isbn13, author, publication, title, ratings, and icons.
- * @apiSuccess {Object} pagination Pagination metadata for the response
- * @apiSuccess {number} pagination.totalRecords The total number of matching records
- * @apiSuccess {number} pagination.limit The number of records per page
- * @apiSuccess {number} pagination.offset The offset for the current page
- * @apiSuccess {number} pagination.nextPage The offset for the next page of results
- * 
- * @apiError (400: Missing Parameters) {String} message "Missing required parameters: startYear and endYear"
- * @apiError (400: Invalid Parameters) {String} message "Invalid parameters: startYear and endYear must be numbers"
- * @apiError (400: Invalid Range Order) {String} message "Invalid parameters: startYear and endYear cannot be negative"
- * @apiError (400: Invalid Range Order) {String} message "Invalid range: startYear cannot be greater than endYear"
+ *
+ * @apiDescription Retrieve a list of books published within a specific year range, optionally paginated.
+ *
+ * @apiQuery (Query Parameters) {Number} startYear The starting year for the publication range (required).
+ * @apiQuery (Query Parameters) {Number} endYear The ending year for the publication range (required).
+ * @apiQuery (Query Parameters) {Number} [limit=10] Number of entries to return per page (optional, defaults to 10).
+ * @apiQuery (Query Parameters) {Number} [offset=0] Number of entries to skip (optional, defaults to 0).
+ *
+ * @apiSuccess (Success 200) {Object[]} books List of books published within the specified range.
+ * @apiSuccess (Success 200) {Number} books.isbn13 The unique ISBN-13 identifier of the book.
+ * @apiSuccess (Success 200) {String} books.author Comma-separated list of authors of the book.
+ * @apiSuccess (Success 200) {Number} books.publication Year the book was published.
+ * @apiSuccess (Success 200) {String} books.title Title of the book.
+ * @apiSuccess (Success 200) {Object} books.ratings Rating details of the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.average Average rating score for the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.count Total number of ratings for the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_1 Count of 1-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_2 Count of 2-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_3 Count of 3-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_4 Count of 4-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_5 Count of 5-star ratings.
+ * @apiSuccess (Success 200) {Object} books.icons URLs to book cover images.
+ * @apiSuccess (Success 200) {String} books.icons.large URL to the large version of the book cover image.
+ * @apiSuccess (Success 200) {String} books.icons.small URL to the small version of the book cover image.
+ *
+ * @apiSuccess (Success 200) {Object} pagination Pagination metadata for the response.
+ * @apiSuccess (Success 200) {Number} pagination.totalRecords Total number of books matching the specified year range.
+ * @apiSuccess (Success 200) {Number} pagination.limit Number of entries returned per page.
+ * @apiSuccess (Success 200) {Number} pagination.offset Offset for the current page.
+ * @apiSuccess (Success 200) {Number|null} pagination.nextPage Offset value to retrieve the next set of entries (null if there are no more pages).
+ *
+ * @apiError (400: Missing Parameters) {String} message "Missing required parameters: startYear and endYear".
+ * @apiError (400: Invalid Parameters) {String} message "Invalid parameters: startYear and endYear must be numbers".
+ * @apiError (400: Invalid Range Order) {String} message "Invalid parameters: startYear and endYear cannot be negative".
+ * @apiError (400: Invalid Range Order) {String} message "Invalid range: startYear cannot be greater than endYear".
+ * @apiError (404: Not Found) {String} message "No books found within the specified publication year range."
+ * @apiError (500: Database Error) {String} message "Server error - contact support".
  */
 retrieveYearRouter.get(
     '/retrieveYear',
@@ -140,12 +157,10 @@ retrieveYearRouter.get(
         const startYear = parseInt(request.query.startYear as string, 10);
         const endYear = parseInt(request.query.endYear as string, 10);
 
-        // Use validated limit and offset for pagination
         const limit = Number(request.query.limit);
         const offset = Number(request.query.offset);
 
         try {
-            // Count total books published within the year range
             const countQuery = `
                 SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
@@ -154,7 +169,12 @@ retrieveYearRouter.get(
             const countResult = await pool.query(countQuery, [startYear, endYear]);
             const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
-            // Fetch paginated books published within the year range
+            if (totalRecords === 0) {
+                return response.status(404).send({
+                    message: 'No books found within the specified publication year range.',
+                });
+            }
+
             const theQuery = `
                 SELECT 
                     Books.isbn13,
@@ -194,7 +214,8 @@ retrieveYearRouter.get(
             const values = [startYear, endYear, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            response.status(200).json({
+            // Send response with books and pagination metadata
+            response.status(200).send({
                 books: rows.map(format),
                 pagination: {
                     totalRecords,

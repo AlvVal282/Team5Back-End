@@ -9,6 +9,7 @@ const routes: Router = express.Router();
 
 routes.use(openRoutes);
 routes.use(authRoutes);
+
 //routes.use(closedRoutes);
 routes.use(bookRoutes);
 

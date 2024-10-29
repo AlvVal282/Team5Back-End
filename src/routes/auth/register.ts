@@ -65,8 +65,21 @@ const emailMiddlewareCheck = (
 /**
  * @api {post} /register Request to register a user
  *
- * @apiDescription Document this route. !**Document the password rules here**!
+ * @apiDescription Document this route. 
+ * !**Document the password rules here**!
+ *      - Password requires:
+ *      - Upper case letter
+ *      - Lower case letters
+ *      - Special character (@, $, !, #)
+ *      - Minimum length of 7 characters
+ *      - At least on number
  * !**Document the role rules here**!
+ *      - Roles:
+ *      1) Admin
+ *      2) Manager
+ *      3) Developer
+ *      4) Account User
+ *      5) Anonymous User
  *
  * @apiName PostRegister
  * @apiGroup Auth
@@ -83,10 +96,10 @@ const emailMiddlewareCheck = (
  * @apiSuccess (Success 201) {number} id unique user id
  *
  * @apiError (400: Missing Parameters) {String} message "Missing required information"
- * @apiError (400: Invalid Password) {String} message "Invalid or missing password  - please refer to documentation"
- * @apiError (400: Invalid Phone) {String} message "Invalid or missing phone number  - please refer to documentation"
- * @apiError (400: Invalid Email) {String} message "Invalid or missing email  - please refer to documentation"
- * @apiError (400: Invalid Role) {String} message "Invalid or missing role  - please refer to documentation"
+ * @apiError (400: Invalid Password) {String} message "Invalid or missing password  - please adhere to the password rules shown"
+ * @apiError (400: Invalid Phone) {String} message "Invalid or missing phone number  - please only include numbers (e.g. 1234567890)"
+ * @apiError (400: Invalid Email) {String} message "Invalid or missing email  - please include '@' symbol and end with a proper domain (e.g. guest1@xample.com)"
+ * @apiError (400: Invalid Role) {String} message "Invalid or missing role  - please select a role for your account"
  * @apiError (400: Username exists) {String} message "Username exists"
  * @apiError (400: Email exists) {String} message "Email exists"
  *

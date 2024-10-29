@@ -9,7 +9,6 @@
  * @apiParam {Number} ISBN13 The ISBN of the book to delete.
  *
  * @apiSuccess (Success 200) {String} message "Book successfully deleted."
- * @apiSuccess (Success 200) {Number} ISBN13 The ISBN of the deleted book.
  *
  * @apiError (400: Missing ISBN) {String} message "Missing or invalid ISBN parameter  - please ensure that the ISBN is valid and/or entered"
  * @apiError (404: Not Found) {String} message "Book not found."

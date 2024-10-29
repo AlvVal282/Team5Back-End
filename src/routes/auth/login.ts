@@ -39,7 +39,6 @@ const key = {
  * @apiSuccess {number} id unique user id
  *
  * @apiError (400: Missing Parameters) {String} message "Missing required information"
- * @apiError (400: Malformed Authorization Header) {String} message "Malformed Authorization Header"
  * @apiError (404: User Not Found) {String} message "User not found"
  * @apiError (400: Invalid Credentials) {String} message "Credentials did not match"
  *
@@ -50,7 +49,7 @@ signinRouter.post(
         if (
             isStringProvided(request.body.email) &&
             isStringProvided(request.body.password)
-        ) {
+        ) {  // if we get both then go to next thing
             next();
         } else {
             response.status(400).send({
@@ -97,6 +96,7 @@ signinRouter.post(
                 //Did our salted hash match their salted hash?
                 if (storedSaltedHash === providedSaltedHash) {
                     //credentials match. get a new JWT
+                    // senstive information should never be in it because it can be easily decrpted.
                     const accessToken = jwt.sign(
                         {
                             name: result.rows[0].firstname,

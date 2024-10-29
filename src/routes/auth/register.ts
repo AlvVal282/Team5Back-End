@@ -90,7 +90,7 @@ const emailMiddlewareCheck = (
  * @apiBody {String} password a users password
  * @apiBody {String} username a username *unique
  * @apiBody {String} role a role for this user [1-5]
- * @apiBody {String} phone a phone number for this user
+ * @apiBody {String} phone a phone number for this user 
  *
  * @apiSuccess (Success 201) {string} accessToken a newly created JWT
  * @apiSuccess (Success 201) {number} id unique user id
@@ -165,7 +165,7 @@ registerRouter.post(
             request.body.phone,
             request.body.role,
         ];
-        console.dir({ ...request.body, password: '******' });
+        //console.dir({ ...request.body, password: '******' }); // debugging 
         pool.query(theQuery, values)
             .then((result) => {
                 //stash the account_id into the request object to be used in the next function

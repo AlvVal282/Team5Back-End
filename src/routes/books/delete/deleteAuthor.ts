@@ -8,10 +8,10 @@
  *
  * @apiParam {Number} Author_ID The unique ID of the author to delete.
  *
- * @apiSuccess (Success 200) {String} message "Author successfully deleted"
+ * @apiSuccess (Success 200) {String} messageSuccess "Author successfully deleted"
  *
- * @apiError (400: Missing ID) {String} message "Missing or invalid author ID  - please ensure that the Author is entered and/or valid "
- * @apiError (404: Not Found) {String} message "Author not found"
+ * @apiError (400: Missing ID) {String} messageFailure "Missing or invalid author ID  - please ensure that the Author is entered and/or valid"
+ * @apiError (404: Not Found) {String} messageNotFound "Author not found"
  *
  */
 

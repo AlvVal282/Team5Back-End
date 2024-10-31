@@ -6,7 +6,7 @@
  * @apiName DeleteYear
  * @apiGroup delete
  *
- * @apiParam {Number} Publication_Year The publication year to delete.
+ * @apiParam {Number} year The publication year to delete.
  *
  * @apiSuccess (Success 200) {String} messageSuccess "All books associated with publication year successfully deleted"
  *

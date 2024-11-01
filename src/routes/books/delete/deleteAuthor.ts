@@ -6,7 +6,7 @@
  * @apiName DeleteAuthor
  * @apiGroup delete
  *
- * @apiParam {Number} id The unique ID of the author to delete.
+ * @apiParam {Number} id The unique ID of the author to delete
  *
  * @apiSuccess (Success 200) {String} messageSuccess "Author successfully deleted"
  *

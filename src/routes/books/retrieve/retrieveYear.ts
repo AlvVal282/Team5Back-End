@@ -3,29 +3,107 @@ import { pool, validationFunctions } from '../../../core/utilities';
 
 const retrieveYearRouter: Router = express.Router();
 
-const format = (resultRow) =>
-    `ISBN: ${resultRow.isbn13}, Title: "${resultRow.title}", Published: ${resultRow.publication}`;
+// Define interfaces for type consistency
+interface IRatings {
+    average: number;
+    count: number;
+    rating_1: number;
+    rating_2: number;
+    rating_3: number;
+    rating_4: number;
+    rating_5: number;
+}
+
+interface IUrlIcon {
+    large: string;
+    small: string;
+}
+
+interface IBook {
+    isbn13: number;
+    author: string;
+    publication: number;
+    title: string;
+    ratings: IRatings;
+    icons: IUrlIcon;
+}
+
+// Updated format function to match specified IBook structure
+const format = (resultRow): IBook => ({
+    isbn13: resultRow.isbn13,
+    author: resultRow.authors,
+    publication: resultRow.publication_year,
+    title: resultRow.title,
+    ratings: {
+        average: resultRow.rating_avg,
+        count: resultRow.rating_count,
+        rating_1: resultRow.rating_1_star,
+        rating_2: resultRow.rating_2_star,
+        rating_3: resultRow.rating_3_star,
+        rating_4: resultRow.rating_4_star,
+        rating_5: resultRow.rating_5_star,
+    },
+    icons: {
+        large: resultRow.image_url,
+        small: resultRow.image_small_url,
+    },
+});
 
 /**
  * Middleware to validate year range parameters.
- * Ensures startYear and endYear are valid numbers and in the correct order.
+ * Ensures startYear and endYear are valid, non-negative numbers, and in the correct order.
  */
 function mwValidYearParams(request: Request, response: Response, next: NextFunction) {
     const startYear = parseInt(request.query.startYear as string, 10);
     const endYear = parseInt(request.query.endYear as string, 10);
 
-    if (
-        validationFunctions.isNumberProvided(startYear) &&
-        validationFunctions.isNumberProvided(endYear) &&
-        startYear <= endYear
-    ) {
-        next();
-    } else {
-        console.error('Invalid or missing year parameters');
-        response.status(400).send({
-            message: 'Invalid or missing year parameters - please refer to documentation',
+    if (!request.query.startYear || !request.query.endYear) {
+        return response.status(400).send({
+            message: 'Missing required parameters: startYear and endYear',
         });
     }
+
+    if (isNaN(startYear) || isNaN(endYear)) {
+        return response.status(400).send({
+            message: 'Invalid parameters: startYear and endYear must be numbers',
+        });
+    }
+
+    if (startYear < 0 || endYear < 0) {
+        return response.status(400).send({
+            message: 'Invalid parameters: startYear and endYear cannot be negative',
+        });
+    }
+
+    if (startYear > endYear) {
+        return response.status(400).send({
+            message: 'Invalid range: startYear cannot be greater than endYear',
+        });
+    }
+
+    next();
+}
+
+/**
+ * Middleware to validate limit and offset parameters.
+ * Sets defaults if values are invalid or not provided.
+ */
+function mwValidPaginationParams(request: Request, response: Response, next: NextFunction) {
+    let limit = Number(request.query.limit);
+    let offset = Number(request.query.offset);
+
+    if (isNaN(limit) || limit <= 0) {
+        limit = 10; // Default limit
+    }
+
+    if (isNaN(offset) || offset < 0) {
+        offset = 0; // Default offset
+    }
+
+    request.query.limit = limit.toString();
+    request.query.offset = offset.toString();
+
+    next();
 }
 
 /**
@@ -37,46 +115,43 @@ function mwValidYearParams(request: Request, response: Response, next: NextFunct
  * 
  * @apiParam {Number} startYear The starting year for the publication range (required)
  * @apiParam {Number} endYear The ending year for the publication range (required)
- * @apiQuery {number} limit The number of entry objects to return. If a value less than
- * 0 is provided, a non-numeric value is provided, or no value is provided, the default limit
- * of 10 will be used.
- * @apiQuery {number} offset The number to offset the lookup of entry objects to return. If a value
- * less than 0 is provided, a non-numeric value is provided, or no value is provided, the default
- * offset of 0 will be used.
+ * @apiQuery {number} limit The number of entry objects to return, defaults to 10 if not provided or invalid.
+ * @apiQuery {number} offset The number to offset the lookup, defaults to 0 if not provided or invalid.
  * 
  * @apiSuccess {Object[]} books List of books that fall within the specified publication year range.
- * @apiSuccess {Number} books.isbn13 ISBN-13 identifier of the book
- * @apiSuccess {String} books.authors Authors of the book
- * @apiSuccess {Number} books.publication Publication year of the book
- * @apiSuccess {String} books.title Title of the book
- * @apiSuccess {Object} pagination Pagination metadata
+ * Each book entry is formatted with the fields isbn13, author, publication, title, ratings, and icons.
+ * @apiSuccess {Object} pagination Pagination metadata for the response
  * @apiSuccess {number} pagination.totalRecords The total number of matching records
  * @apiSuccess {number} pagination.limit The number of records per page
  * @apiSuccess {number} pagination.offset The offset for the current page
  * @apiSuccess {number} pagination.nextPage The offset for the next page of results
  * 
- * @apiError (400) {String} message "Invalid or missing year parameters - please refer to documentation"
+ * @apiError (400) {String} message "Missing required parameters: startYear and endYear"
+ * @apiError (400) {String} message "Invalid parameters: startYear and endYear must be numbers"
+ * @apiError (400) {String} message "Invalid parameters: startYear and endYear cannot be negative"
+ * @apiError (400) {String} message "Invalid range: startYear cannot be greater than endYear"
  */
 retrieveYearRouter.get(
     '/retrieveYear',
     mwValidYearParams,
+    mwValidPaginationParams,
     async (request: Request, response: Response) => {
         const startYear = parseInt(request.query.startYear as string, 10);
         const endYear = parseInt(request.query.endYear as string, 10);
 
-        // Use `limit` and `offset` for pagination, with defaults
-        const limit = (Number(request.query.limit) > 0) ? Number(request.query.limit) : 10;
-        const offset = (Number(request.query.offset) >= 0) ? Number(request.query.offset) : 0;
+        // Use validated limit and offset for pagination
+        const limit = Number(request.query.limit);
+        const offset = Number(request.query.offset);
 
         try {
             // Count total books published within the year range
             const countQuery = `
-                SELECT COUNT(*) AS totalRecords 
+                SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
                 WHERE publication_year BETWEEN $1 AND $2
             `;
             const countResult = await pool.query(countQuery, [startYear, endYear]);
-            const totalRecords = parseInt(countResult.rows[0].totalrecords, 10);
+            const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
             // Fetch paginated books published within the year range
             const theQuery = `

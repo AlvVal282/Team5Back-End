@@ -3,33 +3,97 @@ import { pool } from '../../../core/utilities';
 
 const retrieveRatingRouter: Router = express.Router();
 
-const format = (resultRow) =>
-    `ISBN: ${resultRow.isbn13}, Title: "${resultRow.title}", Rating: ${resultRow.rating_avg}`;
+// Define interfaces for type consistency (optional)
+interface IRatings {
+    average: number;
+    count: number;
+    rating_1: number;
+    rating_2: number;
+    rating_3: number;
+    rating_4: number;
+    rating_5: number;
+}
+
+interface IUrlIcon {
+    large: string;
+    small: string;
+}
+
+interface IBook {
+    isbn13: number;
+    author: string;
+    publication: number;
+    title: string;
+    ratings: IRatings;
+    icons: IUrlIcon;
+}
+
+// Update format function to return a structured object
+const format = (resultRow): IBook => ({
+    isbn13: resultRow.isbn13,
+    author: resultRow.authors,
+    publication: resultRow.publication_year,
+    title: resultRow.title,
+    ratings: {
+        average: resultRow.rating_avg,
+        count: resultRow.rating_count,
+        rating_1: resultRow.rating_1_star,
+        rating_2: resultRow.rating_2_star,
+        rating_3: resultRow.rating_3_star,
+        rating_4: resultRow.rating_4_star,
+        rating_5: resultRow.rating_5_star,
+    },
+    icons: {
+        large: resultRow.image_url,
+        small: resultRow.image_small_url,
+    },
+});
 
 /**
  * Middleware to validate rating query parameters.
- * Ensures minRating and maxRating are numbers between 1 and 5.
- * Sends a 400 error if validation fails.
+ * Ensures minRating and maxRating are provided, are numbers, and are within the range 1 to 5.
+ * Sends a specific 400 error for missing or invalid values.
  */
 function mwValidRatingParams(
     request: Request,
     response: Response,
     next: NextFunction
 ) {
-    const minRating = parseFloat(request.query.minRating as string);
-    const maxRating = parseFloat(request.query.maxRating as string);
+    const minRating = request.query.minRating;
+    const maxRating = request.query.maxRating;
 
-    if (
-        !isNaN(minRating) && minRating >= 1 && minRating <= 5 &&
-        !isNaN(maxRating) && maxRating >= 1 && maxRating <= 5
-    ) {
-        next();
-    } else {
-        console.error('Invalid rating parameters');
+    if (!minRating || !maxRating) {
         response.status(400).send({
-            message: 'Invalid rating parameters - must be between 1 and 5',
+            message: 'Missing required parameters: minRating and maxRating',
         });
+        return;
     }
+
+    const minRatingNum = parseFloat(minRating as string);
+    const maxRatingNum = parseFloat(maxRating as string);
+
+    if (isNaN(minRatingNum) || isNaN(maxRatingNum)) {
+        response.status(400).send({
+            message: 'Invalid parameters: minRating and maxRating must be numbers',
+        });
+        return;
+    }
+
+    if (minRatingNum < 1 || minRatingNum > 5 || maxRatingNum < 1 || maxRatingNum > 5) {
+        response.status(400).send({
+            message: 'Out of range: minRating and maxRating must be between 1 and 5',
+        });
+        return;
+    }
+
+    if (minRatingNum > maxRatingNum) {
+        response.status(400).send({
+            message: 'Invalid range: minRating cannot be greater than maxRating',
+        });
+        return;
+    }
+
+    next();
 }
 
 /**
@@ -41,12 +105,8 @@ function mwValidRatingParams(
  * 
  * @apiParam {Number} minRating Minimum average rating for filtering books (required, must be between 1 and 5)
  * @apiParam {Number} maxRating Maximum average rating for filtering books (required, must be between 1 and 5)
- * @apiQuery {number} limit The number of entry objects to return. If a value less than
- * 0 is provided, a non-numeric value is provided, or no value is provided, the default limit
- * of 10 will be used.
- * @apiQuery {number} offset The number to offset the lookup of entry objects to return. If a value
- * less than 0 is provided, a non-numeric value is provided, or no value is provided, the default
- * offset of 0 will be used.
+ * @apiQuery {number} limit The number of entry objects to return. Defaults to 10 if not provided or invalid.
+ * @apiQuery {number} offset The offset for the lookup. Defaults to 0 if not provided or invalid.
  * 
  * @apiSuccess {Object[]} books List of books that fall within the specified rating range.
  * Each book entry is formatted as "ISBN: {isbn13}, Title: '{title}', Rating: {rating_avg}".
@@ -56,7 +116,10 @@ function mwValidRatingParams(
  * @apiSuccess {number} pagination.offset Offset used for the current query
  * @apiSuccess {number} pagination.nextPage Offset value to retrieve the next set of entries
  * 
- * @apiError (400) {String} message "Invalid or missing rating parameters - must be both min and max rating both between 1 and 5"
+ * @apiError (400: Missing Parameters) {String} message "Missing required parameters: minRating and maxRating" 
+ * @apiError (400: Invalid Parameters) {String} message "Invalid parameters: minRating and maxRating must be numbers"
+ * @apiError (400: Out of Range) {String} message "Out of range: minRating and maxRating must be between 1 and 5"
+ * @apiError (400: Invalid Range Order) {String} message "Invalid range: minRating cannot be greater than maxRating"
  */
 retrieveRatingRouter.get(
     '/retrieveRating',
@@ -64,22 +127,19 @@ retrieveRatingRouter.get(
     async (request: Request, response: Response) => {
         const minRating = parseFloat(request.query.minRating as string);
         const maxRating = parseFloat(request.query.maxRating as string);
-        
-        // Set default values for limit and offset if not provided
+
         const limit = (Number(request.query.limit) > 0) ? Number(request.query.limit) : 10;
         const offset = (Number(request.query.offset) >= 0) ? Number(request.query.offset) : 0;
 
         try {
-            // Count total books matching the rating range
             const countQuery = `
-                SELECT COUNT(*) AS totalRecords 
+                SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
                 WHERE Rating_Avg BETWEEN $1 AND $2
             `;
             const countResult = await pool.query(countQuery, [minRating, maxRating]);
-            const totalRecords = parseInt(countResult.rows[0].totalrecords, 10);
+            const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
-            // Fetch paginated books within the rating range
             const theQuery = `
                 SELECT * FROM Books 
                 WHERE Rating_Avg BETWEEN $1 AND $2
@@ -107,3 +167,6 @@ retrieveRatingRouter.get(
 );
 
 export { retrieveRatingRouter };
+
+
+

@@ -3,8 +3,51 @@ import { pool, validationFunctions } from '../../../core/utilities';
 
 const retrieveTitleRouter: Router = express.Router();
 
-const format = (resultRow) =>
-    `ISBN: ${resultRow.isbn13}, Title: "${resultRow.title}", Author(s): ${resultRow.authors}`;
+// Define the expected interfaces for consistent response structure
+interface IRatings {
+    average: number;
+    count: number;
+    rating_1: number;
+    rating_2: number;
+    rating_3: number;
+    rating_4: number;
+    rating_5: number;
+}
+
+interface IUrlIcon {
+    large: string;
+    small: string;
+}
+
+interface IBook {
+    isbn13: number;
+    author: string;
+    publication: number;
+    title: string;
+    ratings: IRatings;
+    icons: IUrlIcon;
+}
+
+// Updated format function to return a structured object
+const format = (resultRow): IBook => ({
+    isbn13: resultRow.isbn13,
+    author: resultRow.authors,
+    publication: resultRow.publication_year,
+    title: resultRow.title,
+    ratings: {
+        average: resultRow.rating_avg,
+        count: resultRow.rating_count,
+        rating_1: resultRow.rating_1_star,
+        rating_2: resultRow.rating_2_star,
+        rating_3: resultRow.rating_3_star,
+        rating_4: resultRow.rating_4_star,
+        rating_5: resultRow.rating_5_star,
+    },
+    icons: {
+        large: resultRow.image_url,
+        small: resultRow.image_small_url,
+    },
+});
 
 /**
  * Middleware to validate the title parameter.
@@ -14,14 +57,41 @@ const format = (resultRow) =>
 function mwValidTitleParam(request: Request, response: Response, next: NextFunction) {
     const { title } = request.query;
 
-    if (validationFunctions.isStringProvided(title as string)) {
-        next();
-    } else {
-        console.error('Missing or invalid title parameter');
-        response.status(400).send({
-            message: 'Missing or invalid title parameter - please refer to documentation',
+    if (!title) {
+        return response.status(400).send({
+            message: 'Missing required parameter: title',
         });
     }
+    
+    if (!validationFunctions.isStringProvided(title as string)) {
+        return response.status(400).send({
+            message: 'Invalid parameter: title must be a non-empty string',
+        });
+    }
+
+    next();
+}
+
+/**
+ * Middleware to validate limit and offset parameters.
+ * Ensures they are non-negative integers, and defaults them if invalid.
+ */
+function mwValidPaginationParams(request: Request, response: Response, next: NextFunction) {
+    let limit = Number(request.query.limit);
+    let offset = Number(request.query.offset);
+
+    if (isNaN(limit) || limit <= 0) {
+        limit = 10; // Default limit
+    }
+
+    if (isNaN(offset) || offset < 0) {
+        offset = 0; // Default offset
+    }
+
+    request.query.limit = limit.toString();
+    request.query.offset = offset.toString();
+
+    next();
 }
 
 /**
@@ -40,34 +110,36 @@ function mwValidTitleParam(request: Request, response: Response, next: NextFunct
  * offset of 0 will be used.
  * 
  * @apiSuccess {Object[]} books List of books that match the provided title.
- * Each book entry is formatted as "ISBN: {isbn13}, Title: '{title}', Author(s): {authors}".
+ * Each book entry is formatted with the fields isbn13, author, publication, title, ratings, and icons.
  * @apiSuccess {Object} pagination Pagination metadata for the response
  * @apiSuccess {number} pagination.totalRecords Total number of matching books
  * @apiSuccess {number} pagination.limit Number of entries returned per page
  * @apiSuccess {number} pagination.offset Offset used for the current query
  * @apiSuccess {number} pagination.nextPage Offset value to retrieve the next set of entries
  * 
- * @apiError (400) {String} message "Missing or invalid title parameter - please refer to documentation"
+ * @apiError (400) {String} message "Missing required parameter: title"
+ * @apiError (400) {String} message "Invalid parameter: title must be a non-empty string"
  */
 retrieveTitleRouter.get(
     '/retrieveTitle',
     mwValidTitleParam,
+    mwValidPaginationParams,
     async (request: Request, response: Response) => {
         const { title } = request.query;
         
-        // Set default values for limit and offset if not provided
-        const limit = (Number(request.query.limit) > 0) ? Number(request.query.limit) : 10;
-        const offset = (Number(request.query.offset) >= 0) ? Number(request.query.offset) : 0;
+        // Use the validated limit and offset values
+        const limit = Number(request.query.limit);
+        const offset = Number(request.query.offset);
 
         try {
             // Count total books matching the title
             const countQuery = `
-                SELECT COUNT(*) AS totalRecords 
+                SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
                 WHERE title ILIKE '%' || $1 || '%'
             `;
             const countResult = await pool.query(countQuery, [title]);
-            const totalRecords = parseInt(countResult.rows[0].totalrecords, 10);
+            const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
             // Fetch paginated books matching the title
             const theQuery = `

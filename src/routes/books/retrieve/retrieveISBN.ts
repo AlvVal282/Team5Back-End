@@ -7,11 +7,12 @@
  * @apiParam {Number} ISBN the ISBN in which we will look up
  *
  * @apiSuccess (Success 200) {number} Book_ID unique book id
- * @apiSuccess (Success 200) {String} Title the book title
  * @apiSuccess (Success 200) {INT} Publication_Year the year the book was published
- * @apiSuccess (Success 200) {String} Author the authors of the book
+ * @apiSuccess (Success 200) {String} Title the book title 
+ * @apiSuccess (Success 200) {TEXT} Image_URL url of the books image 
+ * 
  *
- * @apiError (400: Invalid ISBN) {String} message "invalid or missing ISBN"
- * @apiError (404: ISBN Not Found) {String} message "ISBN not found"
+ * @apiError (400: Invalid ISBN) {String} message "Invalid or missing ISBN - please ensure that param is entered and is valid"
+ * @apiError (404: ISBN Not Found) {String} message "ISBN Not Found"
  *
  */

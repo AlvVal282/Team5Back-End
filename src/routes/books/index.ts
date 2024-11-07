@@ -5,6 +5,6 @@ import { checkToken } from '../../core/middleware';
 
 const bookRoutes: Router = express.Router();
 
-bookRoutes.use(checkToken, retrieveRouter);
+bookRoutes.use(retrieveRouter, checkToken);
 
 export { bookRoutes };

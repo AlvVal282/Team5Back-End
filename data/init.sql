@@ -1,5 +1,19 @@
 -- Active: 1710457548247@@127.0.0.1@5432@tcss460@public
 
+DROP TABLE IF EXISTS account;
+DROP TABLE IF EXISTS account_credential;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS demo;
+
+DROP TABLE IF EXISTS Book_Ratings CASCADE;
+DROP TABLE IF EXISTS Book_Author CASCADE;
+DROP TABLE IF EXISTS Authors CASCADE;
+DROP TABLE IF EXISTS Books CASCADE;
+DROP TABLE IF EXISTS Account_Credential CASCADE;
+DROP TABLE IF EXISTS Account CASCADE;
+DROP TABLE IF EXISTS Account_Role CASCADE;
+
+
 -- Account Roles Table
 CREATE TABLE Account_Role (
     Role_ID SERIAL PRIMARY KEY,
@@ -36,7 +50,7 @@ CREATE TABLE Authors (
 -- Books Table
 CREATE TABLE Books (
     Book_ID SERIAL PRIMARY KEY,
-    ISBN13 BIGINT UNIQUE,
+    ISBN13 BIGINT,
     Publication_Year INT,
     Title TEXT NOT NULL,
     Rating_Avg FLOAT,
@@ -63,7 +77,3 @@ CREATE TABLE Book_Ratings (
     FOREIGN KEY (Book_ID) REFERENCES Books(Book_ID) ON DELETE CASCADE
 );
 
-COPY books
-FROM '/docker-entrypoint-initdb.d/books.csv'
-DELIMITER ','
-CSV HEADER;

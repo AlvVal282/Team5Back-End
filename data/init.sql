@@ -58,8 +58,11 @@ CREATE TABLE Book_Author (
 CREATE TABLE Book_Ratings (
     Rating_ID SERIAL PRIMARY KEY,
     Book_ID INT NOT NULL,
-    Rating_Star INT CHECK (Rating_Star BETWEEN 1 AND 5),
-    Rating_Count INT,
+    Rating_1_Star INT DEFAULT 0,
+    Rating_2_Star INT DEFAULT 0,
+    Rating_3_Star INT DEFAULT 0,
+    Rating_4_Star INT DEFAULT 0,
+    Rating_5_Star INT DEFAULT 0,
     FOREIGN KEY (Book_ID) REFERENCES Books(Book_ID) ON DELETE CASCADE
 );
 

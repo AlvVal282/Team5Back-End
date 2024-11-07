@@ -5,7 +5,7 @@ import {
     validationFunctions,
 } from '../../../core/utilities';
 
-const isNumberProvided = validationFunctions.isNumberProvided;
+const isAuthorProvided = validationFunctions.isAuthorOrYearProvided;
 
 const deleteAuthorRouter: Router = express.Router();
 
@@ -29,7 +29,7 @@ const deleteAuthorRouter: Router = express.Router();
 deleteAuthorRouter.delete(
     '/author/:id',
     (request: Request, response: Response, next: NextFunction) => {
-        if (isNumberProvided(request.params.id)) {
+        if (isAuthorProvided(request.params.id)) {
             next();
         } else {
             response.status(400).send({

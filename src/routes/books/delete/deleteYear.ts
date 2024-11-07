@@ -5,7 +5,7 @@ import {
     validationFunctions,
 } from '../../../core/utilities';
 
-const isNumberProvided = validationFunctions.isNumberProvided;
+const isYearProvided = validationFunctions.isAuthorOrYearProvided;
 
 const deleteYearRouter: Router = express.Router();
 
@@ -29,7 +29,7 @@ const deleteYearRouter: Router = express.Router();
 deleteYearRouter.delete(
     '/year/:year',
     (request: Request, response: Response, next: NextFunction) => {
-        if (isNumberProvided(request.params.year)) {
+        if (isYearProvided(request.params.year)) {
             next();
         } else {
             response.status(400).send({

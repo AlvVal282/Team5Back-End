@@ -5,7 +5,7 @@ import {
     validationFunctions,
 } from '../../../core/utilities';
 
-const isNumberProvided = validationFunctions.isNumberProvided;
+const isISBNProvided = validationFunctions.isISBNProvided;
 
 const deleteBookRouter: Router = express.Router();
 
@@ -29,7 +29,7 @@ const deleteBookRouter: Router = express.Router();
 deleteBookRouter.delete(
     '/book/:isbn',
     (request: Request, response: Response, next: NextFunction) => {
-        if (isNumberProvided(request.params.isbn)) {
+        if (isISBNProvided(request.params.isbn)) {
             next();
         } else {
             response.status(400).send({

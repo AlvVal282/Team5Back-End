@@ -155,10 +155,41 @@ retrieveYearRouter.get(
 
             // Fetch paginated books published within the year range
             const theQuery = `
-                SELECT * FROM Books 
-                WHERE publication_year BETWEEN $1 AND $2 
-                LIMIT $3 OFFSET $4
-            `;
+    SELECT 
+        Books.isbn13,
+        Books.publication_year,
+        Books.title,
+        Books.rating_avg,
+        Books.rating_count,
+        COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
+        COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
+        COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
+        COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
+        COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
+        Books.image_url,
+        Books.image_small_url,
+        STRING_AGG(Authors.Name, ', ') AS authors
+    FROM Books
+    LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
+    JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
+    JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
+    WHERE Books.publication_year BETWEEN $1 AND $2
+    GROUP BY 
+        Books.isbn13, 
+        Books.publication_year, 
+        Books.title, 
+        Books.rating_avg, 
+        Books.rating_count, 
+        Books.image_url, 
+        Books.image_small_url,
+        Book_Ratings.rating_1_star,
+        Book_Ratings.rating_2_star,
+        Book_Ratings.rating_3_star,
+        Book_Ratings.rating_4_star,
+        Book_Ratings.rating_5_star
+    LIMIT $3 OFFSET $4
+`;
+
             const values = [startYear, endYear, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 

@@ -117,8 +117,8 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiSuccess {number} pagination.offset Offset used for the current query
  * @apiSuccess {number} pagination.nextPage Offset value to retrieve the next set of entries
  * 
- * @apiError (400) {String} message "Missing required parameter: title"
- * @apiError (400) {String} message "Invalid parameter: title must be a non-empty string"
+ * @apiError (400: Missing Parameters) {String} message "Missing required parameter: title"
+ * @apiError (400: Invalid Parameters) {String} message "Invalid parameter: title must be a non-empty string"
  */
 retrieveTitleRouter.get(
     '/retrieveTitle',

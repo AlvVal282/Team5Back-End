@@ -1,3 +1,4 @@
+//apidoc -i ./src/ -o ./docs/
 import express, { NextFunction, Request, Response, Router } from 'express';
 import { pool, validationFunctions } from '../../../core/utilities';
 
@@ -126,10 +127,10 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiSuccess {number} pagination.offset The offset for the current page
  * @apiSuccess {number} pagination.nextPage The offset for the next page of results
  * 
- * @apiError (400) {String} message "Missing required parameters: startYear and endYear"
- * @apiError (400) {String} message "Invalid parameters: startYear and endYear must be numbers"
- * @apiError (400) {String} message "Invalid parameters: startYear and endYear cannot be negative"
- * @apiError (400) {String} message "Invalid range: startYear cannot be greater than endYear"
+ * @apiError (400: Missing Parameters) {String} message "Missing required parameters: startYear and endYear"
+ * @apiError (400: Invalid Parameters) {String} message "Invalid parameters: startYear and endYear must be numbers"
+ * @apiError (400: Invalid Range Order) {String} message "Invalid parameters: startYear and endYear cannot be negative"
+ * @apiError (400: Invalid Range Order) {String} message "Invalid range: startYear cannot be greater than endYear"
  */
 retrieveYearRouter.get(
     '/retrieveYear',
@@ -155,40 +156,40 @@ retrieveYearRouter.get(
 
             // Fetch paginated books published within the year range
             const theQuery = `
-    SELECT 
-        Books.isbn13,
-        Books.publication_year,
-        Books.title,
-        Books.rating_avg,
-        Books.rating_count,
-        COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
-        COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
-        COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
-        COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
-        COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
-        Books.image_url,
-        Books.image_small_url,
-        STRING_AGG(Authors.Name, ', ') AS authors
-    FROM Books
-    LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
-    JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
-    JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
-    WHERE Books.publication_year BETWEEN $1 AND $2
-    GROUP BY 
-        Books.isbn13, 
-        Books.publication_year, 
-        Books.title, 
-        Books.rating_avg, 
-        Books.rating_count, 
-        Books.image_url, 
-        Books.image_small_url,
-        Book_Ratings.rating_1_star,
-        Book_Ratings.rating_2_star,
-        Book_Ratings.rating_3_star,
-        Book_Ratings.rating_4_star,
-        Book_Ratings.rating_5_star
-    LIMIT $3 OFFSET $4
-`;
+                SELECT 
+                    Books.isbn13,
+                    Books.publication_year,
+                    Books.title,
+                    Books.rating_avg,
+                    Books.rating_count,
+                    COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
+                    COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
+                    COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
+                    COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
+                    COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
+                    Books.image_url,
+                    Books.image_small_url,
+                    STRING_AGG(Authors.Name, ', ') AS authors
+                FROM Books
+                LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
+                JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
+                JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
+                WHERE Books.publication_year BETWEEN $1 AND $2
+                GROUP BY 
+                    Books.isbn13, 
+                    Books.publication_year, 
+                    Books.title, 
+                    Books.rating_avg, 
+                    Books.rating_count, 
+                    Books.image_url, 
+                    Books.image_small_url,
+                    Book_Ratings.rating_1_star,
+                    Book_Ratings.rating_2_star,
+                    Book_Ratings.rating_3_star,
+                    Book_Ratings.rating_4_star,
+                    Book_Ratings.rating_5_star
+                LIMIT $3 OFFSET $4
+            `;
 
             const values = [startYear, endYear, limit, offset];
             const { rows } = await pool.query(theQuery, values);

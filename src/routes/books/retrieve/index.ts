@@ -4,6 +4,8 @@ import { retrieveRatingRouter } from './retrieveRating';
 import { retrieveTitleRouter } from './retrieveTitle';
 import { retrieveYearRouter } from './retrieveYear';
 import { retrieveAuthorRouter } from './retrieveAuthor';
+import { retrieveBooksRouter } from './retrieveBooks';
+import { retrieveISBNRouter } from './retrieveISBN';
 
 const retrieveRouter: Router = express.Router();
 
@@ -11,5 +13,7 @@ retrieveRouter.use(retrieveAuthorRouter)
 retrieveRouter.use(retrieveRatingRouter);
 retrieveRouter.use(retrieveTitleRouter);
 retrieveRouter.use(retrieveYearRouter);
+retrieveRouter.use(retrieveBooksRouter);
+retrieveRouter.use(retrieveISBNRouter);
 
 export { retrieveRouter };

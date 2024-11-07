@@ -45,7 +45,7 @@ deleteYearRouter.delete(
             .then((result) => {
                 if (result.rowCount === 0) {
                     response.status(404).send({
-                        message: `No books found for the specified publication year`
+                        messageNotFound: `No books found for the specified publication year`
                     });
                 } else{
                     response.status(200).send({

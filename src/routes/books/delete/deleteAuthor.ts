@@ -45,17 +45,17 @@ deleteAuthorRouter.delete(
             .then((result) => {
                 if (result.rowCount === 0) {
                     response.status(404).send({
-                        message: `Author not found`
+                        messageNotFound: 'Author not found'
                     });
                 } else{
                     response.status(200).send({
-                        messageSuccess: 'All books of the author successfully deleted.'
+                        messageSuccess: 'All books of the author successfully deleted'
                     });
                 }
             })
             .catch((error) => {
                 response.status(500).send({
-                    message: 'An error occurred while trying to delete associations.',
+                    message: 'An error occurred while trying to delete associations',
                     error: error.message
                 });
             });

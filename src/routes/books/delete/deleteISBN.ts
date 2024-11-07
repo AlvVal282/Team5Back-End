@@ -5,7 +5,7 @@ import {
     validationFunctions,
 } from '../../../core/utilities';
 
-const isISBNProvided = validationFunctions.isISBNProvided;
+const isValidISBN13 = validationFunctions.isValidISBN13;
 
 const deleteBookRouter: Router = express.Router();
 
@@ -17,7 +17,7 @@ const deleteBookRouter: Router = express.Router();
  * @apiName DeleteISBN
  * @apiGroup delete
  *
- * @apiParam {Number} isbn The ISBN of the book to delete
+ * @apiParam {String} isbn The ISBN of the book to delete
  *
  * @apiSuccess (Success 200) {string} messageSuccess "Book successfully deleted"
  *
@@ -29,7 +29,7 @@ const deleteBookRouter: Router = express.Router();
 deleteBookRouter.delete(
     '/book/:isbn',
     (request: Request, response: Response, next: NextFunction) => {
-        if (isISBNProvided(request.params.isbn)) {
+        if (isValidISBN13(request.params.isbn)) {
             next();
         } else {
             response.status(400).send({
@@ -45,7 +45,7 @@ deleteBookRouter.delete(
             .then((result) => {
                 if (result.rowCount === 0) {
                     response.status(404).send({
-                        message: `Book not found`
+                        messageNotFound: 'Book not found'
                     });
                 } else{
                     response.status(200).send({

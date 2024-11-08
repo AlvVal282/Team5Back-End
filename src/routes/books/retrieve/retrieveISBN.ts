@@ -1,7 +1,7 @@
 import express, { Request, Response, Router, NextFunction } from 'express';
 import { pool, validationFunctions } from '../../../core/utilities';
 
-const isISBNProvided = validationFunctions. isValidISBN13;
+const isISBNProvided = validationFunctions.isValidISBN13;
 
 const retrieveISBNRouter: Router = express.Router();
 
@@ -52,33 +52,37 @@ const format = (resultRow): IBook => ({
 });
 
 /**
- * @api {get} /retrieveISBN Retrieve a book by ISBN
- * @apiName GetBookByISBN
- * @apiGroup Books
+ * @api {get} /retrieveISBN Request to retrieve an entry by ISBN
  *
- * @apiQuery {Number} ISBN The ISBN number to look up.
+ * @apiName GetISBN
+ * @apiGroup retrieve
  *
- * @apiSuccess {Object} book Book details.
- * @apiSuccess {number} book.isbn13 Book's ISBN number.
- * @apiSuccess {string} book.author Book author(s).
- * @apiSuccess {number} book.publication Publication year.
- * @apiSuccess {string} book.title Book title.
- * @apiSuccess {Object} book.ratings Ratings structure.
- * @apiSuccess {number} book.ratings.average Average rating.
- * @apiSuccess {number} book.ratings.count Rating count.
- * @apiSuccess {number} book.ratings.rating_1 Rating count for 1 star.
- * @apiSuccess {number} book.ratings.rating_2 Rating count for 2 stars.
- * @apiSuccess {number} book.ratings.rating_3 Rating count for 3 stars.
- * @apiSuccess {number} book.ratings.rating_4 Rating count for 4 stars.
- * @apiSuccess {number} book.ratings.rating_5 Rating count for 5 stars.
- * @apiSuccess {Object} book.icons Icon structure.
- * @apiSuccess {string} book.icons.large URL for large image.
- * @apiSuccess {string} book.icons.small URL for small image.
+ * @apiQuery {Number} ISBN the ISBN number we will look up
+ *
+ * @apiSuccess (Success 200) {Object} book the book entree retrieved by ISBN
+ * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
+ * @apiSuccess (Success 200) {String} books.author Comma-separated list of authors of the book.
+ * @apiSuccess (Success 200) {Number} books.publication Publication year of the book.
+ * @apiSuccess (Success 200) {String} books.title Title of the book.
+ * @apiSuccess (Success 200) {Object} books.ratings Rating details of the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.average Average rating score.
+ * @apiSuccess (Success 200) {Number} books.ratings.count Total number of ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_1 Count of 1-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_2 Count of 2-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_3 Count of 3-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_4 Count of 4-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_5 Count of 5-star ratings.
+ * @apiSuccess (Success 200) {Object} books.icons URLs to book cover images.
+ * @apiSuccess (Success 200) {String} books.icons.large URL to the large version of the book cover image.
+ * @apiSuccess (Success 200) {String} books.icons.small URL to the small version of the book cover image.
  * 
- * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid."
- * @apiError (404: ISBN Not Found) {string} message "ISBN Not Found."
- * @apiError (500: Database Error) {string} message "Server error - unable to retrieve book by ISBN."
+ * 
+ *
+ * @apiError (400: Invalid ISBN) {String} message "Invalid or missing ISBN - please ensure that param is entered and is valid"
+ * @apiError (404: ISBN Not Found) {String} message "ISBN Not Found"
+ *
  */
+
 retrieveISBNRouter.get(
     '/retrieveISBN',
     (request: Request, response: Response, next: NextFunction) => {
@@ -87,7 +91,7 @@ retrieveISBNRouter.get(
             next();
         } else {
             response.status(400).send({
-                message: 'Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid.',
+                message: 'Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid',
             });
         }
     },
@@ -136,7 +140,7 @@ retrieveISBNRouter.get(
                 response.status(200).json({ book });
             }
         } catch (error) {
-            console.error('Database error:', error);
+            //console.error('Database error:', error);
             response.status(500).send({
                 message: 'Server error - unable to retrieve book by ISBN.',
             });

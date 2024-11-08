@@ -6,9 +6,9 @@ import { checkToken } from '../../../core/middleware';
 
 const deleteRoutes: Router = express.Router();
 
-deleteRoutes.use('/delete', checkToken, deleteBookRouter);
-deleteRoutes.use('/delete', checkToken, deleteAuthorRouter);
-deleteRoutes.use('/delete', checkToken, deleteYearRouter);
+deleteRoutes.use(checkToken, deleteBookRouter);
+deleteRoutes.use(checkToken, deleteAuthorRouter);
+deleteRoutes.use(checkToken, deleteYearRouter);
 
 export { deleteRoutes };
 

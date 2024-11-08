@@ -19,11 +19,8 @@ const deleteBookRouter: Router = express.Router();
  *
  * @apiParam {String} isbn The ISBN of the book to delete
  *
-<<<<<<< HEAD
  * @apiSuccess (Success 200) {string} messageSuccess "Book successfully deleted"
-=======
  * @apiSuccess (Success 200) {String} message "Book successfully deleted."
->>>>>>> 93d2c59 (Removed unneccesary returns from delete author and ISBN)
  *
  * @apiError (400: Missing ISBN) {String} messageFailure "Missing or invalid ISBN parameter - please ensure that the ISBN is valid and/or entered"
  * @apiError (404: Not Found) {String} messageNotFound "Book not found"

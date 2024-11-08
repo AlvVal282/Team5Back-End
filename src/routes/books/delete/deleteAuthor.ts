@@ -19,7 +19,11 @@ const deleteAuthorRouter: Router = express.Router();
  *
  * @apiParam {Number} id The unique ID of the author to delete
  *
+<<<<<<< HEAD
  * @apiSuccess (Success 200) {String} messageSuccess "All books of the author successfully deleted"
+=======
+ * @apiSuccess (Success 200) {String} message "Author successfully deleted"
+>>>>>>> 93d2c59 (Removed unneccesary returns from delete author and ISBN)
  *
  * @apiError (400: Missing ID) {String} messageFailure "Missing or invalid author ID  - please ensure that the Author is entered and/or valid"
  * @apiError (404: Not Found) {String} messageNotFound "Author not found"

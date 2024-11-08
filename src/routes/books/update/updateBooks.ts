@@ -7,7 +7,7 @@ const updateBookRouter: Router = express.Router();
 /**
  * @api {update} /updateBook Update a book entry
  *
- * @apiDescription Request to update a book entry by ID.
+ * @apiDescription Request to update a book entry by ID. Does not update rating realted data. (Use /updateRating instead)
  *
  * @apiName UpdateBook
  * @apiGroup update

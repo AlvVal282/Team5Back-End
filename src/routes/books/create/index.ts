@@ -194,11 +194,13 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
         }
 
         const insertBookQuery =
-            'INSERT INTO Books (ISBN13, Title, Publication_Year, Image_URL, Image_Small_URL) VALUES ($1, $2, $3, $4, $5) RETURNING Book_ID';
+            'INSERT INTO Books (ISBN13, Title, Publication_Year, Rating_Avg, Rating_Count, Image_URL, Image_Small_URL) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING Book_ID';
         const bookValues = [
             ISBN13,
             Title,
             Publication_Year,
+            Rating_Avg,
+            Rating_Count,
             Image_URL,
             Image_Small_URL,
         ];
@@ -239,18 +241,14 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
         const insertRatingsQuery = `
             INSERT INTO Book_Ratings (
                 Book_ID,
-                Rating_Avg,
-                Rating_Count,
-                One_Star_Count,
-                Two_Star_Count,
-                Three_Star_Count,
-                Four_Star_Count,
-                Five_Star_Count
-            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`;
+                Rating_1_Star,
+                Rating_2_Star,
+                Rating_3_Star,
+                Rating_4_Star,
+                Rating_5_Star
+            ) VALUES ($1, $2, $3, $4, $5, $6)`;
         const ratingValues = [
             bookId,
-            Rating_Avg,
-            Rating_Count,
             One_Star_Count,
             Two_Star_Count,
             Three_Star_Count,
@@ -267,7 +265,7 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
         });
     } catch (error) {
         await client.query('ROLLBACK');
-        console.error('Database error:', error);
+        //console.error('Database error:', error);
         response.status(500).send({
             message: 'Server error - contact support',
         });

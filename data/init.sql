@@ -46,6 +46,8 @@ CREATE TABLE Books (
     ISBN13 BIGINT UNIQUE NOT NULL,
     Publication_Year INT,
     Title TEXT NOT NULL,
+    Rating_Avg FLOAT,
+    Rating_Count INT,
     Image_URL TEXT,
     Image_Small_URL TEXT
 );

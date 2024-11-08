@@ -15,7 +15,7 @@ const deleteAccountRouter: Router = express.Router();
  * @apiDescription Allows the user to permanently delete their account from the system. This action is irreversible.
  *
  * @apiName DeleteAccount
- * @apiGroup auth
+ * @apiGroup Auth
  * 
  * @apiParam {Number} id The unique ID of the account to delete
  *

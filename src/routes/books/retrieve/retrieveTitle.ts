@@ -3,7 +3,6 @@ import { pool, validationFunctions } from '../../../core/utilities';
 
 const retrieveTitleRouter: Router = express.Router();
 
-// Define interfaces for consistent response structure
 interface IRatings {
     average: number;
     count: number;
@@ -28,7 +27,6 @@ interface IBook {
     icons: IUrlIcon;
 }
 
-// Format function to return a structured IBook object
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -98,9 +96,9 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiDescription Retrieve a list of books filtered by title, with optional pagination.
  * Allows partial matching on the title for flexibility.
  * 
- * @apiQuery {String} title Partial or full title of the book to search for (required).
- * @apiQuery {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
- * @apiQuery {Number} [offset=0] Number of books to skip (optional, defaults to 0).
+ * @apiQuery {String} title Partial or full title of the book to search for **Required**
+ * @apiQuery {Number} [limit=10] Number of books to return per page. **Optional**
+ * @apiQuery {Number} [offset=0] Number of books to skip. **Optional**
  * 
  * @apiSuccess (Success 200) {Object[]} books List of books matching the specified title.
  * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
@@ -127,9 +125,7 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * 
  * @apiError (400: Invalid Parameters) {String} message "Invalid parameter: title must be a non-empty string".
  * @apiError (404: Not Found) {String} message "No books found matching the specified title".
- * @apiError (500: Server Error) {String} message "Server error - contact support".
  */
-// Route handler
 retrieveTitleRouter.get(
     '/retrieveTitle',
     mwValidTitleParam,

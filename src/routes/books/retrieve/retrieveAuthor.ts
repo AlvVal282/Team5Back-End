@@ -3,7 +3,6 @@ import { pool, validationFunctions } from '../../../core/utilities';
 
 const retrieveAuthorRouter: Router = express.Router();
 
-// Define interfaces for consistent response structure
 interface IRatings {
     average: number;
     count: number;
@@ -28,7 +27,6 @@ interface IBook {
     icons: IUrlIcon;
 }
 
-// Format function to structure each book object
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -92,9 +90,9 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * 
  * @apiDescription Retrieve a list of books filtered by author name. Allows partial matching on the author's name for flexibility.
  * 
- * @apiQuery {String} author Partial or full name of the author to search for (required)
- * @apiQuery {number} limit The number of entry objects to return (default 10)
- * @apiQuery {number} offset The number to offset the lookup of entry objects to return (default 0)
+ * @apiQuery {String} author Partial or full name of the author to search for **Required**
+ * @apiQuery {number} [limit=10] limit The number of entry objects to return. **Optional.**
+ * @apiQuery {number} [offset=10] offset The number to offset the lookup of entry objects to return. **Optional.**
  * 
  * @apiSuccess {Object[]} books List of books that match the provided author name.
  * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
@@ -152,40 +150,40 @@ retrieveAuthorRouter.get(
 
             // Fetch paginated books matching the author
             const theQuery = `
-    SELECT 
-        Books.isbn13,
-        Books.publication_year,
-        Books.title,
-        Books.rating_avg,
-        Books.rating_count,
-        COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
-        COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
-        COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
-        COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
-        COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
-        Books.image_url,
-        Books.image_small_url,
-        STRING_AGG(Authors.Name, ', ') AS authors
-    FROM Books
-    JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
-    JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
-    LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
-    WHERE Authors.Name ILIKE '%' || $1 || '%'
-    GROUP BY 
-        Books.isbn13, 
-        Books.publication_year, 
-        Books.title, 
-        Books.rating_avg, 
-        Books.rating_count, 
-        Books.image_url, 
-        Books.image_small_url,
-        Book_Ratings.rating_1_star,
-        Book_Ratings.rating_2_star,
-        Book_Ratings.rating_3_star,
-        Book_Ratings.rating_4_star,
-        Book_Ratings.rating_5_star
-    LIMIT $2 OFFSET $3
-`;
+                SELECT 
+                    Books.isbn13,
+                    Books.publication_year,
+                    Books.title,
+                    Books.rating_avg,
+                    Books.rating_count,
+                    COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
+                    COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
+                    COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
+                    COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
+                    COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
+                    Books.image_url,
+                    Books.image_small_url,
+                    STRING_AGG(Authors.Name, ', ') AS authors
+                FROM Books
+                JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
+                JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
+                LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
+                WHERE Authors.Name ILIKE '%' || $1 || '%'
+                GROUP BY 
+                    Books.isbn13, 
+                    Books.publication_year, 
+                    Books.title, 
+                    Books.rating_avg, 
+                    Books.rating_count, 
+                    Books.image_url, 
+                    Books.image_small_url,
+                    Book_Ratings.rating_1_star,
+                    Book_Ratings.rating_2_star,
+                    Book_Ratings.rating_3_star,
+                    Book_Ratings.rating_4_star,
+                    Book_Ratings.rating_5_star
+                LIMIT $2 OFFSET $3
+            `;
 
             const values = [author, limit, offset];
             const { rows } = await pool.query(theQuery, values);

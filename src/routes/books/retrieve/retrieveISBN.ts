@@ -5,7 +5,6 @@ const isISBNProvided = validationFunctions. isValidISBN13;
 
 const retrieveISBNRouter: Router = express.Router();
 
-// Define interfaces for consistent response structure
 interface IRatings {
     average: number;
     count: number;
@@ -30,7 +29,6 @@ interface IBook {
     icons: IUrlIcon;
 }
 
-// Format function to structure each book object
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -58,9 +56,9 @@ const format = (resultRow): IBook => ({
  *
  * @apiDescription Retrieves details for books with the specified ISBN. Supports optional pagination.
  *
- * @apiQuery (Query Parameters){Number} ISBN The ISBN number to look up.
- * @apiQuery {Number} [limit=10] The maximum number of books to return per page. **Optional.** Defaults to 10.
- * @apiQuery {Number} [offset=0] The number of books to skip from the start of the result set. **Optional.** Defaults to 0.
+ * @apiQuery (Query Parameters){Number} ISBN The ISBN number to look up (13 digits).
+ * @apiQuery {Number} [limit=10] The maximum number of books to return per page. **Optional.** 
+ * @apiQuery {Number} [offset=0] The number of books to skip from the start of the result set. **Optional.** 
  *
  * @apiSuccess {Object[]} books List of books matching the specified ISBN.
  * @apiSuccess {number} books.isbn13 Book's ISBN number.
@@ -85,7 +83,7 @@ const format = (resultRow): IBook => ({
  * @apiSuccess {Number} pagination.offset Offset used for the current query.
  * @apiSuccess {Number|null} pagination.nextPage Offset value to retrieve the next set of entries, or `null` if no further pages exist.
  * 
- * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid."
+ * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid (13 digits)."
  * @apiError (404: ISBN Not Found) {string} message "ISBN Not Found."
  * @apiError (500: Server Error) {string} message "Server error - unable to retrieve book by ISBN."
  */

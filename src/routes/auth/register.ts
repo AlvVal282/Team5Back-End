@@ -61,46 +61,42 @@ const emailMiddlewareCheck = (
 };
 
 /**
- * @api {post} /register Request to register a user
+ * @api {post} /register Register a new user
  *
- * @apiDescription Document this route. 
- * !**Document the password rules here**!
- *      - Password requires:
- *      - Upper case letter
- *      - Lower case letters
- *      - Special character (@, $, !, #)
- *      - Minimum length of 7 characters
- *      - At least on number
- * !**Document the role rules here**!
- *      - Roles:
- *      1) Admin
- *      2) Manager
- *      3) Developer
- *      4) Account User
- *      5) Anonymous User
+ * @apiDescription This endpoint allows a new user to register by providing their personal details, role, and secure password. The password must meet specific complexity rules, and the chosen role must match predefined roles.
  *
  * @apiName PostRegister
  * @apiGroup Auth
  *
- * @apiBody {String} firstname a users first name
- * @apiBody {String} lastname a users last name
- * @apiBody {String} email a users email *unique
- * @apiBody {String} password a users password
- * @apiBody {String} username a username *unique
- * @apiBody {String} role a role for this user [1-5]
- * @apiBody {String} phone a phone number for this user
+ * @apiBody {String} firstname The user's first name.
+ * @apiBody {String} lastname The user's last name.
+ * @apiBody {String} email The user's unique email address.
+ * @apiBody {String} password The user's chosen password. **Password Requirements:**
+ *      - Minimum length of 8 characters
+ *      - Must contain:
+ *          - At least one uppercase letter
+ *          - At least one lowercase letter
+ *          - At least one special character (e.g., @, $, !, #)
+ *          - At least one number
+ * @apiBody {String} username A unique username for the user.
+ * @apiBody {String} role The user's role in the system. **Role Options:**
+ *      - "1" - Admin
+ *      - "2" - Manager
+ *      - "3" - Developer
+ *      - "4" - Account User
+ *      - "5" - Anonymous User
+ * @apiBody {String} phone The user's phone number, which must be exactly 10 numerical digits.
  *
- * @apiSuccess (Success 201) {string} accessToken a newly created JWT
- * @apiSuccess (Success 201) {number} id unique user id
+ * @apiSuccess (Success 201) {String} accessToken A newly created JSON Web Token (JWT) for the user, valid for 14 days.
+ * @apiSuccess (Success 201) {Number} id The unique user ID for the newly registered user.
  *
- * @apiError (400: Missing Parameters) {String} message "Missing required information"
- * @apiError (400: Invalid Password) {String} message "Invalid or missing password  - please adhere to the password rules shown"
- * @apiError (400: Invalid Phone) {String} message "Invalid or missing phone number  - please only include numbers (e.g. 1234567890)"
- * @apiError (400: Invalid Email) {String} message "Invalid or missing email  - please include '@' symbol and end with a proper domain (e.g. guest1@xample.com)"
- * @apiError (400: Invalid Role) {String} message "Invalid or missing role  - please select a role for your account"
- * @apiError (400: Username exists) {String} message "Username exists"
- * @apiError (400: Email exists) {String} message "Email exists"
- *
+ * @apiError (400: Missing Parameters) {String} message "Missing required information" - Returned if firstname, lastname, or username is missing.
+ * @apiError (400: Invalid Email) {String} message "Invalid or missing email - please include '@' symbol and end with a proper domain (e.g., user@example.com)" - Returned if the email format is invalid.
+ * @apiError (400: Invalid Password) {String} message "Invalid or missing password - please adhere to the password rules shown" - Returned if the password does not meet complexity requirements.
+ * @apiError (400: Invalid Phone) {String} message "Invalid or missing phone number - please only include numbers (e.g., 1234567890)" - Returned if the phone number is not exactly 10 digits.
+ * @apiError (400: Invalid Role) {String} message "Invalid or missing role - please select a role for your account" - Returned if the role is not within the predefined options.
+ * @apiError (400: Username Exists) {String} message "Username exists" - Returned if the chosen username is already taken.
+ * @apiError (400: Email Exists) {String} message "Email exists" - Returned if the provided email is already associated with an existing account.
  */
 registerRouter.post(
     '/register',

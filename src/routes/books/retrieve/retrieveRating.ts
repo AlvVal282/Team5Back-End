@@ -3,7 +3,6 @@ import { pool } from '../../../core/utilities';
 
 const retrieveRatingRouter: Router = express.Router();
 
-// Define interfaces for consistent response structure
 interface IRatings {
     average: number;
     count: number;
@@ -28,7 +27,6 @@ interface IBook {
     icons: IUrlIcon;
 }
 
-// Format function to structure each book object
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -100,10 +98,10 @@ function mwValidRatingParams(
  * 
  * @apiDescription Retrieve a list of books filtered by average rating within a specified range, with optional pagination.
  * 
- * @apiQuery {Number} minRating Minimum average rating for filtering books (required, must be between 1 and 5).
- * @apiQuery {Number} maxRating Maximum average rating for filtering books (required, must be between 1 and 5).
- * @apiQuery {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
- * @apiQuery {Number} [offset=0] Number of books to skip (optional, defaults to 0).
+ * @apiQuery {Number} minRating Minimum average rating for filtering books. **Required**
+ * @apiQuery {Number} maxRating Maximum average rating for filtering books. **Required**
+ * @apiQuery {Number} [limit=10] Number of books to return per page. **Optional**
+ * @apiQuery {Number} [offset=0] Number of books to skip. **Optional**
  * 
  * @apiSuccess (Success 200) {Object[]} books List of books that fall within the specified rating range.
  * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
@@ -133,7 +131,6 @@ function mwValidRatingParams(
  * @apiError (400: Out of Range) {String} message "Out of range: minRating and maxRating must be between 1 and 5".
  * @apiError (400: Invalid Range Order) {String} message "Invalid range: minRating cannot be greater than maxRating".
  * @apiError (404: Not Found) {String} message "No books found within the specified rating range".
- * @apiError (500: Server Error) {String} message "Server error - contact support".
  */
 retrieveRatingRouter.get(
     '/retrieveRating',

@@ -13,6 +13,15 @@ CREATE TABLE Account_Role (
     Role_Name VARCHAR(50) NOT NULL
 );
 
+-- Insert predefined roles into Account_Role table
+INSERT INTO Account_Role (Role_Name)
+VALUES
+    ('Admin'),
+    ('Manager'),
+    ('Developer'),
+    ('Account User'),
+    ('Anonymous User');
+
 -- Accounts Table
 CREATE TABLE Account (
     Account_ID SERIAL PRIMARY KEY,

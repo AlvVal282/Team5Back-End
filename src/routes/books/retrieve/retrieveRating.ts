@@ -63,38 +63,35 @@ function mwValidRatingParams(
     const maxRating = request.query.maxRating;
 
     if (!minRating || !maxRating) {
-        response.status(400).send({
+        return response.status(400).send({
             message: 'Missing required parameters: minRating and maxRating',
         });
-        return;
     }
 
     const minRatingNum = parseFloat(minRating as string);
     const maxRatingNum = parseFloat(maxRating as string);
 
     if (isNaN(minRatingNum) || isNaN(maxRatingNum)) {
-        response.status(400).send({
+        return response.status(400).send({
             message: 'Invalid parameters: minRating and maxRating must be numbers',
         });
-        return;
     }
 
     if (minRatingNum < 1 || minRatingNum > 5 || maxRatingNum < 1 || maxRatingNum > 5) {
-        response.status(400).send({
+        return response.status(400).send({
             message: 'Out of range: minRating and maxRating must be between 1 and 5',
         });
-        return;
     }
 
     if (minRatingNum > maxRatingNum) {
-        response.status(400).send({
+        return response.status(400).send({
             message: 'Invalid range: minRating cannot be greater than maxRating',
         });
-        return;
     }
 
     next();
 }
+
 
 /**
  * @api {get} /books/rating Retrieve Books by Rating
@@ -103,8 +100,8 @@ function mwValidRatingParams(
  * 
  * @apiDescription Retrieve a list of books filtered by average rating within a specified range, with optional pagination.
  * 
- * @apiParam {Number} minRating Minimum average rating for filtering books (required, must be between 1 and 5).
- * @apiParam {Number} maxRating Maximum average rating for filtering books (required, must be between 1 and 5).
+ * @apiQuery {Number} minRating Minimum average rating for filtering books (required, must be between 1 and 5).
+ * @apiQuery {Number} maxRating Maximum average rating for filtering books (required, must be between 1 and 5).
  * @apiQuery {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
  * @apiQuery {Number} [offset=0] Number of books to skip (optional, defaults to 0).
  * 
@@ -149,7 +146,6 @@ retrieveRatingRouter.get(
         const offset = Number(request.query.offset) >= 0 ? Number(request.query.offset) : 0;
 
         try {
-            // Query to get the count of matching books
             const countQuery = `
                 SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
@@ -158,14 +154,12 @@ retrieveRatingRouter.get(
             const countResult = await pool.query(countQuery, [minRating, maxRating]);
             const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
-            // Return 404 if no books are found in the specified rating range
             if (totalRecords === 0) {
-                return response.status(404).json({
+                return response.status(404).send({
                     message: 'No books found within the specified rating range.',
                 });
             }
 
-            // Query to fetch matching books with pagination
             const theQuery = `
                 SELECT 
                     Books.isbn13,
@@ -200,8 +194,7 @@ retrieveRatingRouter.get(
             const values = [minRating, maxRating, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            // Send the response with books and pagination metadata
-            response.status(200).json({
+            response.status(200).send({
                 books: rows.map(format),
                 pagination: {
                     totalRecords,
@@ -220,6 +213,5 @@ retrieveRatingRouter.get(
 );
 
 export { retrieveRatingRouter };
-
 
 

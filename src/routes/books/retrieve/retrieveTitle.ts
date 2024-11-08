@@ -54,14 +54,9 @@ const format = (resultRow): IBook => ({
  * Ensures the title parameter is provided as a non-empty string.
  * Sends a 400 error if validation fails.
  */
+// Middleware to validate title parameter
 function mwValidTitleParam(request: Request, response: Response, next: NextFunction) {
     const { title } = request.query;
-
-    if (!title) {
-        return response.status(400).send({
-            message: 'Missing required parameter: title',
-        });
-    }
 
     if (!validationFunctions.isStringProvided(title as string)) {
         return response.status(400).send({
@@ -71,6 +66,7 @@ function mwValidTitleParam(request: Request, response: Response, next: NextFunct
 
     next();
 }
+
 
 /**
  * Middleware to validate limit and offset parameters.
@@ -102,7 +98,7 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiDescription Retrieve a list of books filtered by title, with optional pagination.
  * Allows partial matching on the title for flexibility.
  * 
- * @apiParam {String} title Partial or full title of the book to search for (required).
+ * @apiQuery {String} title Partial or full title of the book to search for (required).
  * @apiQuery {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
  * @apiQuery {Number} [offset=0] Number of books to skip (optional, defaults to 0).
  * 
@@ -129,24 +125,21 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiSuccess (Success 200) {Number} pagination.offset Offset used for the current query.
  * @apiSuccess (Success 200) {Number|null} pagination.nextPage Offset for the next page of results, or null if there are no more pages.
  * 
- * @apiError (400: Missing Parameters) {String} message "Missing required parameter: title".
  * @apiError (400: Invalid Parameters) {String} message "Invalid parameter: title must be a non-empty string".
  * @apiError (404: Not Found) {String} message "No books found matching the specified title".
  * @apiError (500: Server Error) {String} message "Server error - contact support".
  */
+// Route handler
 retrieveTitleRouter.get(
     '/retrieveTitle',
     mwValidTitleParam,
     mwValidPaginationParams,
     async (request: Request, response: Response) => {
         const { title } = request.query;
-
-        // Use the validated limit and offset values
         const limit = Number(request.query.limit);
         const offset = Number(request.query.offset);
 
         try {
-            // Count total books matching the title
             const countQuery = `
                 SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
@@ -155,14 +148,12 @@ retrieveTitleRouter.get(
             const countResult = await pool.query(countQuery, [title]);
             const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
-            // Return 404 if no matching records found
             if (totalRecords === 0) {
-                return response.status(404).json({
+                return response.status(404).send({
                     message: 'No books found matching the specified title.',
                 });
             }
 
-            // Fetch paginated books matching the title
             const theQuery = `
                 SELECT 
                     Books.isbn13,
@@ -197,7 +188,7 @@ retrieveTitleRouter.get(
             const values = [title, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            response.status(200).json({
+            response.status(200).send({
                 books: rows.map(format),
                 pagination: {
                     totalRecords,

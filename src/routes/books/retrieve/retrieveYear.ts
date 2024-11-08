@@ -94,11 +94,11 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
     let offset = Number(request.query.offset);
 
     if (isNaN(limit) || limit <= 0) {
-        limit = 10; // Default limit
+        limit = 10;
     }
 
     if (isNaN(offset) || offset < 0) {
-        offset = 0; // Default offset
+        offset = 0;
     }
 
     request.query.limit = limit.toString();
@@ -114,10 +114,10 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  *
  * @apiDescription Retrieve a list of books published within a specific year range, optionally paginated.
  *
- * @apiParam (Query Parameters) {Number} startYear The starting year for the publication range (required).
- * @apiParam (Query Parameters) {Number} endYear The ending year for the publication range (required).
- * @apiParam (Query Parameters) {Number} [limit=10] Number of entries to return per page (optional, defaults to 10).
- * @apiParam (Query Parameters) {Number} [offset=0] Number of entries to skip (optional, defaults to 0).
+ * @apiQuery (Query Parameters) {Number} startYear The starting year for the publication range (required).
+ * @apiQuery (Query Parameters) {Number} endYear The ending year for the publication range (required).
+ * @apiQuery (Query Parameters) {Number} [limit=10] Number of entries to return per page (optional, defaults to 10).
+ * @apiQuery (Query Parameters) {Number} [offset=0] Number of entries to skip (optional, defaults to 0).
  *
  * @apiSuccess (Success 200) {Object[]} books List of books published within the specified range.
  * @apiSuccess (Success 200) {Number} books.isbn13 The unique ISBN-13 identifier of the book.
@@ -157,12 +157,10 @@ retrieveYearRouter.get(
         const startYear = parseInt(request.query.startYear as string, 10);
         const endYear = parseInt(request.query.endYear as string, 10);
 
-        // Use validated limit and offset for pagination
         const limit = Number(request.query.limit);
         const offset = Number(request.query.offset);
 
         try {
-            // Count total books published within the year range
             const countQuery = `
                 SELECT COUNT(*) AS "totalRecords" 
                 FROM Books 
@@ -171,14 +169,12 @@ retrieveYearRouter.get(
             const countResult = await pool.query(countQuery, [startYear, endYear]);
             const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
-            // Return 404 if no matching records found
             if (totalRecords === 0) {
-                return response.status(404).json({
+                return response.status(404).send({
                     message: 'No books found within the specified publication year range.',
                 });
             }
 
-            // Fetch paginated books published within the year range
             const theQuery = `
                 SELECT 
                     Books.isbn13,
@@ -218,8 +214,8 @@ retrieveYearRouter.get(
             const values = [startYear, endYear, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            // Respond with books and pagination metadata if records found
-            response.status(200).json({
+            // Send response with books and pagination metadata
+            response.status(200).send({
                 books: rows.map(format),
                 pagination: {
                     totalRecords,
@@ -236,6 +232,5 @@ retrieveYearRouter.get(
         }
     }
 );
-
 
 export { retrieveYearRouter };

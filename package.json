@@ -1,7 +1,7 @@
 {
-    "name": "tcss460_node_express_template",
+   "name": "backend-project",
     "version": "1.0.0",
-    "description": "Template for a node/express web service for TCSS 460",
+    "description": "API documentation for Team 5 Backend project in course 460.",
     "main": "dist/app.js",
     "scripts": {
         "start": "NODE_PATH=./build node build/index.js",
@@ -15,10 +15,10 @@
         "format:write": "prettier --write ."
     },
     "keywords": [],
-    "author": "Charles Bryan",
+    "author": "Team 5 - TCSS 460, BackEnd Project",
     "repository": {
         "type": "git",
-        "url": "https://github.com/cfb3/cfb3-tcss4540-labs-23sp"
+        "url": "https://github.com/AlvVal282/Team5Back-End"
     },
     "engines": {
         "node": "20.17.0"

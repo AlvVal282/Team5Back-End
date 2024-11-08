@@ -100,10 +100,10 @@ function mwValidRatingParams(
  * 
  * @apiDescription Retrieve a list of books filtered by average rating within a specified range, with optional pagination.
  * 
- * @apiQuery {Number} minRating Minimum average rating for filtering books (required, must be between 1 and 5).
- * @apiQuery {Number} maxRating Maximum average rating for filtering books (required, must be between 1 and 5).
- * @apiQuery {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
- * @apiQuery {Number} [offset=0] Number of books to skip (optional, defaults to 0).
+ * @apiQuery (Query Parameters) {Number} minRating Minimum average rating for filtering books (required, must be between 1 and 5).
+ * @apiQuery (Query Parameters) {Number} maxRating Maximum average rating for filtering books (required, must be between 1 and 5).
+ * @apiQuery (Query Parameters) {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
+ * @apiQuery (Query Parameters) {Number} [offset=0] Number of books to skip (optional, defaults to 0).
  * 
  * @apiSuccess (Success 200) {Object[]} books List of books that fall within the specified rating range.
  * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.

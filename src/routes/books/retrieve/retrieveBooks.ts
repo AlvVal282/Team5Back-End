@@ -56,13 +56,12 @@ const format = (resultRow): IBook => ({
  * 
  * @apiDescription Retrieve a list of all books with optional pagination.
  * 
- * @apiQuery {number} limit The number of books to return per page (default is 10).
- * @apiQuery {number} offset The offset for pagination (default is 0).
+ * @apiQuery (Query Parameters) {number} limit The number of books to return per page (default is 10).
+ * @apiQuery (Query Parameters) {number} offset The offset for pagination (default is 0).
  * 
  * @apiSuccess {Object[]} books List of books in the specified range.
  * @apiSuccess {Object} pagination Pagination metadata for the response.
  * 
- * @apiError (500: Internal Server Error) {String} message "Server error - contact support"
  */
 retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Response) => {
     // Set default values for limit and offset

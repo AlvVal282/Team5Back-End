@@ -1,8 +1,8 @@
 {
-    "name": "TCSS 460 BE Phase 2",
+    "name": "TCSS 460 backend-project",
     "version": "0.1.0",
-    "description": "TCSS 460 Second Node/Express Rest Web API, includes DB and Auth examples",
-    "title": "TCSS 460 Rest Web API",
+    "description": "API documentation for Team 5 project.",
+    "title": "TCSS 460 backend-project",
     "url": "localhost:4000",
     "order": [
         "PostMessage",

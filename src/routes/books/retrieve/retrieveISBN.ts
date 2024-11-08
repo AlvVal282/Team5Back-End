@@ -56,7 +56,7 @@ const format = (resultRow): IBook => ({
  * @apiName GetBookByISBN
  * @apiGroup Books
  *
- * @apiQuery {Number} ISBN The ISBN number to look up.
+ * @apiQuery (Query Parameters){Number} ISBN The ISBN number to look up.
  *
  * @apiSuccess {Object} book Book details.
  * @apiSuccess {number} book.isbn13 Book's ISBN number.
@@ -77,7 +77,6 @@ const format = (resultRow): IBook => ({
  * 
  * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid."
  * @apiError (404: ISBN Not Found) {string} message "ISBN Not Found."
- * @apiError (500: Database Error) {string} message "Server error - unable to retrieve book by ISBN."
  */
 retrieveISBNRouter.get(
     '/retrieveISBN',

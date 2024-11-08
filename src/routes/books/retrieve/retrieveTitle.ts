@@ -98,9 +98,9 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiDescription Retrieve a list of books filtered by title, with optional pagination.
  * Allows partial matching on the title for flexibility.
  * 
- * @apiQuery {String} title Partial or full title of the book to search for (required).
- * @apiQuery {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
- * @apiQuery {Number} [offset=0] Number of books to skip (optional, defaults to 0).
+ * @apiQuery (Query Parameters) {String} title Partial or full title of the book to search for (required).
+ * @apiQuery (Query Parameters) {Number} [limit=10] Number of books to return per page (optional, defaults to 10).
+ * @apiQuery (Query Parameters) {Number} [offset=0] Number of books to skip (optional, defaults to 0).
  * 
  * @apiSuccess (Success 200) {Object[]} books List of books matching the specified title.
  * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.

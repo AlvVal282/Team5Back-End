@@ -50,24 +50,65 @@ const format = (resultRow): IBook => ({
 });
 
 /**
- * @api {get} /retrieveBooks Retrieve all books with pagination
- * @apiName GetAllBooks
- * @apiGroup Books
- * 
- * @apiDescription Retrieve a list of all books with optional pagination.
- * 
- * @apiQuery {number} limit The number of books to return per page (default is 10).
- * @apiQuery {number} offset The offset for pagination (default is 0).
- * 
- * @apiSuccess {Object[]} books List of books in the specified range.
- * @apiSuccess {Object} pagination Pagination metadata for the response.
- * 
- * @apiError (500: Internal Server Error) {String} message "Server error - contact support"
+ * Middleware to validate limit and offset parameters.
  */
-retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Response) => {
-    // Set default values for limit and offset
-    const limit = Number(request.query.limit) > 0 ? Number(request.query.limit) : 10;
-    const offset = Number(request.query.offset) >= 0 ? Number(request.query.offset) : 0;
+function mwValidPaginationParams(request: Request, response: Response, next: NextFunction) {
+    let limit = Number(request.query.limit);
+    let offset = Number(request.query.offset);
+
+    if (isNaN(limit) || limit <= 0) {
+        limit = 10; // Default limit
+    }
+
+    if (isNaN(offset) || offset < 0) {
+        offset = 0; // Default offset
+    }
+
+    request.query.limit = limit.toString();
+    request.query.offset = offset.toString();
+
+    next();
+}
+
+/**
+ * @api {get} /retrieveBooks Retrieve All Books
+ * @apiName GetBooks
+ * @apiGroup retrieve
+ * 
+ * @apiDescription Retrieve a paginated list of all books in the database.
+ * 
+ * @apiQuery {number} limit The number of entry objects to return (default 10)
+ * @apiQuery {number} offset The number to offset the lookup of entry objects to return (default 0)
+ * 
+ * 
+ * @apiSuccess {Object[]} books List of all books.
+ * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
+ * @apiSuccess (Success 200) {String} books.author Comma-separated list of authors of the book.
+ * @apiSuccess (Success 200) {Number} books.publication Publication year of the book.
+ * @apiSuccess (Success 200) {String} books.title Title of the book.
+ * @apiSuccess (Success 200) {Object} books.ratings Rating details of the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.average Average rating score.
+ * @apiSuccess (Success 200) {Number} books.ratings.count Total number of ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_1 Count of 1-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_2 Count of 2-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_3 Count of 3-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_4 Count of 4-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_5 Count of 5-star ratings.
+ * @apiSuccess (Success 200) {Object} books.icons URLs to book cover images.
+ * @apiSuccess (Success 200) {String} books.icons.large URL to the large version of the book cover image.
+ * @apiSuccess (Success 200) {String} books.icons.small URL to the small version of the book cover image.
+ * 
+ * @apiSuccess {Object} pagination Pagination metadata for the response
+ * @apiSuccess {number} pagination.totalRecords Total number of books in the database
+ * @apiSuccess {number} pagination.limit Number of entries returned per page
+ * @apiSuccess {number} pagination.offset Offset used for the current query
+ * @apiSuccess {number} pagination.nextPage Offset value to retrieve the next set of entries
+ * 
+ * @apiError (500) {String} message "Server error - DB error while trying to retrieve books"
+ */
+retrieveBooksRouter.get('/retrieveBooks', mwValidPaginationParams, async (request: Request, response: Response) => {
+    const limit = Number(request.query.limit);
+    const offset = Number(request.query.offset);
 
     try {
         // Query to get total count of books for pagination
@@ -76,7 +117,7 @@ retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Res
         const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
         // Main query to retrieve paginated books
-        const bookQuery = `
+        const theQuery = `
             SELECT 
                 Books.isbn13,
                 Books.publication_year,
@@ -105,8 +146,8 @@ retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Res
                 Books.image_small_url
             LIMIT $1 OFFSET $2;
         `;
-        const bookValues = [limit, offset];
-        const { rows } = await pool.query(bookQuery, bookValues);
+        const values = [limit, offset];
+        const { rows } = await pool.query(theQuery, values);
 
         response.status(200).json({
             books: rows.map(format),
@@ -118,9 +159,9 @@ retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Res
             },
         });
     } catch (error) {
-        console.error('DB Query error on retrieving books', error);
+        //console.error('DB Query error on retrieving books', error);
         response.status(500).send({
-            message: 'Server error - contact support',
+            message: 'Server error - DB error while trying to retrieve books',
         });
     }
 });

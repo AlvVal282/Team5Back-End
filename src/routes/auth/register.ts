@@ -15,36 +15,34 @@ import {
 
 const isStringProvided = validationFunctions.isStringProvided;
 const isNumberProvided = validationFunctions.isNumberProvided;
+const isValidEmail = validationFunctions.isValidEmail;
+const isValidPassword = validationFunctions.isValidPassword;
+const isValidPhone = validationFunctions.isValidPhone;
+const isValidRole = validationFunctions.isValidRole;
 const generateHash = credentialingFunctions.generateHash;
 const generateSalt = credentialingFunctions.generateSalt;
 
 const registerRouter: Router = express.Router();
 
+// Define the user registration body interface
+interface IUserRegistrationData {
+    firstname: string;
+    lastname: string;
+    email: string;
+    password: string;
+    username: string;
+    role: string;
+    phone: string;
+}
+
+// Extend the Request interface to use IUserRegistrationData
 export interface IUserRequest extends Request {
+    body: IUserRegistrationData;  // Add the body with the custom interface
     id: number;
 }
 
-// Add more/your own password validation here. The *rules* must be documented
-// and the client-side validation should match these rules.
-const isValidPassword = (password: string): boolean =>
-    isStringProvided(password) && password.length > 7;
+// Now your middleware and handlers will recognize the body property correctly.
 
-// Add more/your own phone number validation here. The *rules* must be documented
-// and the client-side validation should match these rules.
-const isValidPhone = (phone: string): boolean =>
-    isStringProvided(phone) && phone.length >= 10;
-
-// Add more/your own role validation here. The *rules* must be documented
-// and the client-side validation should match these rules.
-const isValidRole = (priority: string): boolean =>
-    validationFunctions.isNumberProvided(priority) &&
-    parseInt(priority) >= 1 &&
-    parseInt(priority) <= 5;
-
-// Add more/your own email validation here. The *rules* must be documented
-// and the client-side validation should match these rules.
-const isValidEmail = (email: string): boolean =>
-    isStringProvided(email) && email.includes('@');
 
 // middleware functions may be defined elsewhere!
 const emailMiddlewareCheck = (

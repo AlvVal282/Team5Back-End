@@ -72,10 +72,6 @@ signinRouter.post(
                     });
                     return;
                 } else if (result.rowCount > 1) {
-                    //log the error
-                    console.error(
-                        'DB Query error on sign in: too many results returned'
-                    );
                     response.status(500).send({
                         message: 'server error - contact support',
                     });

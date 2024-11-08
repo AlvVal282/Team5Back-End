@@ -1,4 +1,11 @@
--- Active: 1710457548247@@127.0.0.1@5432@tcss460@public
+-- Drop existing tables if they exist
+DROP TABLE IF EXISTS Book_Ratings CASCADE;
+DROP TABLE IF EXISTS Book_Author CASCADE;
+DROP TABLE IF EXISTS Authors CASCADE;
+DROP TABLE IF EXISTS Books CASCADE;
+DROP TABLE IF EXISTS Account_Credential CASCADE;
+DROP TABLE IF EXISTS Account CASCADE;
+DROP TABLE IF EXISTS Account_Role CASCADE;
 
 -- Account Roles Table
 CREATE TABLE Account_Role (
@@ -56,8 +63,7 @@ CREATE TABLE Book_Author (
 
 -- Ratings Table
 CREATE TABLE Book_Ratings (
-    Rating_ID SERIAL PRIMARY KEY,
-    Book_ID INT NOT NULL,
+    Book_ID INT PRIMARY KEY,
     Rating_1_Star INT DEFAULT 0,
     Rating_2_Star INT DEFAULT 0,
     Rating_3_Star INT DEFAULT 0,
@@ -66,7 +72,15 @@ CREATE TABLE Book_Ratings (
     FOREIGN KEY (Book_ID) REFERENCES Books(Book_ID) ON DELETE CASCADE
 );
 
-COPY books
-FROM '/docker-entrypoint-initdb.d/books.csv'
-DELIMITER ','
-CSV HEADER;
+-- Load data from CSV files
+COPY Authors(Author_ID, Name)
+FROM '/docker-entrypoint-initdb.d/authors_only.csv' DELIMITER ',' CSV HEADER;
+
+COPY Books(Book_ID, ISBN13, Publication_Year, Title, Rating_Avg, Rating_Count, Image_URL, Image_Small_URL)
+FROM '/docker-entrypoint-initdb.d/books_only.csv' DELIMITER ',' CSV HEADER;
+
+COPY Book_Author(Book_ID, Author_ID)
+FROM '/docker-entrypoint-initdb.d/book_author.csv' DELIMITER ',' CSV HEADER;
+
+COPY Book_Ratings(Book_ID, Rating_1_Star, Rating_2_Star, Rating_3_Star, Rating_4_Star, Rating_5_Star)
+FROM '/docker-entrypoint-initdb.d/book_ratings.csv' DELIMITER ',' CSV HEADER;

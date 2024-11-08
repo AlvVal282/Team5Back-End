@@ -36,11 +36,9 @@ CREATE TABLE Authors (
 -- Books Table
 CREATE TABLE Books (
     Book_ID SERIAL PRIMARY KEY,
-    ISBN13 BIGINT UNIQUE,
+    ISBN13 BIGINT UNIQUE NOT NULL,
     Publication_Year INT,
     Title TEXT NOT NULL,
-    Rating_Avg FLOAT,
-    Rating_Count INT,
     Image_URL TEXT,
     Image_Small_URL TEXT
 );
@@ -57,9 +55,14 @@ CREATE TABLE Book_Author (
 -- Ratings Table
 CREATE TABLE Book_Ratings (
     Rating_ID SERIAL PRIMARY KEY,
-    Book_ID INT NOT NULL,
-    Rating_Star INT CHECK (Rating_Star BETWEEN 1 AND 5),
+    Book_ID INT UNIQUE NOT NULL,
+    Rating_Avg FLOAT,
     Rating_Count INT,
+    One_Star_Count INT,
+    Two_Star_Count INT,
+    Three_Star_Count INT,
+    Four_Star_Count INT,
+    Five_Star_Count INT,
     FOREIGN KEY (Book_ID) REFERENCES Books(Book_ID) ON DELETE CASCADE
 );
 

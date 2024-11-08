@@ -1,0 +1,5424 @@
+author_id,Name
+1,Suzanne Collins
+2,J.K. Rowling
+3,Mary GrandPré
+4,Stephenie Meyer
+5,Harper Lee
+6,F. Scott Fitzgerald
+7,John Green
+8,J.R.R. Tolkien
+9,J.D. Salinger
+10,Dan Brown
+11,Jane Austen
+12,Khaled Hosseini
+13,Veronica Roth
+14,George Orwell
+15,Erich Fromm
+16,Celâl Üster
+17,Anne Frank
+18,Eleanor Roosevelt
+19,B.M. Mooyaart-Doubleday
+20,Stieg Larsson
+21,Reg Keeland
+22,Rufus Beck
+23,Alice Sebold
+24,William Golding
+25,William Shakespeare
+26,Robert           Jackson
+27,Gillian Flynn
+28,Kathryn Stockett
+29,John Steinbeck
+30,Arthur Golden
+31,E.L. James
+32,Paulo Coelho
+33,Alan R. Clarke
+34,Lois Lowry
+35,C.S. Lewis
+36,Audrey Niffenegger
+37,George R.R. Martin
+38,Elizabeth Gilbert
+39,Rick Riordan
+40,Louisa May Alcott
+41,Charlotte Brontë
+42,Michael Mason
+43,Nicholas Sparks
+44,Yann Martel
+45,Sara Gruen
+46,Markus Zusak
+47,Ray Bradbury
+48,Shel Silverstein
+49,Cassandra Clare
+50,Christopher Paolini
+51,Douglas Adams
+52,Aldous Huxley
+53,Sue Monk Kidd
+54,Mark Twain
+55,John Seelye
+56,Guy Cardwell
+57,E.B. White
+58,Garth Williams
+59,Rosemary Wells
+60,Mark Haddon
+61,Paula Hawkins
+62,Philip Pullman
+63,Emily Brontë
+64,Richard J. Dunn
+65,Jodi Picoult
+66,Kurt Vonnegut Jr.
+67,Margaret Mitchell
+68,Stephen Chbosky
+69,Orson Scott Card
+70,Mary Wollstonecraft Shelley
+71,Percy Bysshe Shelley
+72,Maurice Hindle
+73,Stephen King
+74,Helen Fielding
+75,Tony Tanner
+76,Ros Ballaster
+77,Louis Sachar
+78,Lauren Weisberger
+79,Antoine de Saint-Exupéry
+80,Richard Howard
+81,Dom Marcos Barbosa
+82,Melina Karakosta
+83,Jeannette Walls
+84,Jon Krakauer
+85,Charles Dickens
+86,Richard Maxwell
+87,Hablot Knight Browne
+88,Michael Crichton
+89,John Grisham
+90,Elie Wiesel
+91,Marion Wiesel
+92,William Goldman
+93,S.E. Hinton
+94,James Dashner
+95,Steven D. Levitt
+96,Stephen J. Dubner
+97,Frances Hodgson Burnett
+98,Gabriel García Márquez
+99,Gregory Rabassa
+100,Oscar Wilde
+101,Jeffrey Eugenides
+102,Bram Stoker
+103,Nina Auerbach
+104,David J. Skal
+105,Barbara Kingsolver
+106,David Sedaris
+107,Maurice Sendak
+108,Alexandre Dumas
+109,Robin Buss
+110,Cormac McCarthy
+111,Tina Fey
+112,Sophie Kinsella
+113,Victor Hugo
+114,Lee Fahnestock
+115,Norman MacAfee
+116,Kim Edwards
+117,Jojo Moyes
+118,Joseph Heller
+119,Mitch Albom
+120,Saulius Dagys
+121,Madeleine L'Engle
+122,Amy Tan
+123,Margaret Atwood
+124,Ann Brashares
+125,Vladimir Nabokov
+126,Craig Raine
+127,Gregory Maguire
+128,Douglas Smith
+129,Emma Donoghue
+130,Richard Andrews
+131,Rex Gibson
+132,Frank Herbert
+133,Malcolm Gladwell
+134,Walter Isaacson
+135,Ken Kesey
+136,Ernest Hemingway
+137,L.M. Montgomery
+138,Rebecca Wells
+139,Diana Gabaldon
+140,Nathaniel Hawthorne
+141,Thomas E. Connolly
+142,Nina Baym
+143,Ransom Riggs
+144,Andy Weir
+145,Ken Follett
+146,Anthony Doerr
+147,Laura Hillenbrand
+148,Donna Tartt
+149,Jay Asher
+150,Tracy Chevalier
+151,Gayle Forman
+152,Anita Diamant
+153,Emily Giffin
+154,Dr. Seuss
+155,לאה נאור
+156,Roald Dahl
+157,Quentin Blake
+158,Albert Camus
+159,Matthew    Ward
+160,Rainbow Rowell
+161,Ally Condie
+162,Neil Gaiman
+163,Bernie Wrightson
+164,Fiona Stafford
+165,Leo Tolstoy
+166,Louise Maude
+167,Leo Tolstoj
+168,Aylmer Maude
+169,Anthony Burgess
+170,William Paul Young
+171,Fyodor Dostoyevsky
+172,David McDuff
+173,Sylvia Plath
+174,Frank McCourt
+175,Hermann Hesse
+176,Hilda Rosner
+177,Truman Capote
+178,Kami Garcia
+179,Margaret Stohl
+180,Erin Morgenstern
+181,Philippa Gregory
+182,Scott Westerfeld
+183,Cheryl Strayed
+184,Alan Moore
+185,Dave Gibbons
+186,John Higgins
+187,Patrick Rothfuss
+188,Herman Melville
+189,Andrew Delbanco
+190,Tom Quirk
+191,Mary Ann Shaffer
+192,Annie Barrows
+193,Chuck Palahniuk
+194,Charlaine Harris
+195,Alice Walker
+196,John Grogan
+197,Agatha Christie
+198,Becca Fitzpatrick
+199,Jamie McGuire
+200,Anne Rice
+201,Kiera Cass
+202,Janet Evanovich
+203,Rebecca Skloot
+204,Thomas Harris
+205,Richelle Mead
+206,Ian McEwan
+207,Franz Kafka
+208,Stanley Corngold
+209,Ernest Cline
+210,Garth Stein
+211,Erik Larson
+212,Tony Goldwyn
+213,Sylvia Day
+214,Pauline Baynes
+215,Dave Pelzer
+216,Robert Ludlum
+217,Eoin Colfer
+218,Lauren Kate
+219,Emma McLaughlin
+220,Nicola Kraus
+221,Lewis Carroll
+222,John Tenniel
+223,Martin Gardner
+224,James Kinsley
+225,Deidre Shauna Lynch
+226,Tatiana de Rosnay
+227,Edith Grossman
+228,Laurie Halse Anderson
+229,Liane Moriarty
+230,Augusten Burroughs
+231,Max Brooks
+232,James Patterson
+233,Katherine Paterson
+234,P.C. Cast
+235,Kristin Cast
+236,Stephen R. Covey
+237,Barbara A. Mowat
+238,Paul Werstine
+239,Catherine Belsey
+240,Jonathan Safran Foer
+241,R.J. Palacio
+242,Marissa Meyer
+243,Robert Galbraith
+244,Maggie Stiefvater
+245,Ayn Rand
+246,Leonard Peikoff
+247,Greg Mortenson
+248,David Oliver Relin
+249,Jane Carruth
+250,Rene Cloke
+251,Carlos Ruiz Zafón
+252,Lucia Graves
+253,Frances Mayes
+254,Gail Carson Levine
+255,Betty  Smith
+256,Kristin Hannah
+257,Kazuo Ishiguro
+258,Cecelia Ahern
+259,Daphne du Maurier
+260,Sally Beauman
+261,Daniel Keyes
+262,Laura Esquivel
+263,Thomas  Christensen
+264,Carol Christensen
+265,Lisa See
+266,Mario Puzo
+267,Robert Thompson
+268,Peter Bart
+269,Isaac Asimov
+270,John Tiffany
+271,Jack Thorne
+272,Lauren Oliver
+273,Terry Pratchett
+274,Jack Kerouac
+275,Graeme Simsion
+276,Tom Clancy
+277,Richard Adams
+278,Mindy Kaling
+279,Abraham Verghese
+280,Robert Louis Stevenson
+281,Eric Carle
+282,H.G. Wells
+283,Greg Bear
+284,Carlo Pagetti
+285,Todd Burpo
+286,Lynn Vincent
+287,John Boyne
+288,Joseph Conrad
+289,Rhonda Byrne
+290,Wally Lamb
+291,Jennifer Weiner
+292,Colleen McCullough
+293,Dave McKean
+294,M.L. Stedman
+295,Cornelia Funke
+296,Anthea Bell
+297,Spencer Johnson
+298,Kenneth H. Blanchard
+299,Bill Bryson
+300,Maya Angelou
+301,Christina Baker Kline
+302,Maria Semple
+303,Wilson Rawls
+304,Milan Kundera
+305,Michael Henry Heim
+306,John Irving
+307,Janet Fitch
+308,Marie Lu
+309,Randy Pausch
+310,Jeffrey Zaslow
+311,Robert Jordan
+312,Lisa Genova
+313,David Nicholls
+314,Margaret Wise Brown
+315,Clement Hurd
+316,Homer
+317,Robert Fagles
+318,Frédéric Mugler
+319,Bernard Knox
+320,L. Frank Baum
+321,W.W. Denslow
+322,E. Lockhart
+323,Hunter S. Thompson
+324,Ralph Steadman
+325,Amy Poehler
+326,Toni Morrison
+327,Kristin Cashore
+328,Lemony Snicket
+329,Brett Helquist
+330,Erich Maria Remarque
+331,A.W. Wheen
+332,Philip K. Dick
+333,Roger Zelazny
+334,George Cruikshank
+335,Philip Horne
+336,David   Lloyd
+337,David McCullough
+338,Dean Koontz
+339,Jerry Spinelli
+340,Robert A. Heinlein
+341,Jack London
+342,Jhumpa Lahiri
+343,Deborah Harkness
+344,Haruki Murakami
+345,Jay Rubin
+346,Billie Letts
+347,David Levithan
+348,James Frey
+349,Susan Cain
+350,Scott O'Dell
+351,Arthur Miller
+352,Christopher Bigsby
+353,Gary Paulsen
+354,Brandon Sanderson
+355,Mervyn Peake
+356,Dan Chaon
+357,Jeff Kinney
+358,Sarah J. Maas
+359,Jamie Ford
+360,Patrick Süskind
+361,John E. Woods
+362,Eric Schlosser
+363,William Gibson
+364,Sun Tzu
+365,Thomas Cleary
+366,William Landay
+367,Betty Edwards
+368,Ann Patchett
+369,Jared Diamond
+370,Fannie Flagg
+371,Chinua Achebe
+372,Gary Chapman
+373,Chris Cleave
+374,Alyson Noel
+375,Diane Setterfield
+376,Paula McLain
+377,Umberto Eco
+378,William Weaver
+379,Seán Barrett
+380,Beatrice Sparks
+381,Anonymous
+382,John Kennedy Toole
+383,Walker Percy
+384,Philip Gabriel
+385,J.R. Ward
+386,Arundhati Roy
+387,Stephen Hawking
+388,Cao Chi
+389,Phạm Văn Thiều
+390,Neal Stephenson
+391,Sarah Dessen
+392,A.A. Milne
+393,Ernest H. Shepard
+394,S.J. Watson
+395,Arthur Conan Doyle
+396,Rick Warren
+397,Jim Butcher
+398,Alfred MacAdam
+399,Rick Yancey
+400,Charles Frazier
+401,Laura Joffe Numeroff
+402,Felicia Bond
+403,Tennessee Williams
+404,Elizabeth Kostova
+405,Emily St. John Mandel
+406,Fredrik Backman
+407,Henning Koch
+408,Pearl S. Buck
+409,John Berger
+410,Chuck Dixon
+411,David Wenzel
+412,Sean Deming
+413,Junot Díaz
+414,Zora Neale Hurston
+415,Newt Scamander
+416,Albus Dumbledore
+417,Malala Yousafzai
+418,Christina Lamb
+419,Kathryn Sutherland
+420,Claire Lamont
+421,Viktor E. Frankl
+422,Tana French
+423,Richard Dawkins
+424,Lee Child
+425,Daniel Defoe
+426,Gerald McCann
+427,Virginia Woolf
+428,Niccolò Machiavelli
+429,Adolph Caso
+430,Rufus Goodwin
+431,Benjamin Martinez
+432,Terry Goodkind
+433,Kathleen Grissom
+434,Richard Pevear
+435,Larissa Volokhonsky
+436,Jeanne DuPrau
+437,Kahlil Gibran
+438,Art Spiegelman
+439,Dave Eggers
+440,Jean M. Auel
+441,Anna Sewell
+442,Henry Gifford
+443,Bret Easton Ellis
+444,Meg Cabot
+445,Alexander McCall Smith
+446,Robert Kirkman
+447,Tony Moore
+448,Arthur C. Clarke
+449,Francine Rivers
+450,Tim LaHaye
+451,Jerry B. Jenkins
+452,Barbara Ehrenreich
+453,Patricia Cornwell
+454,Edgar Allan Poe
+455,Corrie ten Boom
+456,John Sherrill
+457,Elizabeth Sherrill
+458,Pat Conroy
+459,Michael Chabon
+460,Simone Elkeles
+461,J.M. Barrie
+462,Michael Hague
+463,Michael Connelly
+464,David Mitchell
+465,Tim O'Brien
+466,Banksy
+467,Jeff Lindsay
+468,Jonathan Swift
+469,Robert DeMaria Jr.
+470,Gail Kern Paster
+471,Robert          Jackson
+472,Unknown
+473,Seamus Heaney
+474,Frank Miller
+475,David Mazzucchelli
+476,Richmond Lewis
+477,Dennis O'Neil
+478,Laini Taylor
+479,Victoria Aveyard
+480,Charles Duhigg
+481,John Berendt
+482,Colleen Hoover
+483,Nancy Bond
+484,Laura Ingalls Wilder
+485,Margery Williams Bianco
+486,William   Nicholson
+487,Robert M. Pirsig
+488,Sara Shepard
+489,Don Freeman
+490,Kate Atkinson
+491,Kenneth Branagh
+492,Thomas Hardy
+493,Tim Dolin
+494,Margaret R. Higonnet
+495,Gustave Flaubert
+496,Margaret Mauldon
+497,Malcolm Bowie
+498,Mark Overstall
+499,Norton Juster
+500,Jules Feiffer
+501,Ned Vizzini
+502,Vanessa Diffenbaugh
+503,Klaus Janson
+504,Lynn Varley
+505,Nick Hornby
+506,John Gray
+507,Anthony Bourdain
+508,Voltaire
+509,Natalie Babbitt
+510,Marie Milpois
+511,P.D. Eastman
+512,E.H. Gombrich
+513,Robert T. Kiyosaki
+514,Lev Grossman
+515,Tsugumi Ohba
+516,Takeshi Obata
+517,Libba Bray
+518,Tammara Webber
+519,Jeremy Tambling
+520,Sherman Alexie
+521,Ellen Forney
+522,Mikhail Bulgakov
+523,Katherine Tiernan O'Connor
+524,Diana Burgin
+525,Ellendea Proffer
+526,Ursula K. Le Guin
+527,Kate DiCamillo
+528,Chris Sheban
+529,John Knowles
+530,Miguel de Cervantes Saavedra
+531,Roberto González Echevarría
+532,John Rutherford
+533,Robin Hobb
+534,Beatrix Potter
+535,Susanna Kaysen
+536,Chelsea Handler
+537,Richard Bach
+538,Russell Munson
+539,Robert Munsch
+540,Sheila McGraw
+541,Daniel James Brown
+542,Christopher Tolkien
+543,Ted Nasmith
+544,Kate Morton
+545,Edwin Muir
+546,Willa Muir
+547,Max Brod
+548,Piper Kerman
+549,Anne Perry
+550,Daniel Kahneman
+551,Marion Zimmer Bradley
+552,Judy Blume
+553,Chris Bohjalian
+554,Chris Van Allsburg
+555,Jon Scieszka
+556,Lane Smith
+557,Margaret Jull Costa
+558,Sheryl Sandberg
+559,Nell Scovell
+560,Tahereh Mafi
+561,Jostein Gaarder
+562,Paulette Møller
+563,Mark Cotta Vaz
+564,Jennifer Egan
+565,Johanna Spyri
+566,Angelo  Rinaldi
+567,Beverly Cleary
+568,Alex Flinn
+569,Geoffrey Chaucer
+570,Nevill Coghill
+571,Harriet Beecher Stowe
+572,Gaston Leroux
+573,Alexander Teixeira de Mattos
+574,José Saramago
+575,Giovanni Pontiero
+576,Jonathan Franzen
+577,Ally Carter
+578,Aravind Adiga
+579,Barack Obama
+580,Judith Viorst
+581,Ray Cruz
+582,Howard Zinn
+583,Justin Cronin
+584,Celeste Ng
+585,Isabel Allende
+586,Magda Bogin
+587,Ροζίτα Σώκου
+588,Chimamanda Ngozi Adichie
+589,Christopher McDougall
+590,Gabrielle Zevin
+591,Ludwig Bemelmans
+592,Napoleon Hill
+593,Susanna Clarke
+594,Jess Walter
+595,Matthew Quick
+596,Jules Verne
+597,Anthony Bonner
+598,Maureen Howard
+599,Jonas Jonasson
+600,Rod Bradbury
+601,Michael Glencross
+602,Brian W. Aldiss
+603,Sharon Creech
+604,Julie Powell
+605,Neal Shusterman
+606,Kate Egan
+607,William Faulkner
+608,Eckhart Tolle
+609,Tite Kubo
+610,Allie Brosh
+611,Gregory David Roberts
+612,Ned Dameron
+613,Jeffery Deaver
+614,Bernhard Schlink
+615,Carol Brown Janeway
+616,Bill Martin Jr.
+617,Dan Simmons
+618,William Peter Blatty
+619,David Guterson
+620,Alex Haley
+621,Brian Bolland
+622,Tim Sale
+623,Ralph Ellison
+624,Ishmael Beah
+625,Robert C. O'Brien
+626,Melissa Bank
+627,Hugh Howey
+628,Christopher Moore
+629,Jenny  Lawson
+630,Scott Lynch
+631,Garth Nix
+632,Jennifer L. Armentrout
+633,Bryan Lee O'Malley
+634,Julie Kagawa
+635,Larry McMurtry
+636,Mary Roach
+637,Thomas Keneally
+638,Malcolm X
+639,Sam Kieth
+640,Mike Dringenberg
+641,Malcolm Jones III
+642,Todd Klein
+643,Karen  Berger
+644,Plato
+645,Desmond Lee
+646,Patti Smith
+647,Jane Green
+648,Walter J. Cobb
+649,Rohinton Mistry
+650,Bill Watterson
+651,G.B. Trudeau
+652,Kate Chopin
+653,Justin Halpern
+654,Irvine Welsh
+655,Eric Lindor Fall
+656,Miguel Ruiz
+657,Jacob Grimm
+658,Wilhelm Grimm
+659,Josef Scharl
+660,Padraic Colum
+661,Joseph Campbell
+662,Margaret Raine Hunt
+663,James Stern
+664,E.L. Konigsburg
+665,Samantha Young
+666,Francis Chan
+667,Danae Yankoski
+668,Chris Tomlin
+669,Helen Keller
+670,Jonathan Tropper
+671,Seth Grahame-Smith
+672,Natsuki Takaya
+673,Alethea Nibley
+674,Athena Nibley
+675,Brian Selznick
+676,Christopher Hitchens
+677,Bisco Hatori
+678,Mary Kubica
+679,Abbi Glines
+680,Hilary Mantel
+681,Diana Wynne Jones
+682,William Olivier Desmond
+683,Henry David Thoreau
+684,Sophocles
+685,J.E. Thomas
+686,Kenneth Grahame
+687,Gillian Avery
+688,Jenny Han
+689,Marjane Satrapi
+690,Mattias Ripa
+691,E.M. Forster
+692,Kody Keplinger
+693,J.D. Robb
+694,Masashi Kishimoto
+695,Katy Bridges
+696,Rachel Joyce
+697,James Clavell
+698,Raina Telgemeier
+699,Jacquelyn Mitchard
+700,Louise Rennison
+701,Robin Sloan
+702,V.C. Andrews
+703,Paul Kalanithi
+704,Ellen Raskin
+705,Pierce Brown
+706,Brent Weeks
+707,Sam McBratney
+708,Anita Jeram
+709,John D. MacDonald
+710,Peter Benchley
+711,Nicole Krauss
+712,Astrid Lindgren
+713,Lauren Child
+714,Florence Lamborn
+715,Nancy Seligsohn
+716,Muriel Barbery
+717,Alison Anderson
+718,Doris Kearns Goodwin
+719,Suzanne Toren
+720,Stuart Gilbert
+721,Susannah Cahalan
+722,Melissa Marr
+723,H.A. Rey
+724,Michael Ende
+725,Ralph Manheim
+726,Roswitha Quadflieg
+727,Sylvia Nasar
+728,Upton Sinclair
+729,Earl Lee
+730,Kathleen DeGrave
+731,Kelley Armstrong
+732,Oliver Sacks
+733,Andre Dubus III
+734,M.R. Carey
+735,Crockett Johnson
+736,Hiromu Arakawa
+737,Akira Watanabe
+738,Joan Didion
+739,Lionel Shriver
+740,Edith Wharton
+741,Geraldine Brooks
+742,Sylvain Reynard
+743,Judi Barrett
+744,Ron Barrett
+745,Helen Simonson
+746,Nora Roberts
+747,John Scalzi
+748,Irma S. Rombauer
+749,Marion Rombauer Becker
+750,Ethan Becker
+751,Joe Haldeman
+752,Bettina Blanch Tyroller
+753,Azar Nafisi
+754,Joe Abercrombie
+755,Annie Proulx
+756,Marie Kondō
+757,Cathy Hirano
+758,Jennifer Niven
+759,فرانک معنوی
+760,Kathy Reichs
+761,Michael Scott
+762,Jessica Knoll
+763,Ellen Hopkins
+764,Richard Matheson
+765,Elizabeth Strout
+766,Lena Dunham
+767,Joana Avillez
+768,James C. Collins
+769,Samuel Beckett
+770,J.A. Redmerski
+771,Kimberly McCreight
+772,Michael Cunningham
+773,Alice Clayton
+774,Susan Ee
+775,Richard Russo
+776,Jandy Nelson
+777,Catherine Hardwicke
+778,Richard Feynman
+779,James Joyce
+780,Seamus Deane
+781,George Eliot
+782,Michel Faber
+783,S.C. Stephens
+784,Stacy Schiff
+785,Thomas L. Friedman
+786,Marcus Pfister
+787,J. Alison James
+788,Gretchen Rubin
+789,Vincent Bugliosi
+790,Curt Gentry
+791,Robert Kapilow
+792,Dante Alighieri
+793,Anthony M. Esolen
+794,Patricia Briggs
+795,Melissa de la Cruz
+796,Caleb Carr
+797,Ta-Nehisi Coates
+798,John Milton
+799,John      Leonard
+800,Michael   Lewis
+801,Patrick Ness
+802,Jim Kay
+803,Siobhan Dowd
+804,Frederick Forsyth
+805,Jason Fried
+806,David Heinemeier Hansson
+807,Ilyana Kadushin
+808,Matt Walters
+809,Carol Rifka Brunt
+810,James Herriot
+811,Michelle Hodkin
+812,Emmuska Orczy
+813,Jon Stone
+814,Michael J. Smollin
+815,Leigh Bardugo
+816,Herman Koch
+817,Sam Garrett
+818,Carl Sagan
+819,Stephanie Perkins
+820,Zadie Smith
+821,Chris Kyle
+822,Scott McEwen
+823,Jim DeFelice
+824,Pittacus Lore
+825,Meg Wolitzer
+826,Better Homes and Gardens
+827,Tess Gerritsen
+828,Timothy Basil Ering
+829,Steven L. Hopp
+830,Camille Kingsolver
+831,Richard A. Houser
+832,Alan Bradley
+833,Donald Miller
+834,Brian K. Vaughan
+835,Fiona Staples
+836,Chad Harbach
+837,Brandon Mull
+838,Mildred D. Taylor
+839,Constance Garnett
+840,Alan Myers
+841,Joseph Frank
+842,Anna Brailovsky
+843,Aziz Ansari
+844,Eric Klinenberg
+845,Katherine Applegate
+846,Patricia Castelao
+847,Sebastian Junger
+848,Jim Fergus
+849,Darrel Anderson
+850,Salman Rushdie
+851,Margaret Peterson Haddix
+852,Michael Pollan
+853,Elizabeth George Speare
+854,Wilkie Collins
+855,Matthew Sweet
+856,James McBride
+857,Karen Marie Moning
+858,William Makepeace Thackeray
+859,John Carey
+860,Dominique Dill
+861,Cynthia D'Aprix Sweeney
+862,Bill Willingham
+863,Lan Medina
+864,Steve Leialoha
+865,Craig Hamilton
+866,James Jean
+867,David    Allen
+868,James Redfield
+869,Huntley Fitzpatrick
+870,Chetan Bhagat
+871,Laurell K. Hamilton
+872,Rosemarie Morgan
+873,Shannon Russell
+874,Mark Z. Danielewski
+875,Willa Cather
+876,Susan Beth Pfeffer
+877,Jon Stewart
+878,Ben Karlin
+879,David Javerbaum
+880,Rich Bloomquist
+881,Steve Bodow
+882,Tim Carvell
+883,Eric Drysdale
+884,J.R. Havlan
+885,Scott Jacobson
+886,Tom Johnson
+887,Rob Kutner
+888,Chris Regan
+889,Jason Reich
+890,Jason Ross
+891,Stephen Colbert
+892,Samantha Bee
+893,Rob Corddry
+894,Brendan Hay
+895,Ed Helms
+896,Lao Tzu
+897,Gia-Fu Feng
+898,Jane English
+899,Chungliang Al Huang
+900,Rowena Pattee Kryder
+901,Toinette Lippe
+902,Jeffrey Archer
+903,Hans Christian Andersen
+904,Lily Owens
+905,Arthur Rackham
+906,Hans Richter
+907,Friedrich Nietzsche
+908,Walter Kaufmann
+909,Elizabeth Gaskell
+910,Alan Shelston
+911,Jaycee Dugard
+912,Amish Tripathi
+913,Aesop
+914,Laura Harris
+915,Laura Gibbs
+916,Anne McCaffrey
+917,Teodor Panasiński
+918,John D. Rateliff
+919,Joanne Harris
+920,Jay Anson
+921,Jeri Johnson
+922,Colum McCann
+923,Harlan Coben
+924,Rachel Hawkins
+925,Austin Kleon
+926,Christina Lauren
+927,Joyce Carol Oates
+928,Scott McCloud
+929,Jon Ronson
+930,David Baldacci
+931,Jonathan Stroud
+932,Richard Dahm
+933,Paul Dinello
+934,Allison Silverman
+935,Michael Brumm
+936,Eric Drydale
+937,Rob Dubbin
+938,Glenn Eichler
+939,Peter Grosz
+940,Peter Gwinn
+941,Jay Katsir
+942,Laura Krafft
+943,Frank Lesser
+944,Tom Purcell
+945,Leon Uris
+946,Ursula Hegi
+947,Raymond Chandler
+948,Ellen DeGeneres
+949,Eowyn Ivey
+950,J. Lynn
+951,Allen Mandelbaum
+952,Eugenio Montale
+953,Benjamin Hoff
+954,Sarah Dunant
+955,David Lagercrantz
+956,George Goulding
+957,Emma Cline
+958,Shannon Hale
+959,Dennis Lehane
+960,Isaac Marion
+961,Everett H. Emerson
+962,Elif Shafak
+963,إليف شافاق
+964,ارسلان فصیحی
+965,محمد درويش
+966,Hajime Isayama
+967,Sheldon Drzka
+968,Olive Ann Burns
+969,Elena Ferrante
+970,Ann Goldstein
+971,Timothy Ferriss
+972,Robin S. Sharma
+973,Amor Towles
+974,Larry Niven
+975,Ruta Sepetys
+976,Andrew Clements
+977,Louise Erdrich
+978,Hanya Yanagihara
+979,Pia Guerra
+980,José Marzán Jr.
+981,Anne Tyler
+982,Jennifer Bassett
+983,Benjamin Alire Sáenz
+984,Alfred Birnbaum
+985,Johann David Wyss
+986,Scott McKowen
+987,Arthur Pober
+988,Jennifer Probst
+989,Watty Piper
+990,Doris Hauman
+991,George Hauman
+992,Karen Joy Fowler
+993,Alan Brennert
+994,Frank E. Peretti
+995,Jessica Sorensen
+996,Lauren Groff
+997,Brian Greene
+998,Janell Cannon
+999,Nancy Horan
+1000,Lorelei King
+1001,Flora Rheta Schreiber
+1002,Rosamunde Pilcher
+1003,Ronald Holt
+1004,Bill O'Reilly
+1005,Martin Dugard
+1006,John Flanagan
+1007,Ira Levin
+1008,Peter Straub
+1009,Katherine Boo
+1010,P.L. Travers
+1011,Mary Shepard
+1012,Sandra Cisneros
+1013,David Benioff
+1014,Jeaniene Frost
+1015,Peter de Jonge
+1016,James S.A. Corey
+1017,Ezra Jack Keats
+1018,Richard   Preston
+1019,Lynne Truss
+1020,Kim Harrison
+1021,Clement C. Moore
+1022,Jan Brett
+1023,Cynthia Hand
+1024,Lee Strobel
+1025,Carl Hiaasen
+1026,Virgil
+1027,Robert Fitzgerald
+1028,Daniel Quinn
+1029,Katie McGarry
+1030,Kennilworthy Whisp
+1031,Harry Allard
+1032,James  Marshall
+1033,Richard Bachman
+1034,Jerry N. Uelsmann
+1035,Trenton Lee Stewart
+1036,Carson Ellis
+1037,Jennifer E. Smith
+1038,Tom Robbins
+1039,Jenna Blum
+1040,Beth Revis
+1041,M. Scott Peck
+1042,Gertrude Chandler Warner
+1043,L. Kate Deal
+1044,A.S.A. Harrison
+1045,Caitlin Moran
+1046,Keith Richards
+1047,Anita Shreve
+1048,Don DeLillo
+1049,Stephen E. Ambrose
+1050,Charles Darwin
+1051,Craig Thompson
+1052,David Wroblewski
+1053,Christina Schwarz
+1054,Charles Bukowski
+1055,Kyle Freeman
+1056,Peter S. Beagle
+1057,Angie Sage
+1058,Terry Hayes
+1059,Allen Ginsberg
+1060,William Carlos Williams
+1061,Richard Carlson
+1062,Adam Mansbach
+1063,Ricardo Cortés
+1064,Téa Obreht
+1065,Maria V. Snyder
+1066,Joseph Smith Jr.
+1067,Karin Slaughter
+1068,Yana Toboso
+1069,Tomo Kimura
+1070,Robert Mighall
+1071,Emily Seife
+1072,John Bunyan
+1073,Andrew R. MacAndrew
+1074,Ben Marcus
+1075,Carson McCullers
+1076,T.H. White
+1077,Christopher Paul Curtis
+1078,Alison Bechdel
+1079,Dan Ariely
+1080,أحمد مراد
+1081,Lynne Reid Banks
+1082,Jesse Andrews
+1083,Simon Winchester
+1084,Andrew Gross
+1085,Jasper Fforde
+1086,Faye Perozich
+1087,John Bolton
+1088,Daerick Gröss
+1089,Adam McCauley
+1090,Dalai Lama XIV
+1091,Howard C. Cutler
+1092,Anna Quindlen
+1093,L.J. Smith
+1094,Kevin Williamson
+1095,Julie Plec
+1096,Chuck Klosterman
+1097,Evelyn Waugh
+1098,Jessie Burton
+1099,Julia Cameron
+1100,Joe Hill
+1101,Robert K. Massie
+1102,Marcus Luttrell
+1103,Patrick Robinson
+1104,Richard Wright
+1105,Veronica Rossi
+1106,Eric Ries
+1107,David Eddings
+1108,Roberto Aguirre-Sacasa
+1109,Mike Perkins
+1110,Laura       Martin
+1111,William L. Shirer
+1112,Jeff Smith
+1113,Steve Hamaker
+1114,Paz Pruneda
+1115,Brian Jacques
+1116,Karl Marx
+1117,Friedrich Engels
+1118,Gareth Stedman Jones
+1119,Ruth Ware
+1120,James Fenimore Cooper
+1121,William Styron
+1122,Bruce H. Wilkinson
+1123,Karen Thompson Walker
+1124,Julia Child
+1125,Alex Prud'Homme
+1126,Wendelin Van Draanen
+1127,Travis Bradberry
+1128,Jean Greaves
+1129,Patrick Lencioni
+1130,Robert McCloskey
+1131,Douglas Preston
+1132,Lincoln Child
+1133,Nicola Yoon
+1134,David Yoon
+1135,George Bernard Shaw
+1136,Louis de Bernières
+1137,Adam Johnson
+1138,Blake Ferris
+1139,Anjali Singh
+1140,Chaim Potok
+1141,Irving Stone
+1142,שמואל שניצר
+1143,Peggy Parish
+1144,Fritz Siebel
+1145,Jodi Ellen Malpas
+1146,W. Bruce Cameron
+1147,Sabaa Tahir
+1148,Helene Wecker
+1149,أحلام مستغانمي
+1150,Ahlam Mosteghanemi
+1151,Nicola Bradbury
+1152,Esphyr Slobodkina
+1153,Tamora Pierce
+1154,Peter Glassman
+1155,Jung Chang
+1156,Guillermo del Toro
+1157,Chuck Hogan
+1158,Emily Dickinson
+1159,Thomas H. Johnson
+1160,Fred Gipson
+1161,Steve Martin
+1162,Frank Warren
+1163,Mary Norton
+1164,Beth Krush
+1165,Joe Krush
+1166,Alexandra Bracken
+1167,Norman Vincent Peale
+1168,Nina Bawden
+1169,Hiro Mashima
+1170,William Flanagan
+1171,Nate  Taylor
+1172,Solomon Northup
+1173,Nathaniel Philbrick
+1174,Ayaan Hirsi Ali
+1175,Nassim Nicholas Taleb
+1176,Aleksandr Solzhenitsyn
+1177,H.T. Willetts
+1178,Walter M. Miller Jr.
+1179,Colm Tóibín
+1180,Lauren DeStefano
+1181,J.D. Vance
+1182,Stephen Crane
+1183,Randall Munroe
+1184,Steven Erikson
+1185,Colson Whitehead
+1186,Cora Carmack
+1187,J.M. Coetzee
+1188,Arnold Lobel
+1189,B.A. Paris
+1190,Michael Shaara
+1191,Sharon M. Draper
+1192,Amanda Hocking
+1193,Boris Pasternak
+1194,Max Hayward
+1195,Manya Harari
+1196,John Bayley
+1197,Blake Crouch
+1198,P.D. James
+1199,Jane Hamilton
+1200,Frank  Muller
+1201,C.J. Critt
+1202,O. Henry
+1203,Lisbeth Zwerger
+1204,Tom Wolfe
+1205,William S. Burroughs
+1206,James Grauerholz
+1207,Barry  Miles
+1208,Kelley Jones
+1209,Charles Vess
+1210,Colleen Doran
+1211,Steve Erickson
+1212,Lech Jęczmyk
+1213,Maureen Johnson
+1214,Lauren Myracle
+1215,Atul Gawande
+1216,Henrik Ibsen
+1217,Michael   Meyer
+1218,James A. Michener
+1219,Richard Yates
+1220,Rachel Cohn
+1221,Tom Stoppard
+1222,Henry Popkin
+1223,Alex Garland
+1224,Beth Hoffman
+1225,Jenna Lamia
+1226,Raymond E. Feist
+1227,Jennifer Crusie
+1228,Nelson Mandela
+1229,Bryce Courtenay
+1230,Dashiell Hammett
+1231,Daniel Goleman
+1232,Munro Leaf
+1233,Robert Lawson
+1234,Kiersten White
+1235,Adriana Trigiani
+1236,MacLeod Andrews
+1237,Andre Agassi
+1238,J.R. Moehringer
+1239,Anthony Horowitz
+1240,Richard Ferrone
+1241,Daniel H. Pink
+1242,Jeph Loeb
+1243,Gregory Wright
+1244,Richard Starkings
+1245,Jean-Paul Sartre
+1246,Lloyd Alexander
+1247,Hayden Carruth
+1248,John Eldredge
+1249,Peter Ackroyd
+1250,Ed Glinert
+1251,Doreen Cronin
+1252,Betsy Lewin
+1253,Kendare Blake
+1254,Dick Hill
+1255,Avi
+1256,Robert Goolrick
+1257,Leif Enger
+1258,Janette Sebring Lowrey
+1259,Gustaf Tenggren
+1260,Maeve Binchy
+1261,Kate Jacobs
+1262,David Foster Wallace
+1263,Emma Chase
+1264,John Wyndham
+1265,Patrick deWitt
+1266,Marcelo Barbão
+1267,Shilpi Somaya Gowda
+1268,Montserrat Mira
+1269,Katherine Duncan-Jones
+1270,Ron Hall
+1271,Denver Moore
+1272,Tracy Kidder
+1273,Mark  Lawrence
+1274,Nancy Farmer
+1275,Walt Whitman
+1276,D.H. Lawrence
+1277,Doris Lessing
+1278,Chester Brown
+1279,George S. Clason
+1280,Leigh Eddings
+1281,Goran Skrobonja
+1282,Sarah Addison Allen
+1283,Frederick Douglass
+1284,Greg Behrendt
+1285,Liz Tuccillo
+1286,Rudyard Kipling
+1287,Alev Lytle Croutier
+1288,Rachel Caine
+1289,Peter David
+1290,Robin Furth
+1291,Jae Lee
+1292,Richard Isanove
+1293,Ruth Ozeki
+1294,Tucker Max
+1295,Jay Crownover
+1296,Charlotte Connan de vries
+1297,Robert B. Cialdini
+1298,Stephen Marlowe
+1299,Louise Fitzhugh
+1300,Sarah Waters
+1301,Marian Keyes
+1302,Louise Penny
+1303,John Ajvide Lindqvist
+1304,Benjamin F. Fisher
+1305,Morgan Matson
+1306,Oswald Chambers
+1307,Andrea Cremer
+1308,Naomi Novik
+1309,Peter V. Brett
+1310,Alfred Lansing
+1311,Rebecca Stead
+1312,Phyllis Reynolds Naylor
+1313,Jo Nesbø
+1314,Don Bartlett
+1315,Stephen Kendrick
+1316,Alex Kendrick
+1317,Ben Sherwood
+1318,Dale Carnegie
+1319,Rebecca Donovan
+1320,Sidney Sheldon
+1321,M.C. Escher
+1322,Bruce Brooks Pfeiffer
+1323,Donna Woolfolk Cross
+1324,Sebastian Faulks
+1325,Joshua Foer
+1326,Sue Miller
+1327,Norman Bridwell
+1328,Katy Evans
+1329,Anne Brontë
+1330,Stevie Davies
+1331,Walter Farley
+1332,Keith Ward
+1333,Tomie dePaola
+1334,R.L. Mathewson
+1335,David Bayles
+1336,Ted Orland
+1337,Hayden Herrera
+1338,C.C. Hunter
+1339,Henry James
+1340,Patricia Crick
+1341,Gustave Doré
+1342,Charlotte Perkins Gilman
+1343,Noah Hawley
+1344,محمد صادق
+1345,B.A. Shapiro
+1346,Marilynne Robinson
+1347,Thomas Pynchon
+1348,David Alabort
+1349,Manuel Espín
+1350,Terry Brooks
+1351,Ann-Marie MacDonald
+1352,Tracey Garvis-Graves
+1353,Miep Gies
+1354,Alison Leslie Gold
+1355,Clive Cussler
+1356,Michael  Grant
+1357,Michael Bond
+1358,Peggy Fortnum
+1359,Nelson DeMille
+1360,Rumiko Takahashi
+1361,David Seltzer
+1362,Tom Rob Smith
+1363,Nancy E. Turner
+1364,Amanda Hopkinson
+1365,Nick Caistor
+1366,Audrey Penn
+1367,Ruth E. Harper
+1368,Nancy M. Leak
+1369,John Elder Robison
+1370,Sherrilyn Kenyon
+1371,Gabrielle Charbonnet
+1372,Curtis Sittenfeld
+1373,Brigitte Walitzek
+1374,Lisa McMann
+1375,Siddhartha Mukherjee
+1376,Deepak Chopra
+1377,Anne Lamott
+1378,Kerstin Gier
+1379,Timothy Zahn
+1380,Robin Cook
+1381,Louise L. Hay
+1382,Emma Straub
+1383,Oliver Pötzsch
+1384,Lee Chadeayne
+1385,Patricia C. Wrede
+1386,Peter de Sève
+1387,John Sandford
+1388,Tami Hoag
+1389,Melanie Benjamin
+1390,David Shannon
+1391,William Strunk Jr.
+1392,R.A. Salvatore
+1393,Jerry Pournelle
+1394,John  Williams
+1395,John McGahern
+1396,David Cote
+1397,Stephen Schwartz
+1398,Joan Marcus
+1399,Winnie Holzman
+1400,Garth Ennis
+1401,Steve Dillon
+1402,Joe R. Lansdale
+1403,Edmond Rostand
+1404,Eteel Lawson
+1405,Lowell Bair
+1406,Anne Fadiman
+1407,J. Kenner
+1408,Steve Parkhouse
+1409,Chris Bachalo
+1410,Michael Zulli
+1411,Clive Barker
+1412,Eleanor H. Porter
+1413,J.H. Williams III
+1414,Dave Stewart
+1415,Anthony  Ryan
+1416,Howard Pyle
+1417,Lawrence Hill
+1418,Richard Francis Burton
+1419,A.S. Byatt
+1420,Lily King
+1421,Louis Darling
+1422,Tracy Dockray
+1423,Carrie Ryan
+1424,Eleanor Catton
+1425,Chip Heath
+1426,Dan Heath
+1427,Piers Paul Read
+1428,Joyce Meyer
+1429,أثير عبدالله النشمي
+1430,Richard Castle
+1431,Amazon
+1432,Iain Banks
+1433,Marisha Pessl
+1434,Rob Lowe
+1435,Kevin Kwan
+1436,Robert Dugoni
+1437,Mike Mignola
+1438,John Byrne
+1439,Francine du Plessix Gray
+1440,Joachim Neugroschel
+1441,Shirley Jackson
+1442,Laura   Miller
+1443,Dodie Smith
+1444,John Jakes
+1445,Marcus Aurelius
+1446,Martin Hammond
+1447,Diskin Clay
+1448,Dave Barry
+1449,Ridley Pearson
+1450,Greg Call
+1451,Sigmund Freud
+1452,Mary Karr
+1453,Raine Miller
+1454,Jeff VanderMeer
+1455,Leonard Mlodinow
+1456,Reza Aslan
+1457,Jan-Philipp Sendker
+1458,Kevin Wiliarty
+1459,Iain M. Banks
+1460,David J. Schwartz
+1461,Carlo Collodi
+1462,Monteiro Lobato
+1463,Robin LaFevers
+1464,Stormie Omartian
+1465,Henry Miller
+1466,Brian Sibley
+1467,Alice Hoffman
+1468,John Howard Griffin
+1469,Jonathan Kellerman
+1470,Robert James Waller
+1471,Mark Bittman
+1472,Wassily Kandinsky
+1473,Winston Groom
+1474,Justin O'Brien
+1475,Carolyn G. Heilbrun
+1476,Italo Calvino
+1477,Sue Grafton
+1478,Patricia MacLachlan
+1479,يوسف زيدان
+1480,Ian Falconer
+1481,Brené Brown
+1482,Eben Alexander
+1483,A.J. Jacobs
+1484,Katherine Dunn
+1485,Dudley Fitts
+1486,Elena Bono
+1487,Robert Penn Warren
+1488,Vince Flynn
+1489,Hannah Kent
+1490,Peter Mayle
+1491,Bagram Ibatoulline
+1492,Martin Cruz Smith
+1493,Tara Conklin
+1494,Karen Hesse
+1495,Elizabeth Wein
+1496,N.K. Sandars
+1497,Anna Godbersen
+1498,Philip Roth
+1499,Gena Showalter
+1500,Elizabeth Berg
+1501,Yoshiki Nakamura
+1502,Paolo Bacigalupi
+1503,Richard Allen Cave
+1504,Ilona Andrews
+1505,Irène Némirovsky
+1506,Sandra Smith
+1507,Vincent van Gogh
+1508,Ronald de Leeuw
+1509,Mark Roskill
+1510,Arnold J. Pomerans
+1511,Grant Morrison
+1512,Hillary Jordan
+1513,Mark Bowden
+1514,V.E. Schwab
+1515,Victoria Schwab
+1516,David Grann
+1517,Trudi Canavan
+1518,Patricia McCormick
+1519,Jane Smiley
+1520,Kent Haruf
+1521,Daniel Clowes
+1522,Ivan Turgenev
+1523,George Reavy
+1524,Jane Costlow
+1525,Eliyahu M. Goldratt
+1526,Jeff Cox
+1527,Claudia Gray
+1528,Ashlee Vance
+1529,Mark Waid
+1530,Alex Ross
+1531,Elliot S. Maggin
+1532,Henri Charrière
+1533,Chris Colfer
+1534,Brandon Dorman
+1535,David Ebershoff
+1536,Walter Dean Myers
+1537,Kevin Hearne
+1538,Kim Stanley Robinson
+1539,Elaine Hedges
+1540,Heidi Murkoff
+1541,Arlene Eisenberg
+1542,Sandee Hathaway
+1543,Peter Thiel
+1544,Blake  Masters
+1545,Katharine Kroeber Wiley
+1546,Jim Gaffigan
+1547,Ron Chernow
+1548,Various
+1549,Nikolai Gogol
+1550,Robert A. Maguire
+1551,Elle Kennedy
+1552,Arlene Mosel
+1553,Blair Lent
+1554,Tina Reber
+1555,Penelope Douglas
+1556,Alison Weir
+1557,Yevgeny Zamyatin
+1558,Clarence Brown
+1559,Alan Paton
+1560,Brian Froud
+1561,Alan Lee
+1562,Aprilynne Pike
+1563,Yuval Noah Harari
+1564,Johnny Kansas
+1565,Stephanie Stehling
+1566,Heather McDonald
+1567,Roy Handler
+1568,Brad Wollack
+1569,Amber Mazzola
+1570,Josh Wolf
+1571,Shoshanna Handler
+1572,Eva Magdalenski
+1573,Amy Meyer
+1574,Glen Handler
+1575,Dave Mallow
+1576,Sarah Colonna
+1577,M. Leighton
+1578,Henning Mankell
+1579,Steven T. Murray
+1580,Keith David
+1581,Anthony Heald
+1582,Shari Lapena
+1583,Ann Leckie
+1584,Jerry I. Porras
+1585,Allen Eskens
+1586,Eric Wilson
+1587,Jack Higgins
+1588,David Wong
+1589,Ann Druyan
+1590,Lucy Christopher
+1591,Stanisław Lem
+1592,Elizabeth Wurtzel
+1593,Daniel J. Levitin
+1594,Julia Quinn
+1595,Margaret Weis
+1596,Tracy Hickman
+1597,Lorraine Hansberry
+1598,Richard K. Morgan
+1599,A.J. Banner
+1600,Jean-Dominique Bauby
+1601,Jeremy Leggatt
+1602,Chevy Stevens
+1603,Charles C. Mann
+1604,Kay Redfield Jamison
+1605,Sarah  Young
+1606,Edward Albee
+1607,Andrzej Sapkowski
+1608,Maxine Paetro
+1609,Jacqueline Carey
+1610,Eric Metaxas
+1611,A.W. Tozer
+1612,Jacqueline Winspear
+1613,Dot Hutchison
+1614,R.K. Lilley
+1615,Alexandra Adornetto
+1616,Kiran Desai
+1617,Johann Wolfgang von Goethe
+1618,Burton Pike
+1619,Alexandra Fuller
+1620,Robin McKinley
+1621,Mark Zug
+1622,سعود السنعوسي
+1623,Saud Alsanousi
+1624,Rae Carson
+1625,Ann Aguirre
+1626,Dava Sobel
+1627,Neil Armstrong
+1628,Peter Salm
+1629,James W. Loewen
+1630,Gabriel Rodríguez
+1631,Alexandra Ripley
+1632,Blaine Harden
+1633,Sarah Thornton
+1634,Dave Ramsey
+1635,Richard Atwater
+1636,Florence Atwater
+1637,George Saunders
+1638,Thomas J. Stanley
+1639,William D. Danko
+1640,Bob Dylan
+1641,George Selden
+1642,Oliver  Harris
+1643,Roger Fisher
+1644,William Ury
+1645,Bruce Patton
+1646,Kerry Lonsdale
+1647,Samantha Towle
+1648,Amy Schumer
+1649,Krishna-Dwaipayana Vyasa
+1650,Simon Brodbeck
+1651,Juan Mascaró
+1652,Paul Auster
+1653,Pam Muñoz Ryan
+1654,Candace Bushnell
+1655,R.J. Hollingdale
+1656,Michael Tanner
+1657,Dave Cullen
+1658,Laila Ibrahim
+1659,Mark Owen
+1660,Kevin Maurer
+1661,Laura Moriarty
+1662,Matt Wagner
+1663,George Pratt
+1664,Dick Giordano
+1665,P. Craig Russell
+1666,Harlan Ellison
+1667,Clare Mackintosh
+1668,H.G. Bissinger
+1669,David Sheff
+1670,Ovid
+1671,David Raeburn
+1672,Denis Feeney
+1673,Julia Alvarez
+1674,Robert Morgan
+1675,Bo Hampton
+1676,Tracey Hampton
+1677,Washington Irving
+1678,Wallace Stegner
+1679,John le Carré
+1680,Elin Hilderbrand
+1681,Tad Williams
+1682,Jan Karon
+1683,Tony Hsieh
+1684,Erika Johansen
+1685,Gordon Korman
+1686,Holly Black
+1687,Tarryn Fisher
+1688,Elizabeth Haynes
+1689,Richard Lancelyn Green
+1690,Ronald Knox
+1691,Julian Symons
+1692,James Rollins
+1693,Oliver Stallybrass
+1694,Pankaj Mishra
+1695,Rachel Hartman
+1696,Erich Segal
+1697,Kevin Henkes
+1698,Wendy Higgins
+1699,Herman Wouk
+1700,Bernard Cornwell
+1701,Michael E. Gerber
+1702,James Howe
+1703,Deborah Howe
+1704,Alan Daniel
+1705,Jussi Adler-Olsen
+1706,Lisa Hartford
+1707,John Connolly
+1708,Bill Clinton
+1709,Linda Sue Park
+1710,Nobuhiro Watsuki
+1711,Kenichiro Yagi
+1712,Miranda Kenneally
+1713,Joe Simpson
+1714,Simms Taback
+1715,Dan Millman
+1716,Barbara Demick
+1717,Jack Welch
+1718,Suzy Welch
+1719,Gail McHugh
+1720,Jonah Lehrer
+1721,Laurie R. King
+1722,Jean de Brunhoff
+1723,Merle S. Haas
+1724,Tom Rachman
+1725,Katja Millay
+1726,Jenny Downham
+1727,Simone Beck
+1728,Louisette Bertholle
+1729,Kazue Kato
+1730,John Werry
+1731,Mohsin Hamid
+1732,Jennifer A. Nielsen
+1733,John Updike
+1734,Daniel Todd Gilbert
+1735,T.S. Eliot
+1736,Else Holmelund Minarik
+1737,Tony DiTerlizzi
+1738,David Platt
+1739,Robert Greene
+1740,Joost Elffers
+1741,Jean Craighead George
+1742,Susanna Kearsley
+1743,Rosalyn Landor
+1744,Peter Lerangis
+1745,Hubert Selby Jr.
+1746,Darren Aronofsky
+1747,Richard Price
+1748,Erin Hunter
+1749,Dee Brown
+1750,Władysław Szpilman
+1751,Maya Banks
+1752,Ian Edginton
+1753,I.N.J. Culbard
+1754,Robert McCammon
+1755,China Miéville
+1756,Carrie Jones
+1757,Geoffrey Crayon
+1758,William L. Hedges
+1759,David Wilkerson
+1760,Cynthia Lord
+1761,Karen Russell
+1762,Mark Kurlansky
+1763,Μαρία Λαϊνά
+1764,Ignes Sodre
+1765,Og Mandino
+1766,Ian Fleming
+1767,Paullina Simons
+1768,A.G. Riddle
+1769,Julie James
+1770,Andy Kubert
+1771,Peter Sanderson
+1772,村上 春樹
+1773,Sheila Burnford
+1774,Frank Quitely
+1775,Fiona Barton
+1776,Patrick Carman
+1777,Marie Rutkoski
+1778,Sapphire
+1779,Atsushi Ohkubo
+1780,William Kent Krueger
+1781,Gene Luen Yang
+1782,Eugene Bradley Coco
+1783,Ron Dias
+1784,Walt Disney Company
+1785,K.A. Tucker
+1786,Christopher Marlowe
+1787,Anthony Robbins
+1788,Tony Robbins
+1789,Frederick L. Covan
+1790,Diane Chamberlain
+1791,Octavia E. Butler
+1792,Henry Cloud
+1793,John Townsend
+1794,Luca Marinelli
+1795,John C. Maxwell
+1796,Zig Ziglar
+1797,J. Sterling
+1798,Sarah Ban Breathnach
+1799,Moira Young
+1800,Edgar Rice Burroughs
+1801,Victoria Finlay
+1802,Ernest J. Gaines
+1803,Gene Zion
+1804,Margaret Bloy Graham
+1805,Hiro Fujiwara
+1806,Nick Bantock
+1807,أحمد خالد توفيق
+1808,Ann Rule
+1809,Joel Schick
+1810,Julie Orringer
+1811,Arthur Morey
+1812,Keith Wilson
+1813,Tim Curry
+1814,Ben Aaronovitch
+1815,Vikram Seth
+1816,Amy Sedaris
+1817,Peter  Swanson
+1818,Patricia Schultz
+1819,Max Lucado
+1820,Renee Ahdieh
+1821,Nicholas D. Kristof
+1822,Sheryl WuDunn
+1823,Daniel Handler
+1824,Maira Kalman
+1825,Mary Doria Russell
+1826,Charlie N. Holmberg
+1827,Steve Harvey
+1828,Candice Millard
+1829,Jonathan Lethem
+1830,Jerry W. Ward Jr.
+1831,Lalita Tademy
+1832,James D. Bradley
+1833,Ron Powers
+1834,Mahatma Gandhi
+1835,Lance Armstrong
+1836,Sally Jenkins
+1837,Helen Macdonald
+1838,Christopher Yost
+1839,Pasqual Ferry
+1840,Frank D'Armata
+1841,Karuho Shiina
+1842,C.J. Roberts
+1843,James Allen
+1844,Nina George
+1845,Simon Pare
+1846,Ann Voskamp
+1847,Robert Bloch
+1848,Alistair MacLean
+1849,Clint Willis
+1850,Rupi Kaur
+1851,Rosamund Lupton
+1852,Liu Cixin
+1853,Ken Liu
+1854,Mark Millar
+1855,Kilian Plunkett
+1856,Andrew Robinson
+1857,Walden Wong
+1858,Dave Johnson
+1859,Julia Glass
+1860,Benjamin Franklin
+1861,Lewis Leary
+1862,Timothy J. Keller
+1863,W. Chan Kim
+1864,Renée Mauborgne
+1865,Audrey Wood
+1866,Don    Wood
+1867,Matthew FitzSimmons
+1868,Vernor Vinge
+1869,Caroline B. Cooney
+1870,Robert Lopshire
+1871,Sophie Jordan
+1872,Jessica Park
+1873,Richard Flanagan
+1874,Jennifer Worth
+1875,Susan Elizabeth Phillips
+1876,Stendhal
+1877,Roger Gard
+1878,Catherine Fisher
+1879,Bev Vincent
+1880,Josephine Angelini
+1881,N.H. Kleinbaum
+1882,Emily Bleeker
+1883,Paramahansa Yogananda
+1884,Alvin Schwartz
+1885,Stephen Gammell
+1886,John Hersey
+1887,Jennifer Brown
+1888,Kasie West
+1889,Karen Armstrong
+1890,Pablo Neruda
+1891,W.S. Merwin
+1892,Cristina García
+1893,Thomas More
+1894,Paul Turner
+1895,Pseudonymous Bosch
+1896,Gilbert Ford
+1897,Danielle  Paige
+1898,Aimee Bender
+1899,Dai Sijie
+1900,Ina Rilke
+1901,Roxane Gay
+1902,Amy Chua
+1903,Noelle Stevenson
+1904,Giada De Laurentiis
+1905,Jeanette Winterson
+1906,Ravinder Singh
+1907,Betty MacDonald
+1908,Alexandra Boiger
+1909,Dan   Harris
+1910,Ina Garten
+1911,Quentin Bacon
+1912,Sena Jeter Naslund
+1913,CLAMP
+1914,Anthony Gerard
+1915,Darren Shan
+1916,Kevin O'Neill
+1917,Nalini Singh
+1918,Euripides
+1919,Rex Warner
+1920,Cinda Williams Chima
+1921,Hannah Hurnard
+1922,Charles Burns
+1923,Therese Anne Fowler
+1924,Catherine Ryan Hyde
+1925,Martha Hall Kelly
+1926,Anthony Marra
+1927,Will Schwalbe
+1928,Lauren Barnholdt
+1929,Warren Ellis
+1930,Darick Robertston
+1931,John Schoenherr
+1932,Jon Meacham
+1933,Mia Sheridan
+1934,Alyson Richman
+1935,Girolamo De Michele
+1936,Alastair McEwen
+1937,Robert Graves
+1938,Joelle Charbonneau
+1939,Kirsty Moseley
+1940,Darynda Jones
+1941,Amanda Lindhout
+1942,Sara Corbett
+1943,Vera Brosgol
+1944,Jean Rhys
+1945,John Fowles
+1946,Caroline Kepnes
+1947,Jacqueline Woodson
+1948,Mira Grant
+1949,Gwyn Hyman Rubio
+1950,Steve Berry
+1951,Katherine Howe
+1952,Kylie Scott
+1953,Emma Healey
+1954,Isabel Wilkerson
+1955,Barbara W. Tuchman
+1956,John Marsden
+1957,Robert M. Edsel
+1958,Bret Witter
+1959,Ava Dellaira
+1960,Helen Bryan
+1961,Yaa Gyasi
+1962,Joël Dicker
+1963,Shirley Kubo
+1964,Koushun Takami
+1965,Yuji Oniki
+1966,Nevil Shute
+1967,Sophia Amoruso
+1968,Daniel Silva
+1969,Mo Willems
+1970,Edward Gorey
+1971,Stephen Baxter
+1972,Steven Pressfield
+1973,Robert McKee
+1974,Raymond Carver
+1975,Michael J. Sullivan
+1976,W. Somerset Maugham
+1977,Benjamin DeMott
+1978,Lisa Gardner
+1979,Virginia Lee Burton
+1980,Vicki Myron
+1981,Soman Chainani
+1982,Margret Rey
+1983,Naoko Takeuchi
+1984,Gurihiru
+1985,Sarah Vowell
+1986,MaryJanice Davidson
+1987,Bill Moyers
+1988,Jo Baker
+1989,Cary Elwes
+1990,Joe Layden
+1991,Rob Reiner
+1992,Peggy Rathmann
+1993,Robyn Schneider
+1994,Jude Watson
+1995,Frank W. Abagnale
+1996,Stan Redding
+1997,Gary Zukav
+1998,Josh Malerman
+1999,Dan Wells
+2000,Timothy Egan
+2001,Ellen Marie Wiseman
+2002,Scott Snyder
+2003,Greg Capullo
+2004,Jonathan Glapion
+2005,Raymond Khoury
+2006,Kathy Griffin
+2007,Aaron Asher
+2008,Nicholas Evans
+2009,Sherry Argov
+2010,Edwin A. Abbott
+2011,Banesh Hoffmann
+2012,Tim Tharp
+2013,Peter D. Kramer
+2014,Rainer Funk
+2015,Shawn McManus
+2016,Bryan Talbot
+2017,Stan Woch
+2018,Mary E. Pearson
+2019,Eleanor Brown
+2020,Tom Perrotta
+2021,Mihaly Csikszentmihalyi
+2022,Portia de Rossi
+2023,Lisa Kleypas
+2024,Carl Bernstein
+2025,Bob Woodward
+2026,Gary Shteyngart
+2027,Michelle Rowen
+2028,Douglas R. Hofstadter
+2029,Robert Frost
+2030,Edward Connery Lathem
+2031,Rodman Philbrick
+2032,Philip Yancey
+2033,Åsne Seierstad
+2034,Ingrid Christopherson
+2035,D.J. MacHale
+2036,Chelsea M. Cameron
+2037,Arthur Hailey
+2038,Harold Bloom
+2039,Terry Southern
+2040,David H. Goldsmith
+2041,James Lundquist
+2042,Lawrence R. Broer
+2043,Peter J. Reed
+2044,Loree Rackstraw
+2045,William S. Doxey
+2046,Jerome Klinkowitz
+2047,Richard Giannone
+2048,John L. Simons
+2049,Leonard Mustazza
+2050,Zoltan Ab di-Nagy
+2051,Peter Freese
+2052,Wendy B. Faris
+2053,Alan Tiegreen
+2054,Alexander Pushkin
+2055,James E. Falen
+2056,Amie Kaufman
+2057,Meagan Spooner
+2058,Alison Goodman
+2059,Carolyn Keene
+2060,Russell H. Tandy
+2061,Sara Paretsky
+2062,Hugh Lofting
+2063,Lara Adrian
+2064,Geoff Dyer
+2065,Barbara Taylor Bradford
+2066,Sarah Ockler
+2067,Sharon L. Lechter
+2068,Camilla Läckberg
+2069,Donna Mabry
+2070,Georgia Cates
+2071,Mary Higgins Clark
+2072,Jason Baker
+2073,Donna Freed
+2074,Thrity Umrigar
+2075,Burton Raffel
+2076,Neil D. Isaacs
+2077,Jerome K. Jerome
+2078,Edward Abbey
+2079,Tom Rath
+2080,Edward Rutherfurd
+2081,Bella Forrest
+2082,Madeleine Wickham
+2083,Byron Glaser
+2084,Bill D. Fountain
+2085,Jean Kwok
+2086,Leonardo da Vinci
+2087,H. Anna Suh
+2088,Mollie Katzen
+2089,Orhan Pamuk
+2090,Erdağ M. Göknar
+2091,Carlos Castaneda
+2092,Marcia Brown
+2093,John   Williams
+2094,Mark Buckingham
+2095,Tori Amos
+2096,Catherine Marshall
+2097,Carol S. Dweck
+2098,Richard H. Thaler
+2099,Cass R. Sunstein
+2100,Susan Cooper
+2101,Richard Paige
+2102,Kate Mosse
+2103,Joseph J. Ellis
+2104,Young Kim
+2105,Samuel Taylor Coleridge
+2106,Michael Martchenko
+2107,H. Rider Haggard
+2108,Jill Thompson
+2109,Vince Locke
+2110,Ursule Molinaro
+2111,John Watkiss
+2112,Duncan Eagleson
+2113,Kent Williams
+2114,Samantha Shannon
+2115,Helen Small
+2116,Stephen Wall
+2117,Jacqueline Susann
+2118,Radwa Ashour
+2119,رضوى عاشور
+2120,Michael Rosen
+2121,Helen Oxenbury
+2122,Howard Roughan
+2123,Peter F. Hamilton
+2124,Thomas Rockwell
+2125,David Herbert Donald
+2126,Katie Ashley
+2127,Patrick O'Brian
+2128,Akira Toriyama
+2129,Alastair Reynolds
+2130,Rachel Renée Russell
+2131,Kresley Cole
+2132,Micah Sparks
+2133,Amy Plum
+2134,Anne Morrow Lindbergh
+2135,John Perkins
+2136,Jorge Luis Borges
+2137,Anthony Kerrigan
+2138,Sejal Badani
+2139,Amanda Coplin
+2140,Mikhail Lermontov
+2141,Paul Foote
+2142,Edmund Morris
+2143,M.M. Kaye
+2144,Jasinda Wilder
+2145,Donna VanLiere
+2146,Rory Freedman
+2147,Kim Barnouin
+2148,Kristen Ashley
+2149,Alice Schroeder
+2150,Julie Garwood
+2151,Betty Crocker
+2152,Michael Ledwidge
+2153,Holly Goldberg Sloan
+2154,Richard Connell
+2155,Cory Doctorow
+2156,Jalaluddin Rumi
+2157,Coleman Barks
+2158,William R. Forstchen
+2159,Helen Gardner
+2160,Fred S. Kleiner
+2161,Christin J. Mamiya
+2162,Miranda July
+2163,Jack Canfield
+2164,Mark Victor Hansen
+2165,Terry Windling
+2166,Jane Yolen
+2167,Alan Weisman
+2168,Angeline Goreau
+2169,Ingrid Law
+2170,Bill Simmons
+2171,عائض القرني
+2172,A.P.J. Abdul Kalam
+2173,Arun Tiwari
+2174,Nate Silver
+2175,Gary Russell
+2176,Olivia Cunning
+2177,Marjorie Flack
+2178,Kurt Wiese
+2179,Simon Sinek
+2180,Dorothy Allison
+2181,Daniel Suarez
+2182,Scott Turow
+2183,Joy Adamson
+2184,Alfred Bester
+2185,Rosamund Hodge
+2186,Shaun Tan
+2187,مصطفى محمود
+2188,Claire Messud
+2189,Augustine of Hippo
+2190,Henry Chadwick
+2191,Albert Cook Outler
+2192,Cathy Marie Buchanan
+2193,Sarah Silverman
+2194,Patricia Highsmith
+2195,Christine Feehan
+2196,Lauren Beukes
+2197,Diane Ackerman
+2198,Chris Hadfield
+2199,Joanna Cole
+2200,Bruce Degen
+2201,Daniel Abraham
+2202,Tommy Patterson
+2203,Bret Lott
+2204,خولة حمدي
+2205,Ellen Schreiber
+2206,Adrian Conan Doyle
+2207,John Dickson Carr
+2208,Joshua Ferris
+2209,Monica  Murphy
+2210,Hisaya Nakajo
+2211,David Ury
+2212,Juliet Marillier
+2213,Seth Godin
+2214,Susanne Kuhlmann-Krieg
+2215,Roland Barthes
+2216,Andrew Davidson
+2217,Elizabeth  Smart
+2218,Chris Stewart
+2219,Michael Buckley
+2220,Peter Ferguson
+2221,Stephen Briggs
+2222,Caragh M. O'Brien
+2223,Derek Landy
+2224,Tom Percival
+2225,Andy Warhol
+2226,Michael Slater
+2227,B.J. Novak
+2228,Nathan Filer
+2229,Madeleine Roux
+2230,John Piper
+2231,Lauren Graham
+2232,Becky Albertalli
+2233,Pam Morris
+2234,A.G. Howard
+2235,Primo Levi
+2236,Stuart J. Woolf
+2237,Jordan Stump
+2238,Susan Vreeland
+2239,William Steig
+2240,Carolyn Jessop
+2241,Laura Palmer
+2242,Stephen R. Donaldson
+2243,Marcus Buckingham
+2244,Curt Coffman
+2245,Thornton Wilder
+2246,Donald Margulies
+2247,Tappan Wilder
+2248,Emily Carroll
+2249,Ayana Mathis
+2250,Gary Saul Morson
+2251,Honoré de Balzac
+2252,Ted Hughes
+2253,Andrew Ross Sorkin
+2254,Zoe Sugg
+2255,Siobhan Curham
+2256,Carol Ryrie Brink
+2257,J.I. Packer
+2258,Marc Hempel
+2259,Richard Case
+2260,D'Israeli
+2261,Teddy Kristiansen
+2262,Glyn Dillon
+2263,Dean Ormston
+2264,Kevin Nowlan
+2265,Frank McConnell
+2266,Mike Allred
+2267,Gary Amaro
+2268,David Giordano
+2269,Tony Harris
+2270,Shea Anton Pensa
+2271,Alec Stevens
+2272,Jerry Pinkney
+2273,Graham Greene
+2274,Monica Ali
+2275,Herodotus
+2276,Aubrey de Sélincourt
+2277,John M. Marincola
+2278,K. Bromberg
+2279,Kimberly Derting
+2280,A. Roger Merrill
+2281,Rebecca R. Merrill
+2282,Nancy Garden
+2283,Malorie Blackman
+2284,Harriet Jacobs
+2285,Kristen Proby
+2286,T. Harv Eker
+2287,Hans Hermann
+2288,Molly McAdams
+2289,Julie Otsuka
+2290,Jennifer McMahon
+2291,Paolo Giordano
+2292,Shaun Whiteside
+2293,Nicole  Williams
+2294,Skottie Young
+2295,G. Willow Wilson
+2296,Adrian Alphona
+2297,Gennifer Choldenko
+2298,Pamela Druckerman
+2299,Abby Craden
+2300,Megan Whalen Turner
+2301,Sarah Winman
+2302,Lang Leav
+2303,Tom Franklin
+2304,Rainer Maria Rilke
+2305,Reginald Snell
+2306,Franz Xaver Kappus
+2307,Anna Banks
+2308,Charles Baudelaire
+2309,Lee Goldberg
+2310,E. Nesbit
+2311,Irwin Shaw
+2312,Gilly Macmillan
+2313,Pat Frank
+2314,Kazu Kibuishi
+2315,Flannery O'Connor
+2316,Shunryu Suzuki
+2317,Han Kang
+2318,Deborah     Smith
+2319,Mark Harman
+2320,Regaip Minareci
+2321,Şerif Yeşilbucak
+2322,Sam Harris
+2323,Susane Colasanti
+2324,Connie Willis
+2325,Bryan Stevenson
+2326,Brian L. Weiss
+2327,Keith Ferrazzi
+2328,Melina Marchetta
+2329,Kimon Nicolaides
+2330,Mamie Harmon
+2331,Lorna Landvik
+2332,K.G. Campbell
+2333,Edward P. Jones
+2334,James     Baldwin
+2335,Yuu Watase
+2336,Marcel Proust
+2337,Simon Vance
+2338,Lydia Davis
+2339,Margaret Sayers Peden
+2340,Daniel H. Wilson
+2341,Sue Townsend
+2342,Mike Carey
+2343,Glenn Fabry
+2344,Chloe Neill
+2345,Naoki Higashida
+2346,K.A. Yoshida
+2347,Janette Oke
+2348,W.B. Yeats
+2349,Richard J. Finneran
+2350,Barbara Shook Hazen
+2351,Robert Lewis May
+2352,Richard Scarry
+2353,Frederik Pohl
+2354,Kerry Patterson
+2355,Joseph Grenny
+2356,Ron McMillan
+2357,Al Switzler
+2358,Thomas Cahill
+2359,Charlie Adlard
+2360,Cliff Rathburn
+2361,Ruth Reichl
+2362,William  Gibson
+2363,Thomas Hobbes
+2364,C.B. Macpherson
+2365,Sandra Brown
+2366,Sloane Crosley
+2367,Antonia Fraser
+2368,Michelle Magorian
+2369,Tabitha Suzuma
+2370,Rob Thomas
+2371,Jennifer Graham
+2372,Danny Sugerman
+2373,Jerry Hopkins
+2374,Marguerite Henry
+2375,Wesley Dennis
+2376,Haven Kimmel
+2377,Bruce Sterling
+2378,A.L. Singer
+2379,Guy Gavriel Kay
+2380,Nora Ephron
+2381,Brennan Manning
+2382,Michael W. Smith
+2383,Rich Mullins
+2384,Wilbur Smith
+2385,Naomi Klein
+2386,Rachel Willson-Broyles
+2387,Günter Grass
+2388,James Noel Smith
+2389,Edith Hamilton
+2390,Steele Savage
+2391,Anna Dewdney
+2392,Al Franken
+2393,Leah Remini
+2394,Rebecca Paley
+2395,Eric Shanower
+2396,Edith Hahn Beer
+2397,Susan Dworkin
+2398,Susan Sarandon
+2399,Julia Ormond
+2400,Rory Kennedy
+2401,Ree Drummond
+2402,Julie Kibler
+2403,Carrie Fisher
+2404,Ron Rash
+2405,Hampton Sides
+2406,Marisa de los Santos
+2407,Christopher Pike
+2408,E.L. Doctorow
+2409,David Weber
+2410,Ben Goldacre
+2411,Cherrie Lynn
+2412,Ai Yazawa
+2413,Joseph Delaney
+2414,Patrick  Arrasmith
+2415,Plum Sykes
+2416,Robert Cormier
+2417,Teddy Slater
+2418,Ric González
+2419,Michael Punke
+2420,Jon J. Muth
+2421,Mikal Gilmore
+2422,Clayton M. Christensen
+2423,Bill Langley
+2424,Foundation for Inner Peace
+2425,Wayne W. Dyer
+2426,Jack Weatherford
+2427,Theodore Dreiser
+2428,Andrea Hirata
+2429,Joanne Fluke
+2430,Mitchell Zuckoff
+2431,Sam Kean
+2432,Bill Dedman
+2433,Paul Clark Newell Jr.
+2434,Brother Lawrence
+2435,Bob Goff
+2436,Benjamin Graham
+2437,Jason Zweig
+2438,Warren Buffett
+2439,Blanche Fisher Wright
+2440,John Jowett
+2441,Anna Todd
+2442,Sarah Rees Brennan
+2443,Cassandra Jean
+2444,Jon Kabat-Zinn
+2445,Banana Yoshimoto
+2446,Megan Backus
+2447,Eric Van Lustbader
+2448,Judith McNaught
+2449,Mark Ford
+2450,Kevin J. Anderson
+2451,Brett Booth
+2452,Jean-Jacques Rousseau
+2453,Maurice Cranston
+2454,Alexander Hamilton
+2455,James Madison
+2456,John Jay
+2457,Philo-Publius
+2458,Clinton Rossiter
+2459,Charles R. Kessler
+2460,Julie Anne Peters
+2461,Sarah Blake
+2462,Orlagh Cassidy
+2463,Nic Sheff
+2464,Daniel O'Malley
+2465,Frank Beddor
+2466,Joyce Maynard
+2467,Ed Catmull
+2468,Amy Wallace
+2469,Frida Kahlo
+2470,Carlos Fuentes
+2471,Sarah M. Lowe
+2472,Michele Wrightson
+2473,Bob McCabe
+2474,Jeff Shaara
+2475,Michael Morpurgo
+2476,Chelsea Cain
+2477,Julianne Donaldson
+2478,Kathleen Tessaro
+2479,Tara Sivec
+2480,Gabrielle Hamilton
+2481,Lars Kepler
+2482,Ann Long
+2483,Piers Anthony
+2484,Tommy Lee
+2485,Vince Neil
+2486,Nikki Sixx
+2487,Neil Strauss
+2488,Mick Mars
+2489,Richard R. Lingeman
+2490,Brynne Stephens
+2491,Lela Dowling
+2492,Cynthia Martin
+2493,Jenny Nimmo
+2494,Jay Kristoff
+2495,Glen Cook
+2496,Susan Hill
+2497,John Lawrence
+2498,Barbara Robinson
+2499,Aimee Carter
+2500,Steven Johnson
+2501,Anna Carey
+2502,Susan Sontag
+2503,Mary McGarry Morris
+2504,Michio Kaku
+2505,Karen Cushman
+2506,Armistead Maupin
+2507,Victoria Hislop
+2508,Ian Rankin
+2509,Mircea Pricăjan
+2510,Marya Hornbacher
+2511,William  Davis
+2512,H.P. Lovecraft
+2513,August Derleth
+2514,Mary  Stewart
+2515,S.T. Joshi
+2516,Neale Donald Walsch
+2517,Felicia Day
+2518,Joss Whedon
+2519,Matt Fraction
+2520,David Aja
+2521,Javier Pulido
+2522,Matt Hollingsworth
+2523,Chris Eliopoulos
+2524,Alan Davis
+2525,Jim Lee
+2526,Scott Williams
+2527,Alex Sinclair
+2528,Jen Lancaster
+2529,Enid Blyton
+2530,Larissa Ione
+2531,Robert Hughes
+2532,Ted Dekker
+2533,Adam Hochschild
+2534,David Ellis
+2535,Samantha van Leer
+2536,Kanoko Sakurakouji
+2537,JN Productions
+2538,Pancha Diaz
+2539,Erin Watt
+2540,Jen Frederick
+2541,Cynthia Holloway
+2542,Laurelin Paige
+2543,NaRae Lee
+2544,Lene Kaaberbøl
+2545,Agnete Friis
+2546,Christopher Gill
+2547,D.B.C. Pierre
+2548,Ntozake Shange
+2549,Jennifer Close
+2550,Stella Gibbons
+2551,Roz Chast
+2552,Rainer Metzger
+2553,Ingo F. Walther
+2554,Chris Guillebeau
+2555,Trevor Noah
+2556,Theodore Taylor
+2557,Justina Chen
+2558,Carol Shields
+2559,Beth Harbison
+2560,Peter Høeg
+2561,Tiina Nunnally
+2562,Julia Hoban
+2563,Hillary Rodham Clinton
+2564,Edmund de Waal
+2565,Al Perkins
+2566,Eric Gurney
+2567,Lissa Price
+2568,Juan Rulfo
+2569,Kelly Corrigan
+2570,Michael North
+2571,Heather Cocks
+2572,Jessica  Morgan
+2573,Robert Charles Wilson
+2574,Eugene O'Neill
+2575,Kohta Hirano
+2576,Duane Johnson
+2577,Noah Gordon
+2578,Scott Brick
+2579,Mark Teague
+2580,Miyamoto Musashi
+2581,Victor Harris
+2582,Irvin D. Yalom
+2583,Aristotle
+2584,J.A.K. Thomson
+2585,Jonathan Barnes
+2586,Hugh Tredennick
+2587,Kyle Idleman
+2588,William Blake
+2589,Stan Berenstain
+2590,Jan Berenstain
+2591,H.W. Janson
+2592,Anthony F. Janson
+2593,Yukiru Sugisaki
+2594,Diana Sudyka
+2595,Jordan Belfort
+2596,Dietrich Bonhoeffer
+2597,Michelle Alexander
+2598,Knut Hamsun
+2599,George Egerton
+2600,Cristina Henriquez
+2601,Brian Azzarello
+2602,Lee Bermejo
+2603,Sergei Lukyanenko
+2604,Andrew Bromfield
+2605,Jenny Offill
+2606,Susan Meissner
+2607,Dalton Trumbo
+2608,Pierre Boulle
+2609,Xan Fielding
+2610,Belva Plain
+2611,Henry T. Blackaby
+2612,Claude V. King
+2613,Richard Blackaby
+2614,James Dickey
+2615,Katsura Hoshino
+2616,Mayumi Kobayashi
+2617,Ian Caldwell
+2618,Dustin Thomason
+2619,Bryan Konietzko
+2620,Michael Dante DiMartino
+2621,Dave Marshall
+2622,Rob Sheffield
+2623,Legs McNeil
+2624,Gillian McCain
+2625,Marybeth Mayhew Whalen
+2626,Sarah Weeks
+2627,Jim Carroll
+2628,Lew Wallace
+2629,Lionel Trilling
+2630,Lolly Winston
+2631,Gary Gianni
+2632,Madeline Sheehan
+2633,Pam Adams
+2634,Robert Bryndza
+2635,John Gardner
+2636,James Gleick
+2637,Kurt Busiek
+2638,Carolyn Mackler
+2639,Suzanne Young
+2640,Jennifer Echols
+2641,Philipp Meyer
+2642,Oliver Wyman
+2643,Bryn Greenwood
+2644,Melanie Acevedo
+2645,Brendan Reichs
+2646,Laura Schroff
+2647,Alex Tresniowski
+2648,Valerie Salembier
+2649,Rhoda Janzen
+2650,Ruud van der Rol
+2651,Rian Verhoeven
+2652,Tony Langham
+2653,Plym Peters
+2654,Gary Larson
+2655,Aaron Johnston
+2656,Pema Chödrön
+2657,Daisy Goodwin
+2658,Al Dempster
+2659,Milt Banta
+2660,Golden Books
+2661,Andy Goldsworthy
+2662,Denis Johnson
+2663,Steve Buccellato
+2664,Eddie Campbell
+2665,Pete Mullins
+2666,Katherine Neville
+2667,Jean Webster
+2668,Edith Pattou
+2669,James Strachey
+2670,Peter Gay
+2671,James Bowen
+2672,John Cassaday
+2673,Eric    Weiner
+2674,Tracy Brogan
+2675,Richard J. Foster
+2676,Muriel Spark
+2677,Megan McCafferty
+2678,Richard Peck
+2679,Ben Mezrich
+2680,Mariko Tamaki
+2681,Jillian Tamaki
+2682,Paul Harding
+2683,Penelope Ward
+2684,Alan Lightman
+2685,Christian Redl
+2686,Philip Dossick
+2687,Emanuela Guercetti
+2688,Michelle-Irène Brudny
+2689,Norman Dietz
+2690,Donald Fanger
+2691,coderati
+2692,Boris de Schlœzer
+2693,Andrew Williamson
+2694,Amy Harmon
+2695,Vikas Swarup
+2696,Donald J. Sobol
+2697,C.J. Sansom
+2698,Lisi Harrison
+2699,Elizabeth Kolbert
+2700,Ben Fountain
+2701,Lian Hearn
+2702,Ronald H. Balson
+2703,Dan John Miller
+2704,Iris Johansen
+2705,Rachael Ray
+2706,James L. Swanson
+2707,Mark  Edwards
+2708,David McRaney
+2709,Sara Donati
+2710,Aeschylus
+2711,William Bedell Stanford
+2712,Ildefonso Falcones
+2713,The Church of Jesus Christ of Latter-day Saints
+2714,Rory Albanese
+2715,Kevin Bleyer
+2716,Wyatt Cenac
+2717,Hallie Haglund
+2718,Elliott Kalan
+2719,Josh Lieb
+2720,Sam Means
+2721,Jo Miller
+2722,John Oliver
+2723,Daniel Radosh
+2724,Rachel Vincent
+2725,Brodi Ashton
+2726,G. Norman Lippert
+2727,Brother Andrew
+2728,J. Courtney Sullivan
+2729,Meg Rosoff
+2730,Heather Gudenkauf
+2731,Dawn J. Ranck
+2732,Phyllis Pellman Good
+2733,Lili St. Crow
+2734,Lilith Saintcrow
+2735,Malika Oufkir
+2736,Michèle Fitoussi
+2737,Steve McNiven
+2738,Dexter Vines
+2739,Morry Hollowell
+2740,Kim Carpenter
+2741,John R. Perry
+2742,Krickitt Carpenter
+2743,Mercer Mayer
+2744,Inga Moore
+2745,Nathan Fairbairn
+2746,Tijan
+2747,Jenő Barcsay
+2748,John Saul
+2749,Jean Sasson
+2750,Joseph Murphy
+2751,Ian McMahan
+2752,Esther Forbes
+2753,Lynd Ward
+2754,Ernesto Che Guevara
+2755,Aleida Guevara March
+2756,N.K. Jemisin
+2757,Roberto Bolaño
+2758,Natasha Wimmer
+2759,Stefan Zweig
+2760,Joel Rotenberg
+2761,Hans Hausmann
+2762,Dirk Muller
+2763,Willy Trenk-Trebitsch
+2764,Mario Adorf
+2765,Gert Westphal
+2766,Justine Korman Fontes
+2767,Don Williams
+2768,Jeanne Birdsall
+2769,Sally Bedell Smith
+2770,Charlotte Barslund
+2771,John Layman
+2772,Rob Guillory
+2773,Arkady Strugatsky
+2774,Boris Strugatsky
+2775,Antonina W. Bouis
+2776,Theodore Sturgeon
+2777,Aram Saroyan
+2778,P.G. Wodehouse
+2779,Amanda Palmer
+2780,Chris   Smith
+2781,Christopher Lee
+2782,Richard Taylor
+2783,Elizabeth  George
+2784,Arturo Pérez-Reverte
+2785,Sonia Soto
+2786,Paul O. Zelinsky
+2787,Douglas Coupland
+2788,Viet Thanh Nguyen
+2789,Joanna Wylde
+2790,Mary O'Hara
+2791,Dave Blossom
+2792,Mirjana Valent
+2793,William Archer
+2794,Caroline Myss
+2795,Beatriz Williams
+2796,Gary D. Schmidt
+2797,Judy Schachner
+2798,Brian Tracy
+2799,Sandra Boynton
+2800,Wallace D. Wattles
+2801,Shelly Crane
+2802,Robert   Harris
+2803,Bertrand Russell
+2804,Nigella Lawson
+2805,Thomas Malory
+2806,Keith Baines
+2807,Cupcake Brown
+2808,Kate Douglas Wiggin
+2809,Anton Chekhov
+2810,S.C. Gwynne
+2811,Karen Kingsbury
+2812,Gary Smalley
+2813,Jennifer Donnelly
+2814,Dorothy L. Sayers
+2815,Robert Sabuda
+2816,Ross King
+2817,Noel Streatfeild
+2818,Diane Goode
+2819,Harry Gregson-Williams
+2820,Carolyn Brown
+2821,E.E. Cummings
+2822,Sara Raasch
+2823,Matthew  Thomas
+2824,Mary Pipher
+2825,Kate Brian
+2826,Russell Hoban
+2827,Lillian Hoban
+2828,Max Barry
+2829,Donna Murphy
+2830,Cece Bell
+2831,David Lasky
+2832,Jude Deveraux
+2833,Jonathan Maberry
+2834,G.M.A. Grube
+2835,John M. Cooper
+2836,Charles R. Cross
+2837,Thucydides
+2838,Moses I. Finley
+2839,George Stade
+2840,Richard Fusco
+2841,Richard Kadrey
+2842,John Hart
+2843,Donald A. Yates
+2844,James E. Irby
+2845,André Maurois
+2846,Colleen Houck
+2847,Tim Harford
+2848,Drew Daywalt
+2849,Oliver Jeffers
+2850,Katie J. Davis
+2851,Beth Clark
+2852,Kathleen Kent
+2853,Thomas Mann
+2854,Patricia Reilly Giff
+2855,Heather Brewer
+2856,Barry Schwartz
+2857,Annette Curtis Klause
+2858,David Brin
+2859,Janet Switzer
+2860,Alexander Osterwalder
+2861,Yves Pigneur
+2862,Stephen Greenblatt
+2863,Margaret George
+2864,Norman Doidge
+2865,Barry Lyga
+2866,J. Ryan Stradal
+2867,Ann McGovern
+2868,Winslow Pinney Pels
+2869,Winslow Pinn
+2870,Ey Pels
+2871,Alaa Al Aswany
+2872,علاء الأسواني
+2873,Brian  McClellan
+2874,Koren Zailckas
+2875,Bree Despain
+2876,Bill Buford
+2877,Clarissa Pinkola Estés
+2878,Donald O. Clifton
+2879,Chris Anderson
+2880,Adolf Hitler
+2881,Aleatha Romig
+2882,Sean Covey
+2883,Tom Angleberger
+2884,Thanhha Lai
+2885,Jude Fisher
+2886,Guy Kawasaki
+2887,Wes  Moore
+2888,Tavis Smiley
+2889,Ariana Franklin
+2890,武内 直子
+2891,Katherine Streeter
+2892,Ruth Stiles Gannett
+2893,Greg Iles
+2894,Jay McInerney
+2895,Syd Hoff
+2896,Giovanni Boccaccio
+2897,G.H. McWilliam
+2898,Alice Munro
+2899,Eileen Christelow
+2900,Andrew Hurley
+2901,Rachel Van Dyken
+2902,Lilian Jackson Braun
+2903,Nyrae Dawn
+2904,Haley Riordan
+2905,Courtney Cole
+2906,Neil Patrick Harris
+2907,Antony Hare
+2908,Josh McDowell
+2909,Cherie Priest
+2910,Rita Mae Brown
+2911,Marianne Williamson
+2912,Charles Portis
+2913,Susan  Jeffers
+2914,Matthew Dicks
+2915,Paul Birkbeck
+2916,Susan Crandall
+2917,Brian Staveley
+2918,Sally Green
+2919,Nikos Kazantzakis
+2920,Νίκος Καζαντζάκης
+2921,William H. Armstrong
+2922,James Barkley
+2923,Lawrence M. Krauss
+2924,Slash
+2925,Anthony Bozza
+2926,Hazel E. Barnes
+2927,Mary Warnock
+2928,Richard Eyre
+2929,Rachel Carson
+2930,Linda Lear
+2931,Edward O. Wilson
+2932,Holly Madison
+2933,Nadia Hashimi
+2934,Keith Thompson
+2935,Goran Sudžuka
+2936,Charles Belfoure
+2937,Morgan Rhodes
+2938,Esther Hicks
+2939,Jerry Hicks
+2940,Henry Fielding
+2941,Thomas Keymer
+2942,Alice Wakely
+2943,Sherwood Anderson
+2944,Ted Goossen
+2945,Diana L. Paxson
+2946,Per Petterson
+2947,Anne Born
+2948,Doug Moench
+2949,Jim Aparo
+2950,Norm Breyfogle
+2951,Graham Nolan
+2952,Jim Balent
+2953,Brad Thor
+2954,Willem Dafoe
+2955,John Fante
+2956,Rick Bragg
+2957,Leigh Nichols
+2958,Stephen Coonts
+2959,Enid Bagnold
+2960,Richard Branson
+2961,Aristophanes
+2962,Sarah Ruden
+2963,Peter Clines
+2964,Scott Jurek
+2965,Steve Friedman
+2966,James Ellroy
+2967,Brett Matthews
+2968,Will Conrad
+2969,T.C. Boyle
+2970,Eugene B. Sledge
+2971,Paul Fussell
+2972,Eleanor Estes
+2973,Louis Slobodkin
+2974,Meredith Wild
+2975,Kass Morgan
+2976,Karma Wilson
+2977,Jane Chapman
+2978,Gary Chalk
+2979,Alexander Theroux
+2980,Lionel Abel
+2981,منى المرشود
+2982,Robert S. Levine
+2983,Glennon Doyle Melton
+2984,Richard Paul Evans
+2985,W.E.B. Du Bois
+2986,Donald B. Gibson
+2987,Monica W. Elbert
+2988,Shonda Rhimes
+2989,Marguerite Duras
+2990,Barbara Bray
+2991,Maxine Hong Kingston
+2992,Stephanie Danler
+2993,Bryan Burrough
+2994,John Helyar
+2995,David Fishelson
+2996,Aaron Leichter
+2997,Rysa Walker
+2998,Catherynne M. Valente
+2999,Ana Juan
+3000,Denise Grover Swank
+3001,Marshall Karp
+3002,Timur Vermes
+3003,Chris Pavone
+3004,Richard Winston
+3005,Clara Winston
+3006,Theodore Ziolkowski
+3007,Kevin Powers
+3008,Gerald Durrell
+3009,Helma Lapiņa
+3010,Tawni O'Dell
+3011,Robin A.H. Waterfield
+3012,Quinn Loftis
+3013,Harry Bliss
+3014,Emily Snow
+3015,Richard Condon
+3016,Shane Claiborne
+3017,John Medina
+3018,Richard C. Morais
+3019,Lincoln Peirce
+3020,Tim Burton
+3021,Edwidge Danticat
+3022,Louis-Ferdinand Céline
+3023,William T. Vollmann
+3024,Matt Haig
+3025,Essam Youssef
+3026,Shaunti Feldhahn
+3027,Keith Szarabajka
+3028,Lynsay Sands
+3029,Matthew Reilly
+3030,Adam Smith
+3031,Richard Ford
+3032,Antony Beevor
+3033,Kyousuke Motomi
+3034,Beryl Markham
+3035,Steven Galloway
+3036,Betty White
+3037,René Descartes
+3038,Donald A. Cress
+3039,James Surowiecki
+3040,James Herbert
+3041,Jason Winters
+3042,Marilyn Manson
+3043,BookRags
+3044,Bernard Waber
+3045,Gail Carriger
+3046,سمانه پرهیزکاری
+3047,Rob Bell
+3048,Edward Said
+3049,Beverly  Lewis
+3050,Anne Bishop
+3051,Nicholas Meyer
+3052,Jonathan Harr
+3053,Sonia Sotomayor
+3054,Immanuel Kant
+3055,Paul Guyer
+3056,Allen W. Wood
+3057,Rien Poortvliet
+3058,Wil Huygen
+3059,Hester Browne
+3060,John Stuart Mill
+3061,Alan Cumming
+3062,D.M. Pulley
+3063,Jill Shalvis
+3064,Rebecca Housel
+3065,J. Jeremy Wisnewski
+3066,William Irwin
+3067,Eric Berne
+3068,Alexandre Dumas fils
+3069,David Coward
+3070,Rachel Hauck
+3071,Stephen C. Lundin
+3072,Harry Paul
+3073,John Christensen
+3074,Vi Keeland
+3075,Philip José Farmer
+3076,Mark Helprin
+3077,Susan Ericksen
+3078,Thomas Paine
+3079,Adeline Yen Mah
+3080,Michel Houellebecq
+3081,Frank Wynne
+3082,Roy Thomas
+3083,Mark D. Beazley
+3084,Dav Pilkey
+3085,Paul Tough
+3086,Scott B. Smith
+3087,Michael Blake
+3088,Ellis Peters
+3089,Giorgio Vasari
+3090,Julia Conway Bondanella
+3091,Peter Bondanella
+3092,Dmitry Glukhovsky
+3093,M. David Drevs
+3094,Christos Tsiolkas
+3095,Robert Henri
+3096,Forbes Watson
+3097,Margery A. Ryerson
+3098,Marcus Sakey
+3099,Camille Pagán
+3100,Caroline Preston
+3101,Myla Goldberg
+3102,Ram Dass
+3103,Richard Alpert
+3104,Conn Iggulden
+3105,Brad Stone
+3106,Brittainy C. Cherry
+3107,Heidi McLaughlin
+3108,Ashwin Sanghi
+3109,Norman Mailer
+3110,James M. McPherson
+3111,Michael Teitelbaum
+3112,Sue DiCicco
+3113,Rob Buyea
+3114,Lindsey Kelk
+3115,A.N. Roquelaure
+3116,Beth Fantaskey
+3117,Larry Bossidy
+3118,Ram Charan
+3119,Charles Burck
+3120,Caitlin Doughty
+3121,Christopher Golden
+3122,Simon Wood
+3123,Grace Lin
+3124,Arthur Ransome
+3125,Mary Kay Andrews
+3126,S.K. Tremayne
+3127,Michael Moss
+3128,Edward Eager
+3129,N.M. Bodecker
+3130,Steve Hockensmith
+3131,Patrick Arrasmith
+3132,Helene Hanff
+3133,Thich Nhat Hanh
+3134,Arnold Kotler
+3135,Anna Kendrick
+3136,Robert Masello
+3137,Jim Starlin
+3138,Mike DeCarlo
+3139,Lisa Lutz
+3140,James E. Talmage
+3141,Don Ferguson
+3142,Lucasta Miller
+3143,collaborative
+3144,Jessica Cox
+3145,Paul Beatty
+3146,Jenna Miscavige Hill
+3147,Lisa Pulitzer
+3148,James J. Helm
+3149,Penn Jillette
+3150,Diane Muldrow
+3151,J.P. Miller
+3152,John Heilemann
+3153,Mark Halperin
+3154,Joni Eareckson Tada
+3155,Joe Musser
+3156,Shakti Gawain
+3157,Anya Seton
+3158,Marina Lewycka
+3159,René Goscinny
+3160,Jean-Jacques Sempé
+3161,Harold G. Moore
+3162,Joseph L. Galloway
+3163,Mike Lupica
+3164,Tk
+3165,Debbie Macomber
+3166,Jun Mochizuki
+3167,望月淳
+3168,Kathryn Erskine
+3169,Joshua Harris
+3170,Zilpha Keatley Snyder
+3171,Kaye Gibbons
+3172,Nahum N. Glatzer
+3173,Tania Stern
+3174,Ernst Kaiser
+3175,Eithne Wilkins
+3176,Isa Chandra Moskowitz
+3177,Terry Hope Romero
+3178,Sabahattin Ali
+3179,Charles M. Sheldon
+3180,Elissa Wall
+3181,Ed Brubaker
+3182,Doug Mahnke
+3183,Patrick Zircher
+3184,Aaron Sowd
+3185,Steve Bird
+3186,Ben Horowitz
+3187,Russell Brand
+3188,Simon Garfield
+3189,R.D. Ronald
+3190,John Katzenbach
+3191,Del Roy
+3192,Kevin    Wilson
+3193,Karl Ove Knausgård
+3194,Tom    Murphy
+3195,Wendy Mass
+3196,Grant Naylor
+3197,G.K. Chesterton
+3198,Jane O'Connor
+3199,Robin Preiss Glasser
+3200,Chris Riddell
+3201,Dee Henderson
+3202,Tobias Wolff
+3203,Molière
+3204,Martin Sorrell
+3205,Kazune Kawahara
+3206,David D. Burns
+3207,Melody Beattie
+3208,Ivan Goncharov
+3209,Stephen Pearl
+3210,Galya Diment
+3211,Po Bronson
+3212,Ashley Merryman
+3213,Janny Wurts
+3214,Richard Thomas
+3215,Chris Ware
+3216,Matt Ridley
+3217,Phil Klay
+3218,James M. Cain
+3219,Robert Kurson
+3220,Clare Vanderpool
+3221,Amitav Ghosh
+3222,Jessica Anthony
+3223,Rodrigo Corral
+3224,Lisa Scottoline
+3225,Naguib Mahfouz
+3226,نجيب محفوظ
+3227,Rachel Simon
+3228,Allen Say
+3229,Robert Silverberg
+3230,Melinda Long
+3231,Linda Howard
+3232,Mira Lyn Kelly
+3233,Linwood Barclay
+3234,Katherine Hannigan
+3235,Aldo Leopold
+3236,Eric Knight
+3237,Marguerite Kirmse
+3238,T. Colin Campbell
+3239,Thomas M. Campbell II
+3240,Julia Donaldson
+3241,Axel Scheffler
+3242,Sui Ishida
+3243,石田 スイ
+3244,Cressida Cowell
+3245,Lauren Conrad
+3246,Paul Bowles
+3247,Lily Koppel
+3248,Frank B. Gilbreth Jr.
+3249,Ernestine Gilbreth Carey
+3250,Mario Spezi
+3251,Paul Kidby
+3252,Philip Gourevitch
+3253,Jonathan Cahn
+3254,L.A. Weatherly
+3255,Bryan J.L. Glass
+3256,Tim Seeley
+3257,Hugo Petrus
+3258,Julio Cortázar
+3259,Eric Clapton
+3260,Ted Chiang
+3261,Mario Vargas Llosa
+3262,Heidi W. Durrow
+3263,Chris Grabenstein
+3264,David Wiesner
+3265,Mercedes Lackey
+3266,Courtney Allison Moulton
+3267,Ozzy Osbourne
+3268,Chris Ayres
+3269,J. Maarten Troost
+3270,Bill Clegg
+3271,Elisabeth Kübler-Ross
+3272,Goran Parlov
+3273,Jesmyn Ward
+3274,Kristen Callihan
+3275,Natasha Preston
+3276,Scott  Meyer
+3277,Émile Zola
+3278,Roger Pearson
+3279,Michael Ondaatje
+3280,Jacqueline Kelly
+3281,Katie Alender
+3282,Danny Gregory
+3283,Michel Foucault
+3284,Alan Sheridan
+3285,Thomas Mathiesen
+3286,Walter Seitter
+3287,Drago Braco Rotar
+3288,Arina Tanemura
+3289,Amy A. Bartol
+3290,Joe McGinniss
+3291,Sudhir Venkatesh
+3292,Michael Avon Oeming
+3293,Ryan Stegman
+3294,Laline Paull
+3295,Elizabeth George
+3296,Ann Leary
+3297,Rudolfo Anaya
+3298,Alessandro Baricco
+3299,Archibald Colquhoun
+3300,Belle Aurora
+3301,Jillian Dodd
+3302,Kate Alcott
+3303,Ken Grimwood
+3304,David Eagleman
+3305,Neil deGrasse Tyson
+3306,Paul Zindel
+3307,Kerrelyn Sparks
+3308,Robert Muchamore
+3309,Sarah Simblet
+3310,Simon Singh
+3311,Aurora Rose Reynolds
+3312,Angela Carter
+3313,Simon Schama
+3314,Michelle Knight
+3315,Michelle Burford
+3316,Jasmine Warga
+3317,Kim Gordon
+3318,D.C. Talk
+3319,The Voice of the Martyrs
+3320,Brunonia Barry
+3321,Travis Moore
+3322,Michael Halbleib
+3323,Anchee Min
+3324,H.M. Ward
+3325,George MacDonald
+3326,Arthur Hughes
+3327,Sönmez Güven
+3328,David Thomson
+3329,A.S. King
+3330,Grace Ellis
+3331,Shannon Waters
+3332,Shannon Watters
+3333,Brooke A. Allen
+3334,Faith Hicks
+3335,Kat Leyh
+3336,Brooke Allen
+3337,Carolyn Nowak
+3338,Carey Pietsch
+3339,Elaine N. Aron
+3340,Chitra Banerjee Divakaruni
+3341,H.W. Brands
+3342,Yoshihiro Togashi
+3343,冨樫 義博
+3344,Ned Rust
+3345,Lucy Grealy
+3346,Kingsley Amis
+3347,David Lodge
+3348,Jeff Hobbs
+3349,Li Cunxin
+3350,C.G. Jung
+3351,Aniela Jaffé
+3352,ياسر حارب
+3353,Suzanne Rappaport
+3354,Founding Fathers
+3355,Gilles Néret
+3356,Malcolm Lowry
+3357,Rachel Abbott
+3358,Mary Pope Osborne
+3359,Salvatore Murdocca
+3360,Kate Beaton
+3361,Ann Packer
+3362,Sogyal Rinpoche
+3363,Andrew Harvey
+3364,Pat Barker
+3365,Michael J. Fox
+3366,John Joseph Adams
+3367,Robert J. Sawyer
+3368,Michael Moorcock
+3369,Sharyn McCrumb
+3370,Barbara Hambly
+3371,Tanith Lee
+3372,Rob Rogers
+3373,Dominic Green
+3374,Barbara Roden
+3375,Peter Tremayne
+3376,Tim Lebbon
+3377,Bradley H. Sinor
+3378,Edward D. Hoch
+3379,Vonda N. McIntyre
+3380,Darrell Schweitzer
+3381,Mary Robinette Kowal
+3382,H.Paul Jeffers
+3383,Geoffrey A. Landis
+3384,Amy Myers
+3385,Tony Pi
+3386,Chris Roberson
+3387,Mark Valentine
+3388,Gigi Levangie Grazer
+3389,Kıvanç Güney
+3390,Sinclair Lewis
+3391,John Rocco
+3392,Catherine Gilbert Murdock
+3393,Erika Swyler
+3394,Frederick Franck
+3395,Kristen Britain
+3396,Helen Oyeyemi
+3397,David  Brooks
+3398,Thomas S. Kuhn
+3399,Peter M. Senge
+3400,Arthur Koestler
+3401,Daphne Hardy
+3402,Jaci Burton
+3403,Jack Campbell
+3404,Lois McMaster Bujold
+3405,Elizabeth Flock
+3406,Malinda Lo
+3407,Diane Arbus
+3408,Stan Grossfeld
+3409,Doon Arbus
+3410,Marvin Israel
+3411,Leo Lionni
+3412,Camron Wright
+3413,Harvey Karp
+3414,Nelson Hobbs
+3415,Dee Lestari
+3416,Dallas Hartwig
+3417,Melissa Hartwig
+3418,Ted Kerasote
+3419,K.E. Semmel
+3420,Elizabeth Chandler
+3421,Marshall Goldsmith
+3422,Mark Reiter
+3423,Kwame Alexander
+3424,Alan Hollinghurst
+3425,Peter F. Drucker
+3426,Kieron Gillen
+3427,Jamie McKelvie
+3428,Matt Wilson
+3429,Clayton Cowles
+3430,Tetsuko Kuroyanagi
+3431,Chihiro Iwasaki
+3432,Dorothy Britton
+3433,Roger Lowenstein
+3434,Natalie Goldberg
+3435,Liza Marklund
+3436,Julietta Suzuki
+3437,Aron Ralston
+3438,David Gemmell
+3439,Sheila Turnage
+3440,Avery Monsen
+3441,Jory John
+3442,Johnny Cash
+3443,Patrick   Carr
+3444,Isak Dinesen
+3445,Karen Blixen
+3446,Robert Crais
+3447,Marieke Nijkamp
+3448,Steven Pinker
+3449,Cynthia Marshall
+3450,Zane
+3451,Kristen Simmons
+3452,Randy Shilts
+3453,William Greider
+3454,Brigitte Sire
+3455,Gilbert Sorrentino
+3456,Jordan Sonnenblick
+3457,John Banville
+3458,L.E. Modesitt Jr.
+3459,Ben H. Winters
+3460,George R. Stewart
+3461,Thea Harrison
+3462,Diane Mowat
+3463,W.W. Jacobs
+3464,Jerry Bridges
+3465,Foster W. Cline
+3466,Jim Fay
+3467,Anne Rivers Siddons
+3468,Eric S. Nylund
+3469,Frank De Felitta
+3470,Nathan  Hill
+3471,J. Sheridan Le Fanu
+3472,K.A. Linde
+3473,Craig Ferguson
+3474,Sarah MacLean
+3475,Charlotte Rogan
+3476,Henryk Sienkiewicz
+3477,W.S. Kuniczak
+3478,Amy Ewing
+3479,Chris d'Lacey
+3480,Deborah Guarino
+3481,Steven Kellogg
+3482,Jacob Tomsky
+3483,Tony Horwitz
+3484,Robert Descharnes
+3485,Laura Dave
+3486,Lori Lansens
+3487,Wiley Cash
+3488,Ann M. Martin
+3489,Roland Smith
+3490,Sheri  Fink
+3491,Guy de Maupassant
+3492,Douglas Parmée
+3493,María Dueñas
+3494,Daniel Hahn
+3495,Kristan Higgins
+3496,Deborah Blum
+3497,Elizabeth Scott
+3498,Ananda Maitreya
+3499,Balangoda Ananda Maitreya Maitreya
+3500,Elisabeth Elliot
+3501,خالد الخميسي
+3502,Khaled Al Khamissi
+3503,Gail Tsukiyama
+3504,Sally   Thorne
+3505,Julia Heaberlin
+3506,Penny Reid
+3507,Akira Amano
+3508,Frances E. Wall
+3509,Alton Brown
+3510,Amy Tintera
+3511,Carrie Brownstein
+3512,Pearl Cleage
+3513,The Arbinger Institute
+3514,Gentry Lee
+3515,Jock
+3516,Francesco Francavilla
+3517,Jared K. Fletcher
+3518,Sal Cipriano
+3519,David   Baron
+3520,Laural Merlington
+3521,James Cameron
+3522,Paula Brackston
+3523,Katarina Bivald
+3524,Alice Menzies
+3525,Christian Lander
+3526,Heather Dixon
+3527,Rachel Dratch
+3528,Willy Lindwer
+3529,Deborah Rodriguez
+3530,محمد السالم
+3531,Ben Mikaelsen
+3532,Rachel Kushner
+3533,Deborah Feldman
+3534,Gary Vaynerchuk
+3535,Lloyd C. Douglas
+3536,Ellen Titlebaum
+3537,Anton DiSclafani
+3538,Gavin de Becker
+3539,Willard F. Harley Jr.
+3540,Kelly Creagh
+3541,Sadegh Hedayat
+3542,D.P. Costello
+3543,Eric Litwin
+3544,James Dean
+3545,Simon  Jones
+3546,R.L. Stine
+3547,Melinda Haynes
+3548,Danielle Steel
+3549,Maura McEvoy
+3550,Fisher Amelie
+3551,Allison Pearson
+3552,Becky  Chambers
+3553,Jennifer Lynn Barnes
+3554,Carol Tavris
+3555,Elliot Aronson
+3556,T.R. Ragan
+3557,Gina Mayer
+3558,Jill Bolte Taylor
+3559,Iain Pears
+3560,Donny Dhirgantoro
+3561,Geoffrey A. Moore
+3562,Regis McKenna
+3563,Peach-Pit
+3564,Neil Shubin
+3565,Bob Ong
+3566,Linda Asher
+3567,Loung Ung
+3568,Owen  West
+3569,Stephen M.R. Covey
+3570,Betty Mahmoody
+3571,Darcie Chan
+3572,Jon Lee Anderson
+3573,Rebecca Solnit
+3574,Alfred Uhry
+3575,منى الخميسي
+3576,Allan Pease
+3577,Barbara Pease
+3578,Farley Mowat
+3579,Michelle Moran
+3580,Merlin Holland
+3581,Cook's Illustrated Magazine
+3582,John Burgoyne
+3583,Carl Tremblay
+3584,Laura C. Schlessinger
+3585,Fábio Moon
+3586,Gabriel Bá
+3587,Sean Konot
+3588,Cherise Sinclair
+3589,Maureen Freely
+3590,Brit Bennett
+3591,Masha
+3592,Marie Simchow Stern
+3593,Taylor Jenkins Reid
+3594,David Timson
+3595,Larry Correia
+3596,Peter Snejbjerg
+3597,Christopher Isherwood
+3598,A. Meredith Walters
+3599,Eliza Wheeler
+3600,Joseph Fink
+3601,Jeffrey Cranor
+3602,Julie   Murphy
+3603,Gina L. Maxwell
+3604,Eve Ensler
+3605,Gloria Steinem
+3606,Barbara Delinsky
+3607,Edmund White
+3608,Susan Mallery
+3609,Ronald A. Beers
+3610,Sylvain Neuvel
+3611,Barron Storey
+3612,Bill Sienkiewicz
+3613,Milo Manara
+3614,Miguelanxo Prado
+3615,Olivia Goldsmith
+3616,Maggie O'Farrell
+3617,Joanna Trollope
+3618,Hugh Osborne
+3619,Yōko Ogawa
+3620,Stephen Snyder
+3621,Niall Ferguson
+3622,Robert M. Durling
+3623,C.J. Bott
+3624,Denise Kiernan
+3625,Ed Gorman
+3626,John Bedford Lloyd
+3627,Mark Dunn
+3628,Paul Tremblay
+3629,Anne McLean
+3630,Rita Williams-Garcia
+3631,Jason F. Wright
+3632,Blue Balliett
+3633,George Beard
+3634,Harold Hutchins
+3635,Tasha Tudor
+3636,Paulo Freire
+3637,Myra Bergman Ramos
+3638,Donaldo Macedo
+3639,Richard Shaull
+3640,Ian Doescher
+3641,Brad Meltzer
+3642,Rags Morales
+3643,Michael Bair
+3644,Seth
+3645,Aaron Ehasz
+3646,Alison Wilgus
+3647,Amy Kim Ganter
+3648,Brian Ralph
+3649,Corey Lewis
+3650,Dave Roman
+3651,Elsa Garagarza
+3652,Ethan Spaulding
+3653,Frank Pittarese
+3654,J. Torres
+3655,Joaquim Dos Santos
+3656,Johane Matte
+3657,John O'Bryan
+3658,Joshua Hamilton
+3659,Justin Ridge
+3660,Kaite Mattila
+3661,May Chan
+3662,Rawles Marie Lumumba
+3663,Reagan Lodge
+3664,Tim Hedrick
+3665,Tom McWeeney
+3666,Catherine McKenzie
+3667,Margaret Sidney
+3668,Jessica Day George
+3669,Barbara Cooney
+3670,Jim Bouton
+3671,Harriet Lerner
+3672,Burton G. Malkiel
+3673,Kelly Elliott
+3674,Julie Klassen
+3675,Michelle A. Valentine
+3676,Claire Huchet Bishop
+3677,C.S. Pacat
+3678,David Frankland
+3679,Paul Murray
+3680,Jessica Shirvington
+3681,Tony Kushner
+3682,Dorothy Koomson
+3683,John Keats
+3684,Joseph Boyden
+3685,Frances Wall
+3686,Khushwant Singh
+3687,Craig Silvey
+3688,Michael A. Singer
+3689,Marlon James
+3690,Nina LaCour
+3691,Jami Attenberg
+3692,Thomas Piketty
+3693,Arthur Goldhammer
+3694,Kay Thompson
+3695,Hilary Knight
+3696,Peter Carey
+3697,Elmore Leonard
+3698,Nathanael West
+3699,Alfred Kazin
+3700,Keri Arthur
+3701,John Darnielle
+3702,Richard DiLallo
+3703,Ori Brafman
+3704,Rom Brafman
+3705,Iris Chang
+3706,Jerry A. Coyne
+3707,Sarah Jane Hails
+3708,Jen Sincero
+3709,Jill Mansell
+3710,Nicky Charles
+3711,Kurtis J. Wiebe
+3712,Roc Upchurch
+3713,Chuck Wendig
+3714,Jennifer Chiaverini
+3715,Safiy al-Rahman al-Mubarakfuri
+3716,Sarah McCoy
+3717,Trina Schart Hyman
+3718,Johann Grimm
+3719,Martin Pistorius
+3720,Megan Lloyd Davies
+3721,Greg McKeown
+3722,Lisa Renee Jones
+3723,L.A. Fiore
+3724,Sandi Lynn
+3725,Dorothy Kunhardt
+3726,Maria Simpson
+3727,Dian Fossey
+3728,Jeffery Hudson
+3729,Adelle Waldman
+3730,Matthew Norman
+3731,Linda Castillo
+3732,Michael Frayn
+3733,Cornelius Ryan
+3734,C.J. Redwine
+3735,Mildred Benson
+3736,Taylor Caldwell
+3737,Mariana Zapata
+3738,Joseph Wambaugh
+3739,Kelly McGonigal
+3740,Paul  Edwards
+3741,Alain de Botton
+3742,Heinrich Böll
+3743,محمد اسماعیل‌زاده
+3744,Laura McHugh
+3745,Richard Wilhelm
+3746,Cary F. Baynes
+3747,John Buchan
+3748,Peter Watts
+3749,Nick Offerman
+3750,Rafael Albuquerque
+3751,Alexis de Tocqueville
+3752,Isaac Kramnick
+3753,Gerald Bevan
+3754,Erica Bauermeister
+3755,Roddy Doyle
+3756,Martin Amis
+3757,Chris Ryall
+3758,Brian Herbert
+3759,Alan Bennett
+3760,بهرام مقدادی
+3761,Steve Niles
+3762,Ben Templesmith
+3763,Youssef Ziedan
+3764,Titus Lucretius Carus
+3765,Omar Khayyám
+3766,Baruch Spinoza
+3767,David Hume
+3768,James Boswell
+3769,Leslie Stephen
+3770,Anatole France
+3771,Emma Goldman
+3772,Carl Van Doren
+3773,H.L. Mencken
+3774,Albert Einstein
+3775,John Betjeman
+3776,Chapman Cohen
+3777,Philip Larkin
+3778,John Leslie Mackie
+3779,Michael Shermer
+3780,A.J. Ayer
+3781,Daniel C. Dennett
+3782,Charles Templeton
+3783,Victor J. Stenger
+3784,Elizabeth S.  Anderson
+3785,Steven Weinberg
+3786,Ibn Warraq
+3787,A.C. Grayling
+3788,Fritjof Capra
+3789,Kathryn Croft
+3790,Elizabeth Eulberg
+3791,Renée Knight
+3792,Richard Dixon
+3793,Hiroyuki Takei
+3794,George Sher
+3795,Andrew  Smith
+3796,Jack Finney
+3797,Melvin Burgess
+3798,Keigo Higashino
+3799,Alexander O. Smith
+3800,Jenny McCarthy
+3801,William Zinsser
+3802,Thomas A. Harris
+3803,Jane Werner Watson
+3804,Corinne Malvern
+3805,S.A. Bodeen
+3806,Boris Vian
+3807,Kimberly Lauren
+3808,Martin Heidegger
+3809,Jonathan Kozol
+3810,Charlie Higson
+3811,Kenneth Oppel
+3812,Thomas Tryon
+3813,Colin Meloy
+3814,Daniel Tammet
+3815,Conor Grennan
+3816,Kaui Hart Hemmings
+3817,Natsumi Ando
+3818,Miyuki Kobayashi
+3819,Faith Hunter
+3820,Mark T. Sullivan
+3821,Craig Johnson
+3822,Sherwood Smith
+3823,Victoria Kann
+3824,Elizabeth Kann
+3825,Ilan Stavans
+3826,Ilsa J. Bick
+3827,Robert William Chapman
+3828,Tillie Cole
+3829,Julee Rosso
+3830,Sheila Lukins
+3831,Michael McLaughlin
+3832,Keri Hulme
+3833,Michelle Paver
+3834,Geoff Taylor
+3835,Gavin Extence
+3836,Diana Hammermeister
+3837,Lawrence Wright
+3838,K.R. Dwyer
+3839,Jeffrey Toobin
+3840,Sarah Jio
+3841,Kyung-Sook Shin
+3842,신경숙
+3843,Chi-Young Kim
+3844,Brian Michael Bendis
+3845,Olivier Coipel
+3846,Tim Townsend
+3847,Rick Magyar
+3848,John Dell
+3849,Scott Hanna
+3850,James Taveras
+3851,Omar Otieku
+3852,Tom Valente
+3853,Esad Ribic
+3854,Booker T. Washington
+3855,Ishmael Reed
+3856,Laura Kaye
+3857,Albert Uderzo
+3858,Derek Hockridge
+3859,Gertrude Crampton
+3860,Robert Fulghum
+3861,Sarah Macdonald
+3862,Lisa Jewell
+3863,Yoko Kamio
+3864,神尾葉子
+3865,Steven Levy
+3866,Linda Kage
+3867,David Small
+3868,Ellis Avery
+3869,Tomoko Hayakawa
+3870,Jay Bonansinga
+3871,Jerzy Kosiński
+3872,Jonathan Haidt
+3873,Cecily von Ziegesar
+3874,Ilya Ilf
+3875,Eugene Petrov
+3876,Maurice Friedberg
+3877,John H.C. Richardson
+3878,Kimberly Kirberger
+3879,Megan Abbott
+3880,Alison Croggon
+3881,Simon R. Green
+3882,The Beatles
+3883,Paul McCartney
+3884,Ringo Starr
+3885,John Lennon
+3886,George Harrison
+3887,Christopher  Ryan
+3888,Cacilda Jethá
+3889,Annette Pollert
+3890,Vera B. Williams
+3891,Kiyoko Arai
+3892,David Hahn
+3893,Whitney G.
+3894,Jen Hatmaker
+3895,Chip Zdarsky
+3896,Sharon Kay Penman
+3897,Byron Katie
+3898,Stephen Mitchell
+3899,Sid Fleischman
+3900,Peter Sís
+3901,MinaLima
+3902,John A. Bertolini
+3903,Drew Karpyshyn
+3904,Brigid Kemmerer
+3905,Richard Rhodes
+3906,Richard Koch
+3907,David V. Erdman
+3908,Katsuhiro Otomo
+3909,Yoko Umezawa
+3910,Linda M. York
+3911,Jo Duffy
+3912,Julie Maroh
+3913,Tachibana Higuchi
+3914,樋口 橘
+3915,William Least Heat-Moon
+3916,Jenny Davidson
+3917,Spencer W. Kimball
+3918,Anne Fortier
+3919,Gerard Way
+3920,Nate Piekos
+3921,Tony Ong
+3922,Jessica Livingston
+3923,Lacey Weatherford
+3924,Scott Sigler
+3925,Leila Sales
+3926,Gloria Naylor
+3927,Jacob Wyatt
+3928,Siobhan Vivian
+3929,Petra Durst-Benning
+3930,Samuel Willcocks
+3931,Maggie Shipstead
+3932,Scott Pratt
+3933,Irving Shulman
+3934,Steve Krug
+3935,Lindy West
+3936,Harper Sloan
+3937,Jim Kjelgaard
+3938,Carl Pfeuffer
+3939,Jaclyn Moriarty
+3940,Stephen R. Bissette
+3941,John Totleben
+3942,Rick Veitch
+3943,Ramsey Campbell
+3944,Laurie Thompson
+3945,Karl Weber
+3946,Catherine Coulter
+3947,James Lee Burke
+3948,Thomas à Kempis
+3949,William Benham
+3950,Peter Shaffer
+3951,Sam Smith
+3952,Doug Grud
+3953,John Ortberg
+3954,Janice Y.K. Lee
+3955,Livia E. Bitton-Jackson
+3956,Roy F. Baumeister
+3957,John Tierney
+3958,Ford Madox Ford
+3959,Kenneth Womack
+3960,William Baker
+3961,J.L. Bourne
+3962,Tony Shasteen
+3963,Nei Ruffino
+3964,Stephen Fry
+3965,John Corey Whaley
+3966,Shiv Khera
+3967,Leil Lowndes
+3968,Gosho Aoyama
+3969,Joshilyn Jackson
+3970,L.A. Meyer
+3971,Phil Knight
+3972,Paul Pilkington
+3973,Andrew Loomis
+3974,Tim Winton
+3975,Jack Ketchum
+3976,Natsuo Kirino
+3977,Philippa Pearce
+3978,Susan Einzig
+3979,Kevin Stein
+3980,David  Perlmutter
+3981,Kristin Loberg
+3982,Annie Dillard
+3983,Daron Acemoğlu
+3984,James A. Robinson
+3985,Marti Olsen Laney
+3986,Daphne Merkin
+3987,Kathryn Lasky
+3988,Gary Taubes
+3989,Steve Pugh
+3990,Carlos Ezquerra
+3991,John M. Barry
+3992,Paul Hattaway
+3993,Brother Yun
+3994,Saul Bellow
+3995,Tim Johnston
+3996,Martha Stewart
+3997,Victor Schrager
+3998,E.D. Baker
+3999,Reginald Rose
+4000,David Mamet
+4001,Simon Bisley
+4002,Bernie Mireault
+4003,Anne Enright
+4004,Tori Spelling
+4005,Julia Scheeres
+4006,Angela Marsons
+4007,Langston Hughes
+4008,QuinRose
+4009,Soumei Hoshino
+4010,Caroline Alexander
+4011,Jay McLean
+4012,Lin-Manuel Miranda
+4013,Jeremy McCarter
+4014,Victoria Blake
+4015,Janet Briggs
+4016,Beth Wittlinger
+4017,Brian Lumley
+4018,Truddi Chase
+4019,Robert A. Phillips Jr.
+4020,Robison Wells
+4021,Amy Efaw
+4022,Mhairi McFarlane
+4023,Kevin D. Mitnick
+4024,William L. Simon
+4025,Steve Wozniak
+4026,Julianna Baggott
+4027,Robin Oliveira
+4028,Diane Duane
+4029,R.C.S. Libri
+4030,Robert Graysmith
+4031,Graeme Base
+4032,Elizabeth   Hunter
+4033,Leslie Feinberg
+4034,Amy  Stewart
+4035,Helen Marion Palmer
+4036,Dean Karnazes
+4037,Alexandra Potter
+4038,Rajaa Alsanea
+4039,Carrie Vaughn
+4040,Ha Jin
+4041,Judith Guest
+4042,Jen Wang
+4043,Dylan Thomas
+4044,Ben Avery
+4045,Mike S. Miller
+4046,Peter  May
+4047,Jerome Lawrence
+4048,Robert E.  Lee
+4049,Tony Hawks
+4050,Gary Jennings
+4051,Charlie Jane Anders
+4052,Amanda Knox
+4053,Jean Ferris
+4054,J.J. Abrams
+4055,Doug Dorst
+4056,Heather O'Neill
+4057,Chanda Hahn
+4058,محمدعلی فروغی
+4059,قاسم غنی
+4060,Richard A. Knaak
+4061,Carolyn  Parkhurst
+4062,Ina May Gaskin
+4063,Ambrose Bierce
+4064,Dale Brown
+4065,Miriam Toews
+4066,Charles Stross
+4067,Sara Nović
+4068,Rachel Maddow
+4069,Don Winslow
+4070,Stephanie Dray
+4071,Laura Kamoie
+4072,Cynthia Kadohata
+4073,Peter Gross
+4074,Preeti Shenoy
+4075,Robert Hurley
+4076,Steven Naifeh
+4077,Gregory White Smith
+4078,Thomas  Moore
+4079,Laurie Notaro
+4080,Alice McDermott
+4081,Michael Thomas Ford
+4082,Elizabeth Ross
+4083,ROFry
+4084,Auguste Maquet
+4085,Mike Mullin
+4086,Kim Holden
+4087,Trinka Hakes Noble
+4088,Dorothy Gilman
+4089,Karen Miller
+4090,Christiane F.
+4091,Kai Hermann
+4092,Horst Rieck
+4093,John             Lewis
+4094,Andrew Aydin
+4095,Nate Powell
+4096,Hugh Laurie
+4097,R.K. Narayan
+4098,Mark Manson
+4099,James Grady
+4100,Jeff Hertzberg
+4101,Zoë François
+4102,Mark Luinenburg
+4103,V.S. Naipaul
+4104,John Locke
+4105,Nicholas Carr
+4106,Natasha Solomons
+4107,Mineko Iwasaki
+4108,Rande Brown
+4109,James Tynion IV
+4110,Jason Fabok
+4111,Becky Cloonan
+4112,Andy Clarke
+4113,Sandu Florea
+4114,Howard E. Wasdin
+4115,Stephen Templin
+4116,J.D. Horn
+4117,Gordon B. Hinckley
+4118,Helena Hunting
+4119,Irin Carmon
+4120,Shana Knizhnik
+4121,Jennifer Estep
+4122,John Galsworthy
+4123,Laurie Faria Stolarz
+4124,Firoozeh Dumas
+4125,John P. Kotter
+4126,Gene Wolfe
+4127,Georgette Heyer
+4128,Friedrich A. Hayek
+4129,Marko Kloos
+4130,Donald A. Norman
+4131,Cathy Glass
+4132,Joanna Weaver
+4133,Laura Lippman
+4134,Leslye Walton
+4135,Anna Lee Waldo
+4136,Gemma Malley
+4137,Obert Skye
+4138,Stephen E. Robinson
+4139,Loreth Anne White
+4140,Karen Chance
+4141,Lori Brighton
+4142,Deb Perelman
+4143,J. Michael Straczynski
+4144,Shane Davis
+4145,Sandra Hope
+4146,Barbara Ciardo
+4147,Rob Leigh
+4148,John Foxe
+4149,W. Grinton Berry
+4150,Rachel Gibson
+4151,Michael Dorris
+4152,Seanan McGuire
+4153,Robert Lynn Asprin
+4154,Elizabeth Reyes
+4155,Simon Kuper
+4156,Stefan Szymanski
+4157,Lurlene McDaniel
+4158,Sandy   Hall
+4159,John Verdon
+4160,James L. Ferrell
+4161,Betty Friedan
+4162,عبدالله المغلوث
+4163,Meg Jay
+4164,John McCrea
+4165,Michael Whelan
+4166,David Colbert
+4167,Peter H. Reynolds
+4168,محمد عبد الرحمن العريفي
+4169,James Allworth
+4170,Karen Dillon
+4171,Jon Klassen
+4172,Denis Leary
+4173,Françoise Sagan
+4174,Corban Addison
+4175,John Steakley
+4176,Ilon Wikland
+4177,Jill M. Morgan
+4178,Jacqueline Wilson
+4179,Nick Sharratt
+4180,Evan Wright
+4181,Hope Jahren
+4182,Patricia Gaffney
+4183,Emmy Laybourne
+4184,Teri Terry
+4185,Pramoedya Ananta Toer
+4186,Lorrie Moore
+4187,Rebecca Forster
+4188,Andrew Sinclair
+4189,Kevin Wignall
+4190,Cliff Chiang
+4191,Tony Akins
+4192,Dan Green
+4193,Matthew Wilson
+4194,David Scott Kastan
+4195,Ed Emberley
+4196,Jinsei Kataoka
+4197,Kazuma Kondou
+4198,Linda Lafferty
+4199,Robert Harling
+4200,David Axton
+4201,Caralyn Buehner
+4202,Mark Buehner
+4203,Alessandra Torre
+4204,Sidney Hook
+4205,Jack Fruchtman Jr.
+4206,David Farland
+4207,Suzanne Rindell
+4208,Alan Dean Foster
+4209,J.M. Darhower
+4210,Sara Pennypacker
+4211,Marla Frazee
+4212,Cassie Dandridge Selleck
+4213,Geoff Colvin
+4214,George C. Perry
+4215,Clive Barda
+4216,Jane Rice
+4217,Andrew Lloyd Webber
+4218,Joel Martinsen
+4219,Pepper Winters
+4220,Jim Benton
+4221,Liz Murray
+4222,Tony Parsons
+4223,Miranda Beverly-Whittemore
+4224,John Gribbin
+4225,F. Paul Wilson
+4226,Chris Tebbetts
+4227,Laura Park
+4228,David A. Vise
+4229,Hans Fallada
+4230,Michael Hofmann
+4231,Geoff Wilkes
+4232,Alwyn Hamilton
+4233,Joseph L. Henderson
+4234,Jolande Jacobi
+4235,John Freeman
+4236,Marie-Louise von Franz
+4237,Gerald N. Lund
+4238,Steven  Rowley
+4239,Louise Doughty
+4240,Stephanie Evanovich
+4241,Eiji Yoshikawa
+4242,Charles Terry
+4243,Edwin O. Reischauer
+4244,Matthew      Lewis
+4245,Arnaldur Indriðason
+4246,Bernard Scudder
+4247,Lynda Mullaly Hunt
+4248,Jim Cymbala
+4249,Dean Merrill
+4250,Megan Shepherd
+4251,Mark Carwardine
+4252,Lucy Knisley
+4253,Lambert M. Surhone
+4254,Shayla Black
+4255,Arlette Elkaïm-Sartre
+4256,Annie Cohen-Solal
+4257,Carol Macomber
+4258,Scott Belsky
+4259,Rachel Isadora
+4260,Rory Stewart
+4261,Sharon Guskin
+4262,Rod Campbell
+4263,Hannah Harrington
+4264,M.J. Arlidge
+4265,Kitty French
+4266,Vaddey Ratner
+4267,Jack Gantos
+4268,Ralph Waldo Emerson
+4269,J.G. Ballard
+4270,Adele Faber
+4271,Elaine Mazlish
+4272,Kimberly Ann Coe
+4273,Joseph Stein
+4274,Jerry Bock
+4275,Sheldon Harnick
+4276,Sydney Taylor
+4277,Katharine Graham
+4278,Jane Harper
+4279,Charlotte Hughes
+4280,Anthony R. Ferris
+4281,Rolf Potts
+4282,J.C. Reed
+4283,Matthew Mather
+4284,Nujood Ali
+4285,Delphine Minoui
+4286,Linda Coverdale
+4287,David Auburn
+4288,Damon Knight
+4289,Robert A. Caro
+4290,Dan Jurgens
+4291,Jerry Ordway
+4292,Louise Simonson
+4293,Roger Stern
+4294,Jon Bogdanove
+4295,Tom Grummett
+4296,Jackson Butch Guice
+4297,Brett Breeding
+4298,Rick Burchett
+4299,Doug Hazlewood
+4300,Dennis Janke
+4301,Denis Rodier
+4302,Steven Hall
+4303,Sonali Deraniyagala
+4304,Andrew Solomon
+4305,Barbara Park
+4306,Denise Brunkus
+4307,Maud Hart Lovelace
+4308,Lois Lenski
+4309,Sara Zarr
+4310,Diane Mott Davidson
+4311,James  Jones
+4312,Michael Moore
+4313,Gerda Weissmann Klein
+4314,Elio M. García Jr.
+4315,Linda Antonsson
+4316,Nando Parrado
+4317,Vince Rause
+4318,Kimberly Brubaker Bradley
+4319,مرضیه ورشوساز
+4320,Zoë Heller
+4321,Dorothea Benton Frank
+4322,Anita Sengupta
+4323,G.P. Ching
+4324,Rhys Bowen
+4325,Elizabeth Haydon
+4326,Amin Maalouf
+4327,Russell Harris
+4328,NoViolet Bulawayo
+4329,Marian Potter
+4330,Scott Cunningham
+4331,Cath Crowley
+4332,John Steptoe
+4333,Molly Wizenberg
+4334,Martin E.P. Seligman
+4335,John Lawrence Peterson
+4336,Roberta Carter Clark
+4337,Barbara Siebel Thomas
+4338,Cynthia Voigt
+4339,James Alexander Thom
+4340,Cristin Terrill
+4341,Kimberly Rae Miller
+4342,Kathleen Winsor
+4343,John  Stephens
+4344,Doug Stanton
+4345,Yuna Kagesaki
+4346,Patricia Polacco
+4347,Tiffany Reisz
+4348,William  Kennedy
+4349,Paul Theroux
+4350,Darick Robertson
+4351,Liz Moore
+4352,Lloyd Jones
+4353,Victoria Pearson
+4354,John Patrick Shanley
+4355,Cate Tiernan
+4356,Laurie Fabiano
+4357,Søren Kierkegaard
+4358,Alastair Hannay
+4359,Amelia Atwater-Rhodes
+4360,Wallace Tripp
+4361,Thor Heyerdahl
+4362,Nigel Calder
+4363,Robert W. Lawson
+4364,Anna Maxted
+4365,David James Duncan
+4366,Shawn Achor
+4367,Kathy  Keller
+4368,Philip Tan
+4369,Matsuri Hino
+4370,Janet Stevens
+4371,Matthew J. Bruccoli
+4372,Tyler Oakley
+4373,Laurence Sterne
+4374,Melvyn New
+4375,Giles Andreae
+4376,Guy Parker-Rees
+4377,Mia Ikumi
+4378,Reiko Yoshida
+4379,Emily M. Danforth
+4380,Sue Klebold
+4381,Peter Laslett
+4382,Raymond Geuss
+4383,David  Arnold
+4384,Barbara Claypole White
+4385,Nick Cutter
+4386,Stephen Tapscott
+4387,Amy Bloom
+4388,Georg Wilhelm Friedrich Hegel
+4389,A.V. Miller
+4390,John Niemeyer Findlay
+4391,Sarah Mlynowski
+4392,Julie Gregory
+4393,Paulette Jiles
+4394,Devdutt Pattanaik
+4395,Anthony Hope
+4396,Tammy Falkner
+4397,J.P. Delaney
+4398,Mark Powers
+4399,Ardian Syaf
+4400,Alex Kava
+4401,Allan Curless
+4402,M.O. Walsh
+4403,Mika Waltari
+4404,ذبیح‌الله منصوری
+4405,Marie Force
+4406,Tayeb Salih
+4407,Denys Johnson-Davies
+4408,Éric-Emmanuel Schmitt
+4409,Harold S. Kushner
+4410,Susan Coolidge
+4411,Philip G. Zimbardo
+4412,Nancy Pickard
+4413,Michael Pritchard
+4414,Rusty Young
+4415,Thomas McFadden
+4416,Fuyumi Soryo
+4417,Alice Waters
+4418,Michelle Richmond
+4419,Marv Wolfman
+4420,George Pérez
+4421,John Hodgman
+4422,Patricia Crampton
+4423,Neil Smith
+4424,Elisabeth Naughton
+4425,Tan Twan Eng
+4426,Claudia Rankine
+4427,Sarah Prineas
+4428,Antonio Javier Caparo
+4429,Michael Azerrad
+4430,Rosalind Miles
+4431,Guy Delisle
+4432,Courtney Maum
+4433,Michael E. Porter
+4434,Wayne A. Grudem
+4435,Sarah Andersen
+4436,R. Scott Bakker
+4437,Kristin Kimball
+4438,Melissa Landers
+4439,Laura Ruby
+4440,Marcus Samuelsson
+4441,Stephanie Garber
+4442,Cheryl Rainfield
+4443,Ahmad Fuadi
+4444,Rick Atkinson
+4445,Jo Walton
+4446,Garr Reynolds
+4447,Tom Sniegoski
+4448,Thomas E. Sniegoski
+4449,Josh Kaufman
+4450,Scott  Hawkins
+4451,Joel Osteen
+4452,Jennifer L. Holm
+4453,Mary Beth Chapman
+4454,Steven Curtis Chapman
+4455,Karen V. Kukil
+4456,Jill Conner Browne
+4457,Debra Dean
+4458,Hannu Rajaniemi
+4459,Ludwig Wittgenstein
+4460,Spencer Quinn
+4461,Caroline Knapp
+4462,Kalayna Price
+4463,Mary Gordon
+4464,Steven Callahan
+4465,Howard Schultz
+4466,Joanne Gordon
+4467,Laurence Rees
+4468,Durjoy Datta
+4469,Maanvi Ahuja
+4470,Robyn Carr
+4471,José Mauro de Vasconcelos
+4472,قاسم صنعوی
+4473,Ivan Doig
+4474,Steve Martini
+4475,Gloria Levine
+4476,Walter Mosley
+4477,Jane Ray
+4478,Jim Thompson
+4479,Mary Elizabeth Braddon
+4480,Jodi Lynn Anderson
+4481,Amanda Foreman
+4482,A.C. Gaughen
+4483,Jimmy Palmiotti
+4484,Machado de Assis
+4485,Robert Shea
+4486,Robert Anton Wilson
+4487,Alexander Gordon Smith
+4488,Jay Ryan
+4489,Nancy Thayer
+4490,Poppy Z. Brite
+4491,Alan W. Watts
+4492,Ramez Naam
+4493,Kathleen E. Woodiwiss
+4494,Dorie Greenspan
+4495,Alan    Richardson
+4496,Aya Nakahara
+4497,Pookie Rolf
+4498,Sharon Mazel
+4499,Mark D. Widome
+4500,Kristin Levine
+4501,Phillip C. McGraw
+4502,Hidekaz Himaruya
+4503,Herman Parish
+4504,Lynn Sweat
+4505,Eric Schmidt
+4506,Jonathan Rosenberg
+4507,Amy Gentry
+4508,Amanda Grange
+4509,Miranda Hart
+4510,Tim Hamilton
+4511,Maki Minami
+4512,Hiroshi Sakurazaka
+4513,桜坂洋
+4514,Joseph Reeder
+4515,Wanda Gág
+4516,Ella Carey
+4517,Philip C. Stead
+4518,Erin E. Stead
+4519,Smith Henderson
+4520,Lisa Jackson
+4521,Erskine Caldwell
+4522,Lewis Nordan
+4523,Kate Summerscale
+4524,Loretta Chase
+4525,Glenn Beck
+4526,Larry Bird
+4527,Earvin Johnson
+4528,Jackie MacMullan
+4529,Tony Hillerman
+4530,Cammie McGovern
+4531,Melissa Nathan
+4532,Misty Bernall
+4533,Rita Golden Gelman
+4534,Lauren Blakely
+4535,Elizabeth Bard
+4536,Michael Pietsch
+4537,Confucius
+4538,D.C. Lau
+4539,Pamela Des Barres
+4540,Dave Navarro
+4541,Giuseppe Tomasi di Lampedusa
+4542,Paul Jenkins
+4543,Joe Quesada
+4544,Bill Jemas
+4545,Eileen Wilks
+4546,Sunny
+4547,Sara Douglass
+4548,Sandra Gulland
+4549,حسن الجندي
+4550,Adam Gidwitz
+4551,Alisa Valdes
+4552,Alisa Valdes-Rodriguez
+4553,Luke Rhinehart
+4554,Krista Ritchie
+4555,Becca Ritchie
+4556,Jill Dembowski
+4557,Elijah Wood
+4558,Spencer Locke
+4559,Eleanor Coerr
+4560,Ronald Himler
+4561,Josephine Tey
+4562,Anaïs Nin
+4563,Stephen Lang
+4564,غسان كنفاني
+4565,Mark Mathabane
+4566,Eugène Vinaver
+4567,Gene Stratton-Porter
+4568,T.M. Frazier
+4569,Pierre A. Walker
+4570,Nancy Reagin
+4571,Masaru Emoto
+4572,David A. Thayne
+4573,Jason Mott
+4574,Ramachandra Guha
+4575,Ryan Holiday
+4576,Kate Grenville
+4577,Ben Carson
+4578,Cecil Murphey
+4579,Linda Williams
+4580,Megan Lloyd
+4581,R.C. Sproul
+4582,Carole Radziwill
+4583,Nancy E. Shaw
+4584,Margot Apple
+4585,Isai Kamen
+4586,Phaidon Press
+4587,Bruno Ernst
+4588,John E. Brigham
+4589,Steve Perry
+4590,Al Ries
+4591,Jack Trout
+4592,J.B. Salsbury
+4593,Hazel Gaynor
+4594,Gary Keller
+4595,Jay Papasan
+4596,Sue Heap
+4597,Omar Tyree
+4598,Alisa Kwitney
+4599,Marc Guggenheim
+4600,Alex Maleev
+4601,Paul Pen
+4602,Simon Bruni
+4603,America's Test Kitchen
+4604,Daniel J. Van Ackere
+4605,Phaedra Patrick
+4606,Jodi Meadows
+4607,William Kamkwamba
+4608,Bryan Mealer
+4609,Katherine Addison
+4610,Adam Makos
+4611,Larry Alexander
+4612,Yoshitaka Amano
+4613,John Cheever
+4614,Neil Simon
+4615,V.S. Ramachandran
+4616,Sandra Blakeslee
+4617,Drew Barrymore
+4618,Mario Benedetti
+4619,Tamara Ireland Stone
+4620,James Andrew Miller
+4621,Tom Shales
+4622,Morten T. Hansen
+4623,Emma Vieceli
+4624,Leigh Dragoon
+4625,Mem Fox
+4626,Jane Dyer
+4627,Jessica Verday
+4628,P.B. Kerr
+4629,Joel Holland
+4630,R.S. Grey
+4631,عزالدين شكري فشير
+4632,Sara Quin
+4633,Joan Bauer
+4634,A.M. Homes
+4635,Naomi Wolf
+4636,Lane T. Dennis
+4637,Douglas E. Richards
+4638,Miklós Nyiszli
+4639,Tibère Kremer
+4640,Bruno Bettelheim
+4641,Richard Seaver
+4642,Kathryn Jackson
+4643,Byron Jackson
+4644,Gustav Tenggren
+4645,Robert Baldick
+4646,Geoffrey Wall
+4647,Mike Birbiglia
+4648,Phil Robertson
+4649,Mark Schlabach
+4650,Raditya Dika
+4651,Tara Sue Me
+4652,Jonah Berger
+4653,Terry McMillan
+4654,Joe Navarro
+4655,Marvin Karlins
+4656,Lauren Willig
+4657,Stephen Sondheim
+4658,Hugh Wheeler
+4659,Christopher Godfrey Bond
+4660,Shūsaku Endō
+4661,William Johnston
+4662,Rachel Ward
+4663,Wednesday Martin
+4664,Margot Lee Shetterly
+4665,D. Ross Campbell
+4666,Carl R. Rogers
+4667,Masami Tsuda
+4668,Darcy Lockman
+4669,Jack Niida
+4670,Howard Jacobson
+4671,Iris Rainer Dart
+4672,David Almond
+4673,Maxwell Maltz
+4674,Deborah Ellis
+4675,Stephen Clarke
+4676,Frantz Fanon
+4677,Richard Philcox
+4678,Homi K. Bhabha
+4679,Susan Massotty
+4680,Robert Jackson Bennett
+4681,Bruce Coville
+4682,Nicola Ferguson
+4683,C.S. Friedman
+4684,David R. Gillham
+4685,James D. Watson
+4686,Jamie Oliver
+4687,Shoichi Aoki
+4688,Mark Sanders
+4689,Shoich Aoki
+4690,Mary Westmacott
+4691,Fiona Carnarvon
+4692,S.M. Stirling
+4693,Bethany McLean
+4694,Peter Elkind
+4695,John Shors
+4696,Brian Coffey
+4697,Kurt Cobain
+4698,Mary Downing Hahn
+4699,Andrew Pepoy
+4700,Ανταίος Χρυσοστομίδης
+4701,Ελευθερία Κοψιδά
+4702,Clifford D. Simak
+4703,Henri J.M. Nouwen
+4704,Charles Wheelan
+4705,Addison Moore
+4706,Laura Wiess
+4707,Judith Krantz
+4708,Sandra Dallas
+4709,Janne Teller
+4710,Martin Aitken
+4711,Eduardo Risso
+4712,Liz Kessler
+4713,Sarah Gibb
+4714,Sarah Hepola
+4715,Joe Hart
+4716,Kelly Jones
+4717,Daniel Vozzo
+4718,Lee Loughridge
+4719,Steve Oliff
+4720,Rus Wooton
+4721,Morgan Rice
+4722,Kōbō Abe
+4723,E. Dale Saunders
+4724,Helen R. Lane
+4725,Rodney Ramos
+4726,Amy Zhang
+4727,Sheldon Vanauken
+4728,Anna Jean Mayhew
+4729,Jennifer Ashley
+4730,Stephen Hunter
+4731,Kendra Elliot
+4732,Esther Earl
+4733,Lori Earl
+4734,Wayne Earl
+4735,Pauline Réage
+4736,Sabine d'Estree
+4737,Sean Patrick
+4738,Alan Jay Lerner
+4739,Elizabeth Norris
+4740,J.G. Jones
+4741,Chris Claremont
+4742,Noam Chomsky
+4743,Edward S. Herman
+4744,Gerry Bothmer
+4745,Horace Walpole
+4746,Julia Pierpont
+4747,Anne Sexton
+4748,Maxine Kumin
+4749,David Hackett Fischer
+4750,Waris Dirie
+4751,Cathleen Miller
+4752,Tom Peters
+4753,Robert H. Waterman Jr.
+4754,Emily Raymond
+4755,Bill Finger
+4756,Gardner F. Fox
+4757,Bob Kane
+4758,Jerry Robinson
+4759,Sheldon Moldoff
+4760,Eric Blehm
+4761,Lisa Tawn Bergren
+4762,Bob E. Flick
+4763,Jim Gallant
+4764,Luciano Bianciardi
+4765,Erica Jong
+4766,Sarah Blakley-Cartwright
+4767,David Leslie Johnson
+4768,Rashmi Bansal
+4769,Nickolas Butler
+4770,Mireille Guiliano
+4771,Laura Whitcomb
+4772,pleasefindthis
+4773,Iain S. Thomas
+4774,Jon Ellis
+4775,Angela Elwell Hunt
+4776,Tim Jonke
+4777,Brent Curtis
+4778,Charles Tomlinson
+4779,Ali Smith
+4780,Patricia Ingham
+4781,Lesley Livingston
+4782,Franklin Foer
+4783,Fernando Pessoa
+4784,Richard Zenith
+4785,Geoff Johns
+4786,Gary Frank
+4787,Jon Sibal
+4788,Brad Anderson
+4789,Sam Lamott
+4790,Manning Marable
+4791,Marlo Morgan
+4792,Bert Dodson
+4793,Gene Ha
+4794,Joshua Middleton
+4795,Iñaki Miranda
+4796,Len Deighton
+4797,Marion Cunningham
+4798,Fannie Merritt Farmer
+4799,Archibald Candy Corporation
+4800,بهاء طاهر
+4801,Keary Taylor
+4802,Suzanne Wright
+4803,Hergé
+4804,Leslie Lonsdale-Cooper
+4805,Michael Turner
+4806,Ottessa Moshfegh
+4807,Nicholas Ganz
+4808,Tristan Manco
+4809,Ed Young
+4810,Anita Amirrezvani
+4811,Anne Rampling
+4812,Mary-Jane Knight
+4813,Robert Foster
+4814,Lucinda Riley
+4815,Cynthia Brantley Johnson
+4816,Alyssa  Harad
+4817,Uwem Akpan
+4818,Elly Griffiths
+4819,Ebba Segerberg
+4820,John Van Fleet
+4821,Jesse Delperdang
+4822,Harold McGee
+4823,Jodee Blanco
+4824,Gemma Burgess
+4825,Lama Surya Das
+4826,Edie Claire
+4827,Kim van Alkemade
+4828,David Byrne
+4829,Heather Burch
+4830,Nicky Cruz
+4831,Jamie Buckingham
+4832,August Wilson
+4833,Richard Wurmbrand
+4834,Lynda Cohen Loigman
+4835,Daniel Coyle
+4836,John Farrell
+4837,Elizabeth Little
+4838,Carrie Anne Noble
+4839,David Simon
+4840,Benedict Freedman
+4841,Nancy Freedman
+4842,Connor Franta
+4843,Rene Denfeld
+4844,Paul  Hoffman
+4845,Katie Cotugno
+4846,Adam Gopnik
+4847,Tyler Hamilton
+4848,Oliver Brock
+4849,Samad Behrangi
+4850,Robertson Davies
+4851,Karen Tack
+4852,Catherine Bybee
+4853,Dick Riley
+4854,Pam McAllister
+4855,Bruce Cassiday
+4856,L.A. Casey
+4857,Walter Lord
+4858,Brady Udall
+4859,Donald Ray Pollock
+4860,Saroo Brierley
+4861,Clare Naylor
+4862,Mimi Hare
+4863,Matthew Desmond
+4864,Genevieve Cogman
+4865,Melissa Anelli
+4866,Francisco X. Stork
+4867,Tere Liye
+4868,Jeffrey Brown
+4869,C.J. Box
+4870,Jill Alexander Essbaum
+4871,Amanda Brown
+4872,Susan Dennard
+4873,Gavin Menzies
+4874,Hope Larson
+4875,Liza Klaussmann
+4876,G.E.M. Anscombe
+4877,Claire Contreras
+4878,Scott Dikkers
+4879,Maria Schneider
+4880,John Krewson
+4881,Robert Siegel
+4882,Todd Hanson
+4883,Carol Kolb
+4884,Mike Loew
+4885,Tim Harrod
+4886,Will Durant
+4887,Elaine Pagels
+4888,Kyle Mills
+4889,Armand Schultz
+4890,American Psychiatric Association
+4891,Kiyohiko Azuma
+4892,あずま きよひこ
+4893,Black Elk
+4894,John G. Neihardt
+4895,Sara Ryan
+4896,Tom Standage
+4897,Karen   White
+4898,Robert Hicks
+4899,Randy Alcorn
+4900,Yoko Tanaka
+4901,محمد المنسي قنديل
+4902,Mohamed Mansi Qandil
+4903,Stephen R. Lawhead
+4904,حسن كمال
+4905,Dolen Perkins-Valdez
+4906,Beth Moore
+4907,John A. Byrne
+4908,Mike Barnicle
+4909,خالد الباتلي
+4910,Anita Brookner
+4911,Joe Sachs
+4912,Emily Murdoch
+4913,Jill Murphy
+4914,Cynthia Rylant
+4915,Siri Hustvedt
+4916,Todd J. McCaffrey
+4917,Ken Robinson
+4918,Lou Aronica
+4919,William C. Dietz
+4920,Billy Collins
+4921,Bob Mayer
+4922,Apostolos Doxiadis
+4923,Christos H. Papadimitriou
+4924,Alecos Papadatos
+4925,Annie Di Donna
+4926,Laurent Binet
+4927,Kate Andersen Brower
+4928,Lori Nelson Spielman
+4929,T.J. Reed
+4930,T.A. Barron
+4931,Iris Murdoch
+4932,Mary Kinzie
+4933,L. Ron Hubbard
+4934,Carol Burnett
+4935,Samuel Shem
+4936,Ayşe Kulin
+4937,John W. Baker
+4938,Keri Smith
+4939,Edward E. Ericson Jr.
+4940,Heinrich Harrer
+4941,Suzanne Weyn
+4942,Larry Levin
+4943,Rose Levy Beranbaum
+4944,Maria Guarnaschelli
+4945,Vincent Lee
+4946,Manuela Paul
+4947,Dean G. Bornstein
+4948,Robert  Beatty
+4949,George Lucas
+4950,Sarah Turnbull
+4951,Amélie Nothomb
+4952,Christopher Chabris
+4953,Daniel Simons
+4954,Steve Toltz
+4955,Ramit Sethi
+4956,Jeff Wheeler
+4957,Charles Bernard Nordhoff
+4958,James Norman Hall
+4959,Ken Akamatsu
+4960,William Arntz
+4961,Betsy Chasse
+4962,Mark Vicente
+4963,Johanna Lindsey
+4964,Shirley Foster
+4965,Sylvia Raphael
+4966,Christopher Prendergast
+4967,Marcella Hazan
+4968,Karin Kretschmann
+4969,Jess Rothenberg
+4970,April Henry
+4971,Leah Wilson
+4972,Mary Borsellino
+4973,Terri  Clark
+4974,Adrienne Kress
+4975,Sarah Darer Littman
+4976,Cara Lockwood
+4977,Elizabeth M. Rees
+4978,Lili Wilkinson
+4979,Blythe Woolston
+4980,Maggie Nelson
+4981,Jann S. Wenner
+4982,Corey Seymour
+4983,Dominic Smith
+4984,Louise Jensen
+4985,Margaret Leroy
+4986,Thomas C. Foster
+4987,Bruce Campbell
+4988,Bettina Abarbanell
+4989,Rolf Dobelli
+4990,Ellen Stoll Walsh
+4991,L.D. Davis
+4992,Ulrich Bischoff
+4993,Charles Harrison
+4994,Paul Wood
+4995,Hervé Tullet
+4996,Christopher Franceschelli
+4997,Alfred Tennyson
+4998,Charles Keeping
+4999,Jamie Delano
+5000,John Ridgway
+5001,Alfredo Alcalá
+5002,Jane Lynch
+5003,Lisa Dickey
+5004,سلطان موسى الموسى
+5005,Walter Moers
+5006,John Brownjohn
+5007,Raymond Briggs
+5008,Winston Graham
+5009,Gregg Hurwitz
+5010,Bella Andre
+5011,Roland Merullo
+5012,Suetonius
+5013,Michael Grant
+5014,Ibraheem Abbas
+5015,إبراهيم عباس
+5016,Yasser Bahjatt
+5017,Charlie LeDuff
+5018,Philip Reeve
+5019,Mark Pearson
+5020,Gemma Halliday
+5021,Bernadette Rossetti-Shustak
+5022,Caroline Jayne Church
+5023,Jim Krueger
+5024,Doug Braithwaite
+5025,William Nicholson
+5026,Scarlett Thomas
+5027,Daniel Wallace
+5028,Lisa O'Donnell
+5029,Tim Tebow
+5030,Nathan Whitaker
+5031,Patricia M. Scarry
+5032,James Luceno
+5033,Anderson Cooper
+5034,Gloria Vanderbilt
+5035,Ann Cleeves
+5036,Sarah L. Delany
+5037,A. Elizabeth Delany
+5038,Amy Hill Hearth
+5039,Peter Hedges
+5040,J.S. Scott
+5041,Sarah Pinborough
+5042,Robert W. Chambers
+5043,E.F. Bleiler
+5044,Nathaniel Branden
+5045,Susan  Wilson
+5046,Randy Susan Meyers
+5047,Ruth Wariner
+5048,Charles M. Schulz
+5049,Adrian Nicole LeBlanc
+5050,Benedict Jacka
+5051,Victoria Helen Stone
+5052,Sharon G. Flake
+5053,Pascal Mercier
+5054,Barbara Harshav
+5055,Tessa Dare
+5056,Martha Grimes
+5057,Lucie Whitehouse
+5058,The Waiter
+5059,Steve Dublanica
+5060,Grant Blackwood
+5061,Melanie Rawn
+5062,Breena Clarke
+5063,Nancy Leigh DeMoss
+5064,Joe Sacco
+5065,Jean   Stone
+5066,Yangsze Choo
+5067,Karina Halle
+5068,Twyla Tharp
+5069,Mourid Barghouti
+5070,مريد البرغوثي
+5071,Jocelyn Davies
+5072,Mark Greaney
+5073,Miles Davis
+5074,Quincy Troupe
+5075,Elizabeth Winthrop
+5076,Steven Tyler
+5077,Josh Bazell
+5078,William S. Baring-Gould
+5079,Eric Hill
+5080,Yasunari Kawabata
+5081,Edward G. Seidensticker
+5082,Ergin Altay
+5083,Kim Gruenenfelder
+5084,Morris Gleitzman
+5085,Gary Brandner
+5086,Ilana Tan
+5087,Oprah Winfrey
+5088,Sara B. Larson
+5089,Mircea Eliade
+5090,Christina McKenna
+5091,Glen David Gold
+5092,Georges Bataille
+5093,Dovid Bergelson
+5094,Robert Hass
+5095,Randolph Hogan
+5096,Christiane Northrup
+5097,Lindsay Ashford
+5098,Danielle L. Jensen
+5099,Andy Cohen
+5100,Assata Shakur
+5101,Angela Y. Davis
+5102,Lennox S. Hinds
+5103,Paul Galdone
+5104,Peter Christen Asbjørnsen
+5105,Willow Aster
+5106,Corina Bomann
+5107,Alison Layland
+5108,Edward M. Kennedy
+5109,James Hilton
+5110,Nella Larsen
+5111,Thadious M. Davis
+5112,Michael Reaves
+5113,Harry Bernstein
+5114,Brenna Yovanoff
+5115,George Carlin
+5116,Tony Hendra
+5117,Homer Hickam
+5118,Val McDermid
+5119,Robin Norwood
+5120,Perry Moore
+5121,Alex Kotlowitz
+5122,Sonya Sones
+5123,Danielle Trussoni
+5124,Paula H. Deen
+5125,J.S. Bernstein
+5126,Nicholas Pileggi
+5127,Patrick Stewart
+5128,عباس معروفی
+5129,Cynthia Swanson
+5130,Anatoli Boukreev
+5131,G. Weston DeWalt
+5132,Bart D. Ehrman
+5133,George Gordon Byron
+5134,Peter J. Manning
+5135,Susan J. Wolfson
+5136,Anna Gavalda
+5137,Peter Lynch
+5138,John Rothchild
+5139,Bertolt Brecht
+5140,David Hare
+5141,Nic Pizzolatto
+5142,Mac Barnett
+5143,Justin Torres
+5144,Edmund Spenser
+5145,Thomas P. Roche
+5146,C. Patrick O'Donnell
+5147,Alissa Nutting
+5148,Arthur Nersesian
+5149,Steve Alten
+5150,John O'Hara
+5151,Janet Ahlberg
+5152,Allan Ahlberg
+5153,Gene Kim
+5154,Kevin Behr
+5155,George Spafford
+5156,Brandon Stanton
+5157,M.T. Anderson
+5158,Tabitha King
+5159,Erin Gruwell
+5160,Zlata Filipović
+5161,The Freedom Writers
+5162,Fareed Zakaria
+5163,Dinah Bucholz
+5164,Bill Browder
+5165,David Bach
+5166,Cat Patrick
+5167,Jill Leovy
+5168,Terry Jones
+5169,Paul Torday
+5170,Alex  Ross
+5171,Katie Klein
+5172,Trish Doller
+5173,Glenn Greenwald
+5174,Hafez
+5175,John L. Parker Jr.
+5176,Ben Hatke
+5177,Barbara Reynolds
+5178,William  Boyd
+5179,Amy Lichtenhan
+5180,A.L. Jackson
+5181,David Lebovitz
+5182,Grace Draven
+5183,Ronald C. White Jr.
+5184,Sylvan Barnet
+5185,Alvin Kernan
+5186,Russell Fraser
+5187,Gayle Tzemach Lemmon
+5188,Tonya Hurley
+5189,Alafair Burke
+5190,Aaron Alexovich
+5191,Rebecca Cantrell
+5192,Josh Kilmer-Purcell
+5193,Michael Herr
+5194,Lorenzo Carcaterra
+5195,Walter Benjamin
+5196,Michael W. Jennings
+5197,Brigid Doherty
+5198,Edmund F.N. Jephcott
+5199,Rodney Livingstone
+5200,Howard Eiland
+5201,Thomas Y. Levin
+5202,Sarah Palin
+5203,Dewey Whetsell
+5204,Anne Byrn
+5205,Anthony Loew
+5206,Forrest Carter
+5207,Richard Brautigan
+5208,Crissy Calhoun
+5209,Myra McEntire
+5210,Laurann Dohner
+5211,David B.
+5212,Tracy Letts
+5213,Susan Elia MacNeal
+5214,Christopher Priest
+5215,Donald McCaig
+5216,Melody Anne
+5217,Andrew Hunt
+5218,Dave Thomas
+5219,Katee Robert
+5220,Richard Poe
+5221,Pamela Rambo
+5222,Clem Robins
+5223,Diablo Cody
+5224,أنيس منصور
+5225,Peter Heller
+5226,Steven Spielberg
+5227,Robert O'Keefe
+5228,F. Murray Abraham
+5229,Michael York
+5230,Kate Nelligan
+5231,David Purdham
+5232,Audre Lorde
+5233,Hye-Kyung Baek
+5234,Amy Waldman
+5235,Ian McKellen
+5236,Jenna Black
+5237,Stephen Jones
+5238,Kim Newman
+5239,Brian Mooney
+5240,Nicholas Royle
+5241,David Langford
+5242,Michael Marshall Smith
+5243,Basil Copper
+5244,Jack Yeovil
+5245,Guy N. Smith
+5246,Adrian Cole
+5247,D.F. Lewis
+5248,David Sutton
+5249,Nick Cave
+5250,Jeff Brown
+5251,Scott Nash
+5252,Macky Pamintuan
+5253,Donald Crews
+5254,Kate Clifford Larson
+5255,Jennifer Haigh
+5256,Garth Risk Hallberg
+5257,Eric Jerome Dickey
+5258,Georgia Byng
+5259,Tom Brokaw
+5260,Lynn Flewelling
+5261,Jacqueline Davies
+5262,John Searles
+5263,Clint Hill
+5264,Lisa McCubbin
+5265,W.P. Kinsella
+5266,Charles Martin
+5267,Peter Jenkins
+5268,Michael Patrick MacDonald
+5269,William March
+5270,Elaine Showalter
+5271,Ira Wagler
+5272,Toni Aleo
+5273,Steve Sheinkin
+5274,Suketu Mehta
+5275,Bob Grant
+5276,Carolly Erickson
+5277,Brian Kilmeade
+5278,Don Yaeger
+5279,Christine Zolendz
+5280,Bjarne Hansen
+5281,Federico García Lorca
+5282,Antonio Sobejano-Moran
+5283,Paola Bianco
+5284,Lettie B. Cowman
+5285,James Reimann
+5286,Joshua Lewis
+5287,Chris Heimerdinger
+5288,Jenna Jameson
+5289,Jacquelyn Frank
+5290,Katie MacAlister
+5291,Mary Hoffman
+5292,Caroline Binch
+5293,Nancy Tillman
+5294,Rachel Bertsche
+5295,Jon Foster
+5296,J.  Daniels
+5297,François Lelord
+5298,Lorenza García
+5299,Indu Sundaresan
+5300,Erica Stevens
+5301,Isabel Wolff
+5302,Hanif Kureishi
+5303,Sarah Crossan
+5304,Alex Rosenberg
+5305,Michael J. Sandel
+5306,Leila Meacham
+5307,Mordicai Gerstein
+5308,Jacqueline Sheehan
+5309,Bob Gale
+5310,Devin Grayson
+5311,Dale Eaglesham
+5312,Jeffrey D. Sachs
+5313,Bono
+5314,Esi Edugyan
+5315,Katrina Kittle
+5316,Robin Benway
+5317,Victoria Jamieson
+5318,Randall Wallace
+5319,Jim Fern
+5320,André Aciman
+5321,Gary Ezzo
+5322,نور عبدالمجيد
+5323,Steve Coll
+5324,E.C. Diskin
+5325,Phyllis T. Smith
+5326,Tad Carpenter
+5327,Don Richardson
+5328,Jed Rubenfeld
+5329,Alfred Gough
+5330,Miles Millar
+5331,Dave McCaig
+5332,Gerry Alanguilan
+5333,Leinil Francis Yu
+5334,Martha Weston
+5335,Julian Barnes
+5336,Caroline Mustill
+5337,Clifford Harper
+5338,H.P. Mallory
+5339,William M. Hutchins
+5340,Olive E. Kenny
+5341,Frank Bettger
+5342,Billy Crystal
+5343,Jackie Collins
+5344,Erma Bombeck
+5345,Cheryl McIntyre
+5346,Teju Cole
+5347,Janice  Thompson
+5348,Al Mayton
+5349,Ian McGuire
+5350,Judith Affleck
+5351,Philip de May
+5352,Patricia E. Easterling
+5353,John     Harrison
+5354,David Baggett
+5355,Shawn E. Klein
+5356,Katharine Hepburn
+5357,Neil A. Fiore
+5358,Joel C. Rosenberg
+5359,Alice  Miller
+5360,Ruth Ward
+5361,Dale Wasserman
+5362,Austin Grossman
+5363,Graham Swift
+5364,Annette Lavers
+5365,Malcolm Heath
+5366,Melanie Gideon
+5367,Colleen Oakley
+5368,Margot Livesey
+5369,Mary J. Gregor
+5370,Christine M. Korsgaard
+5371,Donna Russo Morin
+5372,Erlend Loe
+5373,Tor Ketil Solberg
+5374,Meca Tanaka
+5375,田中メカ
+5376,Andy Andrews
+5377,John Lanchester
+5378,Shana Norris
+5379,Linda Fairstein
+5380,Jay Winik
+5381,Julie Buxbaum
+5382,HaveYouSeenThisGirL
+5383,Jan Irene Villar
+5384,Debora Geary
+5385,Elle Casey
+5386,Si Robertson
+5387,Kady Cross
+5388,Daniel Glattauer
+5389,James Lincoln Collier
+5390,Christopher Collier
+5391,Tom Holland
+5392,Molly Harper
+5393,Eloisa James
+5394,Derf Backderf
+5395,Cindy C. Bennett
+5396,Dick King-Smith
+5397,Maggie Kneen
+5398,Jack McCallum
+5399,David Maxfield
+5400,Joel Fuhrman
+5401,Susan S. Adler
+5402,Renée Graef
+5403,Nancy Niles
+5404,Sebastian Barry
+5405,Greg Rucka
+5406,Stephanie Bond
+5407,Chelsea Fine
+5408,Alex Marwood
+5409,John Brunner
+5410,Gwen Cooper
+5411,Bette Greene
+5412,Gardner R. Dozois
+5413,Matthew Hughes
+5414,Michael Swanwick
+5415,David  Ball
+5416,Bradley Denton
+5417,Paul Cornell
+5418,Steven Saylor
+5419,Walter Jon Williams
+5420,Phyllis Eisenstein
+5421,Lisa Tuttle
+5422,Jodi Daynard
+5423,Cora Reilly

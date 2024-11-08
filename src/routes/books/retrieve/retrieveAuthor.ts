@@ -3,6 +3,7 @@ import { pool, validationFunctions } from '../../../core/utilities';
 
 const retrieveAuthorRouter: Router = express.Router();
 
+// Define interfaces for consistent response structure
 interface IRatings {
     average: number;
     count: number;
@@ -27,6 +28,7 @@ interface IBook {
     icons: IUrlIcon;
 }
 
+// Format function to structure each book object
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -52,16 +54,10 @@ const format = (resultRow): IBook => ({
  */
 function mwValidAuthorParam(request: Request, response: Response, next: NextFunction) {
     const { author } = request.query;
-
-    if (!author) {
-        return response.status(400).send({
-            message: 'Missing required parameter: author',
-        });
-    }
-    
+  
     if (!validationFunctions.isStringProvided(author as string)) {
-        return response.status(400).send({
-            message: 'Invalid parameter: author must be a non-empty string',
+        response.status(400).send({
+            message: 'Invalid or missing author - please ensure that param is entered and is valid'
         });
     }
 
@@ -96,20 +92,35 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * 
  * @apiDescription Retrieve a list of books filtered by author name. Allows partial matching on the author's name for flexibility.
  * 
- * @apiParam {String} author Partial or full name of the author to search for (required)
+ * @apiQuery {String} author Partial or full name of the author to search for (required)
  * @apiQuery {number} limit The number of entry objects to return (default 10)
  * @apiQuery {number} offset The number to offset the lookup of entry objects to return (default 0)
  * 
  * @apiSuccess {Object[]} books List of books that match the provided author name.
- * Each book entry is formatted with the fields isbn13, author, publication, title, ratings, and icons.
+ * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
+ * @apiSuccess (Success 200) {String} books.author Comma-separated list of authors of the book.
+ * @apiSuccess (Success 200) {Number} books.publication Publication year of the book.
+ * @apiSuccess (Success 200) {String} books.title Title of the book.
+ * @apiSuccess (Success 200) {Object} books.ratings Rating details of the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.average Average rating score.
+ * @apiSuccess (Success 200) {Number} books.ratings.count Total number of ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_1 Count of 1-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_2 Count of 2-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_3 Count of 3-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_4 Count of 4-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_5 Count of 5-star ratings.
+ * @apiSuccess (Success 200) {Object} books.icons URLs to book cover images.
+ * @apiSuccess (Success 200) {String} books.icons.large URL to the large version of the book cover image.
+ * @apiSuccess (Success 200) {String} books.icons.small URL to the small version of the book cover image.
+ * 
  * @apiSuccess {Object} pagination Pagination metadata for the response
  * @apiSuccess {number} pagination.totalRecords Total number of matching books
  * @apiSuccess {number} pagination.limit Number of entries returned per page
  * @apiSuccess {number} pagination.offset Offset used for the current query
  * @apiSuccess {number} pagination.nextPage Offset value to retrieve the next set of entries
  * 
- * @apiError (400) {String} message "Missing required parameter: author"
- * @apiError (400) {String} message "Invalid parameter: author must be a non-empty string"
+ * @apiError (400: Invalid Author) {String} message "Invalid or missing author - please ensure that param is entered and is valid"
+ * @apiError (404: Author Not Found) {String} message "Author Not Found"
  */
 retrieveAuthorRouter.get(
     '/retrieveAuthor',
@@ -131,6 +142,13 @@ retrieveAuthorRouter.get(
             `;
             const countResult = await pool.query(countQuery, [author]);
             const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
+
+            // If no records found, send a 404 response
+            if (totalRecords === 0) {
+                return response.status(404).send({
+                    message: 'Author Not Found',
+                });
+            }
 
             // Fetch paginated books matching the author
             const theQuery = `
@@ -182,9 +200,9 @@ retrieveAuthorRouter.get(
                 },
             });
         } catch (error) {
-            console.error('DB Query error on retrieve by author', error);
+            //console.error('DB Query error on retrieve by author', error);
             response.status(500).send({
-                message: 'Server error - contact support',
+                message: 'DB error while trying to retrieve a book by Author',
             });
         }
     }

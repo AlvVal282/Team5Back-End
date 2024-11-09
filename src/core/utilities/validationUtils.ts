@@ -42,6 +42,15 @@ function isNumber(x): x is number {
     return typeof x === 'number';
 }
 /**
+ * 
+ * @param str a value to check
+ * @returns true if the type of str only contains alphabetical characters or spaces, false otherwise
+ */
+function isAlphabetical(str: string): boolean {
+    const alphabeticalRegex = /^[a-zA-Z\s]+$/;
+    return alphabeticalRegex.test(str);
+}
+/**
  * Checks the parameter to see if it can be converted into a number and if so, greater than -1.
  *
  * @param {String} candidate the value to check
@@ -127,7 +136,8 @@ const validationFunctions = {
     isValidPhone,
     isValidRole,
     isAuthorOrYearProvided,
-    isValidISBN13
+    isValidISBN13,
+    isAlphabetical
 };
 
 export { validationFunctions };

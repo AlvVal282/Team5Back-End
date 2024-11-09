@@ -266,7 +266,7 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
         await client.query('COMMIT');
 
         return response.status(201).send({
-            message: 'Book successfully created ',
+            message: 'Book successfully created',
         });
     } catch (error) {
         await client.query('ROLLBACK');

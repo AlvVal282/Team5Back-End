@@ -8,7 +8,9 @@ import { checkToken } from '../../core/middleware';
 
 const bookRoutes: Router = express.Router();
 
-bookRoutes.use('/retrieve', retrieveRouter);
-bookRoutes.use('/delete', deleteRoutes);
+bookRoutes.use('/retrieve', checkToken, retrieveRouter);
+bookRoutes.use('/delete', checkToken, deleteRoutes);
+bookRoutes.use('/update', checkToken, updateRouter);
+bookRoutes.use('/create', checkToken, createRouter);
 
 export { bookRoutes };

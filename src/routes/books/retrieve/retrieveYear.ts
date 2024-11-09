@@ -56,7 +56,7 @@ const format = (resultRow): IBook => ({
 /**
  * @api {get} /books/year Retrieve Books by Publication Year Range
  * @apiName GetBooksByYear
- * @apiGroup Books
+ * @apiGroup retrieve
  * 
  * @apiUse JWT
  *

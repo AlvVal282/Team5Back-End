@@ -92,7 +92,7 @@ function mwValidRatingParams(
 /**
  * @api {get} /books/rating Retrieve Books by Rating
  * @apiName GetBooksByRating
- * @apiGroup Books
+ * @apiGroup retrieve
  * 
  * @apiUse JWT
  * 

@@ -85,7 +85,7 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
 /**
  * @api {get} /books/title Retrieve Books by Title
  * @apiName GetBooksByTitle
- * @apiGroup Books
+ * @apiGroup retrieve
  * 
  * @apiUse JWT
  * 

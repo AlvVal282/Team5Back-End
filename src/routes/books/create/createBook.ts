@@ -30,7 +30,7 @@ const createBookRouter: Router = express.Router();
  *
  * @apiError (400: Missing/Invalid ISBN) {String} message "Missing or invalid ISBN13 - please ensure that the ISBN is entered, unique, and a 13 digit positive integer"
  * @apiError (400: Missing/Invalid Title) {String} message "Missing or invalid Title - please ensure that the title is entered and a valid string"
- * @apiError (400: Invalid Authors) {String} "Invalid Authors - please ensure that the authors are provided as a comma-separated string"
+ * @apiError (400: Invalid Authors) {String} message "Invalid Authors - please ensure that the authors are provided as a comma-separated string"
  * @apiError (400: Invalid Rating_Avg) {String} message "Invalid Rating Average - please ensure that Rating_Avg is a valid number between 1 and 5"
  * @apiError (400: Invalid Rating_Avg) {String} message "Invalid Rating Average - please ensure that Rating_Avg matches the average of the star counts"
  * @apiError (400: Invalid Rating Count) {String} message "Invalid Rating count - please ensure that the rating count is a non-negative integer equal to the sum of all star counts"

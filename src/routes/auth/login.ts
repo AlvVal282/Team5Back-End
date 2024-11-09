@@ -28,21 +28,22 @@ const key = {
 };
 
 /**
- * @api {post} /login Request to sign a user in the system
+ * @api {post} /login User Login
+ * @apiDescription Authenticates a user by verifying their email and password, then returns a JSON Web Token (JWT) upon successful login.
+ *
  * @apiName PostLogin
  * @apiGroup Auth
  *
- * @apiBody {String} email a users email
- * @apiBody {String} password a users password
+ * @apiBody {String} email The email address associated with the user's account. **Required.**
+ * @apiBody {String} password The user's password. **Required.**
  *
- * @apiSuccess {String} accessToken JSON Web Token
- * @apiSuccess {number} id unique user id
+ * @apiSuccess {String} accessToken JSON Web Token that grants access to the system, valid for 14 days.
+ * @apiSuccess {Number} id The unique user ID of the authenticated user.
  *
- * @apiError (400: Missing Parameters) {String} message "Missing required information"
- * @apiError (400: Malformed Authorization Header) {String} message "Malformed Authorization Header"
- * @apiError (404: User Not Found) {String} message "User not found"
- * @apiError (400: Invalid Credentials) {String} message "Credentials did not match"
- *
+ * @apiError (400 Missing Information) {String} message "Missing required information" - Returned if the `email` or `password` fields are missing.
+ * @apiError (400 Bad Request) {String} message "Malformed Authorization Header" - Returned if the authorization header is incorrectly formatted.
+ * @apiError (404 Not Found) {String} message "User not found" - Returned if no user is found with the provided email.
+ * @apiError (400 Password Mismatch) {String} message "Credentials did not match" - Returned if the provided password does not match the stored password.
  */
 signinRouter.post(
     '/login',

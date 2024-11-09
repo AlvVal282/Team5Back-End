@@ -64,8 +64,7 @@ function isAuthorOrYearProvided(candidate: string): boolean {
  * @returns true if the parameter is a number and is a valid ISBN number
  */
 function isValidISBN13(isbn: String): boolean {
-    if (isbn.length === 13) return true;
-    return false;
+    return isbn.length === 13;
 }
 
 

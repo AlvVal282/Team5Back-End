@@ -2,12 +2,13 @@ import express, { Router } from 'express';
 import { deleteAuthorRouter } from './deleteAuthor';
 import { deleteBookRouter } from './deleteISBN';
 import { deleteYearRouter } from './deleteYear';
+import { checkToken } from '../../../core/middleware';
 
 const deleteRoutes: Router = express.Router();
 
-deleteRoutes.use('/delete', deleteBookRouter);
-deleteRoutes.use('/delete', deleteAuthorRouter);
-deleteRoutes.use('/delete', deleteYearRouter);
+deleteRoutes.use(checkToken, deleteBookRouter);
+deleteRoutes.use(checkToken, deleteAuthorRouter);
+deleteRoutes.use(checkToken, deleteYearRouter);
 
 export { deleteRoutes };
 

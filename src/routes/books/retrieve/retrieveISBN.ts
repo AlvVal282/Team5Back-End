@@ -57,14 +57,14 @@ const format = (resultRow): IBook => ({
  * @api {get} /retrieveISBN Retrieve a book by ISBN
  * @apiName GetBookByISBN
  * @apiGroup Books
- * 
+ *
  * @apiUse JWT
  *
  * @apiDescription Retrieves details for books with the specified ISBN. Supports optional pagination.
  *
  * @apiQuery (Query Parameters){Number} ISBN The ISBN number to look up (13 digits).
- * @apiQuery {Number} [limit=10] The maximum number of books to return per page. **Optional.** 
- * @apiQuery {Number} [offset=0] The number of books to skip from the start of the result set. **Optional.** 
+ * @apiQuery {Number} [limit=10] The maximum number of books to return per page. **Optional.**
+ * @apiQuery {Number} [offset=0] The number of books to skip from the start of the result set. **Optional.**
  *
  * @apiSuccess {Object[]} books List of books matching the specified ISBN.
  * @apiSuccess {number} books.isbn13 Book's ISBN number.
@@ -88,7 +88,7 @@ const format = (resultRow): IBook => ({
  * @apiSuccess {Number} pagination.limit Number of entries returned per page.
  * @apiSuccess {Number} pagination.offset Offset used for the current query.
  * @apiSuccess {Number|null} pagination.nextPage Offset value to retrieve the next set of entries, or null if no further pages exist.
- * 
+ *
  * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid (13 digits)."
  * @apiError (404: ISBN Not Found) {string} message "ISBN Not Found."
  * @apiError (500: Server Error) {string} message "Server error - unable to retrieve book by ISBN."
@@ -101,14 +101,19 @@ retrieveISBNRouter.get(
             next();
         } else {
             response.status(400).send({
-                message: 'Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid.',
+                message:
+                    'Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid (13 digits).',
             });
         }
     },
     async (request: Request, response: Response) => {
         const isbn = request.query.ISBN as string;
-        const limit = Number(request.query.limit) > 0 ? Number(request.query.limit) : 10;
-        const offset = Number(request.query.offset) >= 0 ? Number(request.query.offset) : 0;
+        const limit =
+            Number(request.query.limit) > 0 ? Number(request.query.limit) : 10;
+        const offset =
+            Number(request.query.offset) >= 0
+                ? Number(request.query.offset)
+                : 0;
 
         try {
             const countQuery = `
@@ -163,7 +168,10 @@ retrieveISBNRouter.get(
                         totalRecords,
                         limit,
                         offset,
-                        nextPage: offset + limit < totalRecords ? offset + limit : null,
+                        nextPage:
+                            offset + limit < totalRecords
+                                ? offset + limit
+                                : null,
                     },
                 });
             }
@@ -177,4 +185,3 @@ retrieveISBNRouter.get(
 );
 
 export { retrieveISBNRouter };
-

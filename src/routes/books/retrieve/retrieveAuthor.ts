@@ -54,7 +54,7 @@ function mwValidAuthorParam(request: Request, response: Response, next: NextFunc
     const { author } = request.query;
   
     if (!validationFunctions.isStringProvided(author as string)) {
-        response.status(400).send({
+        return response.status(400).send({
             message: 'Invalid or missing author - please ensure that param is entered and is valid'
         });
     }
@@ -195,7 +195,7 @@ retrieveAuthorRouter.get(
             const values = [author, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            response.status(200).send({
+            return response.status(200).send({
                 books: rows.map(format),
                 pagination: {
                     totalRecords,

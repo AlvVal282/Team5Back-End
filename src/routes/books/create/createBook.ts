@@ -12,19 +12,19 @@ const createBookRouter: Router = express.Router();
  * @apiName AddBook
  * @apiGroup create
  *
- * @apiParam {BIGINT} ISBN13 (Required) The ISBN for the book.
- * @apiParam {TEXT} Title (Required) The title of the book.
- * @apiParam {TEXT} Authors (Optional) A comma-separated list of authors.
- * @apiParam {FLOAT} Rating_Avg (Optional) The average rating for the book.
- * @apiParam {INT} Rating_Count (Optional) The count of ratings for the book.
- * @apiParam {INT} One_Star_Count (Optional) Count of 1-star ratings.
- * @apiParam {INT} Two_Star_Count (Optional) Count of 2-star ratings.
- * @apiParam {INT} Three_Star_Count (Optional) Count of 3-star ratings.
- * @apiParam {INT} Four_Star_Count (Optional) Count of 4-star ratings.
- * @apiParam {INT} Five_Star_Count (Optional) Count of 5-star ratings.
- * @apiParam {TEXT} Image_URL (Optional) URL for the book image.
- * @apiParam {TEXT} Image_Small_URL (Optional) URL for the small book image.
- * @apiParam {INT} Publication_Year (Optional) Year of publication.
+ * @apiBody {BIGINT} ISBN13 (Required) The ISBN for the book.
+ * @apiBody {TEXT} Title (Required) The title of the book.
+ * @apiBody {TEXT} Authors (Optional) A comma-separated list of authors.
+ * @apiBody {FLOAT} Rating_Avg (Optional) The average rating for the book.
+ * @apiBody {INT} Rating_Count (Optional) The count of ratings for the book.
+ * @apiBody {INT} One_Star_Count (Optional) Count of 1-star ratings.
+ * @apiBody {INT} Two_Star_Count (Optional) Count of 2-star ratings.
+ * @apiBody {INT} Three_Star_Count (Optional) Count of 3-star ratings.
+ * @apiBody {INT} Four_Star_Count (Optional) Count of 4-star ratings.
+ * @apiBody {INT} Five_Star_Count (Optional) Count of 5-star ratings.
+ * @apiBody {TEXT} Image_URL (Optional) URL for the book image.
+ * @apiBody {TEXT} Image_Small_URL (Optional) URL for the small book image.
+ * @apiBody {INT} Publication_Year (Optional) Year of publication.
  *
  * @apiSuccess (201) {String} message "Book successfully created"
  *

@@ -12,13 +12,13 @@ const updateBookRouter: Router = express.Router();
  * @apiName UpdateBook
  * @apiGroup update
  *
- * @apiParam {Number} Book_ID (Require this or ISBN13) The unique ID of the book to update.
- * @apiParam {BIGINT} ISBN13 (Require this or Book_ID) The ISBN for the book.
- * @apiParam {INT} Publication_Year The year the book was published.
- * @apiParam {Text} Title The title of the book.
- * @apiParam {TEXT} Authors of the book, comma separated.
- * @apiParam {TEXT} Image_URL The URL for an image for the book.
- * @apiParam {TEXT} Image_Small_URL A small URL for the book.
+ * @apiBody {Number} Book_ID (Require this or ISBN13) The unique ID of the book to update.
+ * @apiBody {BIGINT} ISBN13 (Require this or Book_ID) The ISBN for the book.
+ * @apiBody {INT} Publication_Year The year the book was published.
+ * @apiBody {Text} Title The title of the book.
+ * @apiBody {TEXT} Authors of the book, comma separated.
+ * @apiBody {TEXT} Image_URL The URL for an image for the book.
+ * @apiBody {TEXT} Image_Small_URL A small URL for the book.
  *
  * @apiSuccess (Success 200) {String} message "Book successfully updated"
  *
@@ -26,7 +26,7 @@ const updateBookRouter: Router = express.Router();
  * @apiError (400: Invalid Book_ID) {String} message "Invalid book ID - please ensure that the book ID is a positive integer associated with a book entry"
  * @apiError (400: Invalid ISBN) {String} message "Invalid ISBN - please ensure that the ISBN is a 13 digit integer beginning with 978 or 979 and is associated with a book entry"
  * @apiError (404: Book Not Found) {String} message "Book entry not found - please ensure the provided Book_ID and/or ISBN is associated with a book entry"
- * @apiError (400: Invalid Identifiers) {String} "Invalid Book_ID / ISBN combination - please ensure the identifiers coordinate to a single rating entry"
+ * @apiError (400: Invalid Identifiers) {String} message "Invalid Book_ID / ISBN combination - please ensure the identifiers coordinate to a single rating entry"
  * @apiError (400: No Fields To Update) message "No fields to update - please include at least one field to update"
  * @apiError (400: Invalid Publication Year) {String} message "Invalid Publication Year - please ensure the year is a valid positive integer less than or equal to the current year"
  * @apiError (400: Invalid Title) {String} message "Invalid Title - please ensure that the title is a valid string"

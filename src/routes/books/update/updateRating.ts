@@ -12,15 +12,15 @@ const updateRatingRouter: Router = express.Router();
  * @apiName UpdateBookRatingID
  * @apiGroup update
  *
- * @apiParam {NUMBER} Book_ID (Requirement option) The unique Book_ID for the book rating to update.
- * @apiParam {NUMBER} ISBN13 (Requirement option) The unique ISBN for the book rating to update.
- * @apiParam {FLOAT} Rating_Avg The average rating for the book.
- * @apiParam {INT} Rating_Count The count of ratings for the book.
- * @apiParam {INT} One_Star_Count The count of 1 star ratings for the book.
- * @apiParam {INT} Two_Star_Count The count of 2 star ratings for the book.
- * @apiParam {INT} Three_Star_Count The count of 3 star ratings for the book.
- * @apiParam {INT} Four_Star_Count The count of 4 star ratings for the book.
- * @apiParam {INT} Five_Star_Count The count of 5 star ratings for the book.
+ * @apiBody {NUMBER} Book_ID (Requirement option) The unique Book_ID for the book rating to update.
+ * @apiBody {NUMBER} ISBN13 (Requirement option) The unique ISBN for the book rating to update.
+ * @apiBody {FLOAT} Rating_Avg The average rating for the book.
+ * @apiBody {INT} Rating_Count The count of ratings for the book.
+ * @apiBody {INT} One_Star_Count The count of 1 star ratings for the book.
+ * @apiBody {INT} Two_Star_Count The count of 2 star ratings for the book.
+ * @apiBody {INT} Three_Star_Count The count of 3 star ratings for the book.
+ * @apiBody {INT} Four_Star_Count The count of 4 star ratings for the book.
+ * @apiBody {INT} Five_Star_Count The count of 5 star ratings for the book.
  *
  * @apiSuccess (Success 200) {String} message "Book rating successfully updated"
  *

@@ -19,11 +19,18 @@ const key = {
 };
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {post} /reset Reset Password
  * @apiDescription Allows a user (registered and signed in) to reset their password by providing their current password and a new password. The new password must meet specific complexity requirements for security.
  *
  * @apiName ResetPassword
- * @apiGroup Auth
+ * @apiGroup auth
+ * 
+ * @apiUse JWT
  *
  * @apiBody {String} email The email address associated with the user's account. **Required.**
  * @apiBody {String} currentPassword The user's current password. **Required.**

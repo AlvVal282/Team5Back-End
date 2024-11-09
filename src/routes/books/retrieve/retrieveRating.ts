@@ -84,11 +84,17 @@ function mwValidRatingParams(
 
     next();
 }
+/**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
 
 /**
  * @api {get} /books/rating Retrieve Books by Rating
  * @apiName GetBooksByRating
  * @apiGroup Books
+ * 
+ * @apiUse JWT
  * 
  * @apiDescription Retrieve a list of books filtered by average rating within a specified range, with optional pagination.
  * 

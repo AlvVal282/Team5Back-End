@@ -19,7 +19,7 @@ interface ForgottenPasswordRequest extends Request {
  * @apiDescription Allows a user who has forgotten their password to reset it by providing their email and a new password. The new password must meet specific complexity requirements for security.
  *
  * @apiName ResetForgottenPassword
- * @apiGroup Auth
+ * @apiGroup auth
  *
  * @apiBody {String} email The email address associated with the user's account. **Required.**
  * @apiBody {String} newPassword The new password the user wants to set. **Password Requirements:**

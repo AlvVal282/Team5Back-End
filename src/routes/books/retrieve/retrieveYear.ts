@@ -49,9 +49,16 @@ const format = (resultRow): IBook => ({
 });
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {get} /books/year Retrieve Books by Publication Year Range
  * @apiName GetBooksByYear
  * @apiGroup Books
+ * 
+ * @apiUse JWT
  *
  * @apiDescription Retrieve a list of books published within a specific year range, optionally paginated.
  *

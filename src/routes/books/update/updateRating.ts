@@ -5,12 +5,19 @@ import { pool } from '../../../core/utilities';
 const updateRatingRouter: Router = express.Router();
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {put} /updateRating Update a book rating
  *
  * @apiDescription Request to update a book rating. Request must include either Book_ID or ISBN as the identifier(s) associated with the book rating(s) to be updated. Book_ID and ISBN cannot be changed.
  *
  * @apiName UpdateBookRatingID
  * @apiGroup update
+ * 
+ * @apiUse JWT
  *
  * @apiBody {NUMBER} Book_ID (Requirement option) The unique Book_ID for the book rating to update.
  * @apiBody {NUMBER} ISBN13 (Requirement option) The unique ISBN for the book rating to update.

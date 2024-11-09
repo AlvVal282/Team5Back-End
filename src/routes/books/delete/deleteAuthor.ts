@@ -6,12 +6,19 @@ const isAuthorProvided = validationFunctions.isAlphabetical;
 const deleteAuthorRouter: Router = express.Router();
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {delete} /author/:name Delete all books of an author
  *
  * @apiDescription Request to delete all books of an author by name
  *
  * @apiName DeleteAuthor
  * @apiGroup delete
+ * 
+ * @apiUse JWT
  *
  * @apiParam {String} name The name of the author whose books will be deleted
  *

@@ -10,12 +10,19 @@ const isAccountProvided = validationFunctions.isNumberProvided;
 const deleteAccountRouter: Router = express.Router();
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {delete} /account/:id Delete user's account
  *
  * @apiDescription Allows the user to permanently delete their account from the system. This action is irreversible.
  *
  * @apiName DeleteAccount
  * @apiGroup auth
+ * 
+ * @apiUse JWT
  * 
  * @apiParam {String} id The unique ID of the account to delete
  *

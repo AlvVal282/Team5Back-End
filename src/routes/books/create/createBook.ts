@@ -5,12 +5,19 @@ import { pool } from '../../../core/utilities';
 const createBookRouter: Router = express.Router();
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {post} /addBook Create a book entry
  *
  * @apiDescription Request to create a book entry.
  *
  * @apiName AddBook
  * @apiGroup create
+ * 
+ * @apiUse JWT
  *
  * @apiBody {BIGINT} ISBN13 (Required) The ISBN for the book.
  * @apiBody {TEXT} Title (Required) The title of the book.

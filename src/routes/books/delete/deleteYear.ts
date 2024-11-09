@@ -10,12 +10,19 @@ const isYearProvided = validationFunctions.isAuthorOrYearProvided;
 const deleteYearRouter: Router = express.Router();
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {delete} /year/:year Delete a specified year
  *
  * @apiDescription Request to delete all books associated of a specific publication year from the database.
  *
  * @apiName DeleteYear
  * @apiGroup delete
+ * 
+ * @apiUse JWT
  *
  * @apiParam {Number} year The publication year to delete
  *

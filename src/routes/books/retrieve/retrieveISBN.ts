@@ -48,11 +48,17 @@ const format = (resultRow): IBook => ({
         small: resultRow.image_small_url,
     },
 });
+/**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
 
 /**
  * @api {get} /retrieveISBN Retrieve a book by ISBN
  * @apiName GetBookByISBN
  * @apiGroup Books
+ * 
+ * @apiUse JWT
  *
  * @apiDescription Retrieves details for books with the specified ISBN. Supports optional pagination.
  *

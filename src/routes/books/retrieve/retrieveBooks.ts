@@ -48,9 +48,16 @@ const format = (resultRow): IBook => ({
 });
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {get} /retrieveBooks Retrieve all books with pagination
  * @apiName GetAllBooks
  * @apiGroup Books
+ * 
+ * @apiUse JWT
  * 
  * @apiDescription Retrieve a list of all books with optional pagination.
  * 

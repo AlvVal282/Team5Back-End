@@ -10,12 +10,19 @@ const isValidISBN13 = validationFunctions.isValidISBN13;
 const deleteBookRouter: Router = express.Router();
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {delete} /book/:isbn Delete a book by ISBN
  *
  * @apiDescription Request to delete a book by its ISBN.
  *
  * @apiName DeleteISBN
  * @apiGroup delete
+ * 
+ * @apiUse JWT
  *
  * @apiParam {String} isbn The ISBN of the book to delete
  *

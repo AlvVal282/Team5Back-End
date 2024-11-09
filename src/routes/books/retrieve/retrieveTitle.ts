@@ -78,9 +78,16 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
 }
 
 /**
+ * @apiDefine JWT
+ * @apiHeader {String} Authorization The string "Bearer " + a valid JSON Web Token (JWT).
+ */
+
+/**
  * @api {get} /books/title Retrieve Books by Title
  * @apiName GetBooksByTitle
  * @apiGroup Books
+ * 
+ * @apiUse JWT
  * 
  * @apiDescription Retrieve a list of books filtered by title, with optional pagination.
  * Allows partial matching on the title for flexibility.

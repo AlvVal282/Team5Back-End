@@ -7,7 +7,7 @@ const updateRatingRouter: Router = express.Router();
 /**
  * @api {put} /updateRating Update a book rating
  *
- * @apiDescription Request to update a book rating. Request must include either Book_ID associated with the book rating(s) to be updated.
+ * @apiDescription Request to update a book rating. Request must include either Book_ID or ISBN as the identifier(s) associated with the book rating(s) to be updated. Book_ID and ISBN cannot be changed.
  *
  * @apiName UpdateBookRatingID
  * @apiGroup update
@@ -25,9 +25,9 @@ const updateRatingRouter: Router = express.Router();
  * @apiSuccess (Success 200) {String} message "Book rating successfully updated"
  *
  * @apiError (400: Missing Required Field) {String} message "Missing required field - please ensure that the request includes at least either Book_ID or ISBN"
- * @apiError (400: Invalid Book_ID) {String} message "Invalid book ID - please ensure that the book ID is a non-negative integer associated with a rating entry"
- * @apiError (400: Invalid ISBN) {String} message "Invalid ISBN - please ensure that the ISBN is a 13 digit non-negative integer associated with a rating entry"
- * @apiError (404: Rating Entry Not Found) {String} message "Rating entry not found - please ensure the provided identifiers are associated with a rating entry"
+ * @apiError (400: Invalid Book_ID) {String} message "Invalid book ID - please ensure that the book ID is a positive integer associated with a rating entry"
+ * @apiError (400: Invalid ISBN) {String} message "Invalid ISBN - please ensure that the ISBN is a 13 digit integer beginning with 978 or 979 and is associated with a book entry"
+ * @apiError (404: Rating Entry Not Found) {String} message "Rating entry not found - please ensure the provided identifier(s) are associated with a rating entry"
  * @apiError (400: Invalid Identifiers) {String} message "Invalid Book_ID / ISBN combination - please ensure the provided identifiers coordinate to a single rating entry"
  * @apiError (400: No fields to update) message "No fields to update - please include at least one field to update"
  * @apiError (400: Invalid Rating Average) {String} message "Invalid rating average - please ensure that the rating average is a number between 0 and 5 and calculated correctly based on star counts"
@@ -37,7 +37,6 @@ const updateRatingRouter: Router = express.Router();
  * @apiError (400: Invalid Three_Star_Count) {String} message "Invalid 3 star count - please ensure that the 3 star count is a non-negative integer"
  * @apiError (400: Invalid Four_Star_Count) {String} message "Invalid 4 star count - please ensure that the 4 star count is a non-negative integer"
  * @apiError (400: Invalid Five_Star_Count) {String} message "Invalid 5 star count - please ensure that the 5 star count is a non-negative integer"
- * @apiError (500: Server Error) {String} message "Server error - contact support"
  */
 
 updateRatingRouter.put(
@@ -62,57 +61,91 @@ updateRatingRouter.put(
             });
         }
 
-        if (Book_ID && typeof Book_ID !== 'number') {
-            response.status(400).send({
+        if (Book_ID && (typeof Book_ID !== 'number' || Book_ID <= 0)) {
+            return response.status(400).send({
                 message:
-                    'Invalid book ID - please ensure that the book ID is a non-negative integer associated with a rating entry',
+                    'Invalid book ID - please ensure that the book ID is a positive integer associated with a rating entry',
             });
         }
 
-        if (ISBN13 && !/^\d{13}$/.test(String(ISBN13))) {
-            response.status(400).send({
+        if (ISBN13 && !/^(978|979)\d{10}$/.test(String(ISBN13))) {
+            return response.status(400).send({
                 message:
-                    'Invalid ISBN - please ensure that the ISBN is a 13 digit non-negative integer associated with a rating entry',
+                    'Invalid ISBN - please ensure that the ISBN is a 13 digit integer beginning with 978 or 979 and is associated with a book entry',
             });
         }
-
-        let selectQuery =
-            'SELECT br.* FROM Book_Ratings br INNER JOIN Books b ON br.Book_ID = b.Book_ID WHERE ';
-        const params: (string | number)[] = [];
-        const conditions = [];
-        if (Book_ID) {
-            conditions.push(
-                `${params.length ? 'br.Book_ID = $2' : 'br.Book_ID = $1'}`
-            );
-            params.push(Book_ID);
-        }
-        if (ISBN13) {
-            conditions.push(
-                `${params.length ? 'b.ISBN13 = $3' : 'b.ISBN13 = $1'}`
-            );
-            params.push(ISBN13);
-        }
-        selectQuery += conditions.join(' AND ');
 
         const client = await pool.connect();
         try {
             await client.query('BEGIN');
 
-            const ratingResults = await client.query(selectQuery, params);
+            let bookIdFromDb: number = null;
 
-            if (ratingResults.rows.length === 0) {
-                await client.query('ROLLBACK');
-                response.status(404).send({
-                    message:
-                        'Rating entry not found - please ensure the provided identifiers are associated with a rating entry',
-                });
+            if (Book_ID && !ISBN13) {
+                const bookIdQuery =
+                    'SELECT * FROM Book_Ratings WHERE Book_ID = $1';
+                const bookIdResults = await client.query(bookIdQuery, [
+                    Book_ID,
+                ]);
+
+                if (bookIdResults.rows.length === 0) {
+                    await client.query('ROLLBACK');
+                    return response.status(404).send({
+                        message:
+                            'Rating entry not found - please ensure the provided identifier(s) are associated with a rating entry',
+                    });
+                }
             }
-            if (ratingResults.rows.length > 1) {
-                await client.query('ROLLBACK');
-                response.status(400).send({
-                    message:
-                        'Invalid Book_ID / ISBN combination - please ensure the provided identifiers coordinate to a single rating entry',
-                });
+
+            if (ISBN13 && !Book_ID) {
+                const isbnQuery = 'SELECT Book_ID FROM Books WHERE ISBN13 = $1';
+                const isbnResults = await client.query(isbnQuery, [ISBN13]);
+
+                if (isbnResults.rows.length === 0) {
+                    await client.query('ROLLBACK');
+                    return response.status(404).send({
+                        message:
+                            'Rating entry not found - please ensure the provided identifier(s) are associated with a rating entry',
+                    });
+                }
+                bookIdFromDb = isbnResults.rows[0].book_id;
+            }
+
+            if (Book_ID && ISBN13) {
+                const isbnQuery = 'SELECT Book_ID FROM Books WHERE ISBN13 = $1';
+                const isbnResults = await client.query(isbnQuery, [ISBN13]);
+
+                if (isbnResults.rows.length > 0) {
+                    bookIdFromDb = isbnResults.rows[0].book_id;
+
+                    if (bookIdFromDb !== Book_ID) {
+                        await client.query('ROLLBACK');
+                        return response.status(400).send({
+                            message:
+                                'Invalid Book_ID / ISBN combination - please ensure the provided identifiers coordinate to a single rating entry',
+                        });
+                    }
+                } else {
+                    const bookIdQuery =
+                        'SELECT * FROM Book_Ratings WHERE Book_ID = $1';
+                    const bookIdResults = await client.query(bookIdQuery, [
+                        Book_ID,
+                    ]);
+
+                    if (bookIdResults.rows.length === 0) {
+                        await client.query('ROLLBACK');
+                        return response.status(404).send({
+                            message:
+                                'Rating entry not found - please ensure the provided identifier(s) are associated with a rating entry',
+                        });
+                    } else {
+                        await client.query('ROLLBACK');
+                        return response.status(400).send({
+                            message:
+                                'Invalid Book_ID / ISBN combination - please ensure the provided identifiers coordinate to a single rating entry',
+                        });
+                    }
+                }
             }
 
             const booksUpdates = [];
@@ -172,47 +205,57 @@ updateRatingRouter.put(
                         starCounts[i] < 0 ||
                         !Number.isInteger(starCounts[i]))
                 ) {
-                    response.status(400).send({
+                    return response.status(400).send({
                         message: `Invalid ${i + 1} star count - please ensure that the ${i + 1} star count is a non-negative integer`,
                     });
                 }
             }
 
+            if (!bookIdFromDb) {
+                bookIdFromDb = Book_ID;
+            }
+            const selectQuery =
+                'SELECT br.* FROM Book_Ratings br INNER JOIN Books b ON br.Book_ID = b.Book_ID WHERE br.Book_ID = $1';
+            const params = [bookIdFromDb];
+
+            const ratingResults = await client.query(selectQuery, params);
+
             const existingData = ratingResults.rows[0];
             const calculatedCount =
-                (One_Star_Count ?? existingData.Rating_1_Star) +
-                (Two_Star_Count ?? existingData.Rating_2_Star) +
-                (Three_Star_Count ?? existingData.Rating_3_Star) +
-                (Four_Star_Count ?? existingData.Rating_4_Star) +
-                (Five_Star_Count ?? existingData.Rating_5_Star);
+                (One_Star_Count ?? existingData.rating_1_star) +
+                (Two_Star_Count ?? existingData.rating_2_star) +
+                (Three_Star_Count ?? existingData.rating_3_star) +
+                (Four_Star_Count ?? existingData.rating_4_star) +
+                (Five_Star_Count ?? existingData.rating_5_star);
 
             if (
                 Rating_Count !== undefined &&
                 Rating_Count !== calculatedCount
             ) {
                 await client.query('ROLLBACK');
-                response.status(400).send({
+                return response.status(400).send({
                     message:
                         'Invalid rating count - please ensure that the rating count is a non-negative integer equal to the sum of all star counts',
                 });
             }
 
-            const calculatedAvg =
-                (1 * (One_Star_Count ?? existingData.Rating_1_Star) +
-                    2 * (Two_Star_Count ?? existingData.Rating_2_Star) +
-                    3 * (Three_Star_Count ?? existingData.Rating_3_Star) +
-                    4 * (Four_Star_Count ?? existingData.Rating_4_Star) +
-                    5 * (Five_Star_Count ?? existingData.Rating_5_Star)) /
+            let calculatedAvg =
+                (1 * (One_Star_Count ?? existingData.rating_1_star) +
+                    2 * (Two_Star_Count ?? existingData.rating_2_star) +
+                    3 * (Three_Star_Count ?? existingData.rating_3_star) +
+                    4 * (Four_Star_Count ?? existingData.rating_4_star) +
+                    5 * (Five_Star_Count ?? existingData.rating_5_star)) /
                 calculatedCount;
+
+            calculatedAvg = Math.round(calculatedAvg * 100) / 100;
 
             if (Rating_Avg !== undefined && Rating_Avg !== calculatedAvg) {
                 await client.query('ROLLBACK');
-                response.status(400).send({
+                return response.status(400).send({
                     message:
                         'Invalid rating average - please ensure that the rating average is a number between 0 and 5 and calculated correctly based on star counts',
                 });
             }
-
             if (Rating_Count === undefined) {
                 booksUpdates.push(`Rating_Count = $${booksCounter++}`);
                 booksValues.push(calculatedCount);
@@ -221,16 +264,10 @@ updateRatingRouter.put(
                 booksUpdates.push(`Rating_Avg = $${booksCounter++}`);
                 booksValues.push(calculatedAvg);
             }
-
             const updateRatingQuery = `UPDATE Book_Ratings SET ${ratingUpdates.join(', ')} WHERE Book_ID = $${ratingCounter}`;
-            ratingValues.push(ratingResults.rows[0].Book_ID);
+            ratingValues.push(ratingResults.rows[0].book_id);
 
             await client.query(updateRatingQuery, ratingValues);
-
-            const updateBooksQuery = `UPDATE Book_Ratings SET ${booksUpdates.join(', ')} WHERE Book_ID = $${booksCounter}`;
-            booksValues.push(ratingResults.rows[0].Book_ID);
-
-            await client.query(updateBooksQuery, booksValues);
 
             await client.query('COMMIT');
 
@@ -239,7 +276,6 @@ updateRatingRouter.put(
                 .send({ message: 'Book rating successfully updated' });
         } catch (error) {
             await client.query('ROLLBACK');
-            //console.error('Database error:', error);
             response
                 .status(500)
                 .send({ message: 'Server error - contact support' });

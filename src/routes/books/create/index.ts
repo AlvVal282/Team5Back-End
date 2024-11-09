@@ -28,7 +28,7 @@ const createRouter: Router = express.Router();
  *
  * @apiSuccess (201) {String} message "Book successfully created"
  *
- * @apiError (400: Missing/Invalid ISBN) {String} message "Missing or invalid ISBN - please ensure that the ISBN is entered, unique, and a 13 digit positive integer"
+ * @apiError (400: Missing/Invalid ISBN) {String} message "Missing or invalid ISBN13 - please ensure that the ISBN is entered, unique, and a 13 digit positive integer"
  * @apiError (400: Missing/Invalid Title) {String} message "Missing or invalid Title - please ensure that the title is entered and a valid string"
  * @apiError (400: Invalid Authors) {String} "Invalid Authors - please ensure that the authors are provided as a comma-separated string"
  * @apiError (400: Invalid Rating_Avg) {String} message "Invalid Rating Average - please ensure that Rating_Avg is a valid number between 1 and 5"
@@ -43,7 +43,6 @@ const createRouter: Router = express.Router();
  * @apiError (400: Invalid Image Small URL) {String} message "Invalid Image Small URL - please ensure that the URL is valid"
  * @apiError (400: Invalid Publication Year) {String} message "Invalid Publication Year - please ensure the year is a valid positive integer less than or equal to the current year"
  * @apiError (400: Non-Unique ISBN) {String} message "ISBN already exists in the database - please use an ISBN not already in the system"
- * @apiError (500: Server Error) {String} message "Server error - contact support"
  */
 
 createRouter.post('/addBook', async (request: Request, response: Response) => {
@@ -64,52 +63,24 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
     } = request.body;
 
     if (!ISBN13 || !/^\d{13}$/.test(String(ISBN13))) {
-        response.status(400).send({
+        return response.status(400).send({
             message:
-                'Missing or invalid ISBN - please ensure that the ISBN is a 13 digit positive integer',
+                'Missing or invalid ISBN13 - please ensure that the ISBN is entered, unique, and a 13 digit positive integer',
         });
     }
 
     if (!Title || typeof Title !== 'string' || Title.trim() === '') {
-        response.status(400).send({
+        return response.status(400).send({
             message:
                 'Missing or invalid Title - please ensure that the title is entered and a valid string',
         });
     }
 
     if (Authors && typeof Authors !== 'string') {
-        response.status(400).send({
+        return response.status(400).send({
             message:
                 'Invalid Authors - please ensure that the authors are provided as a comma-separated string',
         });
-    }
-
-    if (Rating_Avg !== undefined) {
-        if (
-            typeof Rating_Avg !== 'number' ||
-            Rating_Avg < 1 ||
-            Rating_Avg > 5
-        ) {
-            response.status(400).send({
-                message:
-                    'Invalid Rating Average - please ensure that Rating_Avg is a valid number between 1 and 5',
-            });
-        } else {
-            const calculatedAvg =
-                (One_Star_Count * 1 +
-                    Two_Star_Count * 2 +
-                    Three_Star_Count * 3 +
-                    Four_Star_Count * 4 +
-                    Five_Star_Count * 5) /
-                Rating_Count;
-
-            if (Math.abs(Rating_Avg - calculatedAvg) > 0.01) {
-                response.status(400).send({
-                    message:
-                        'Invalid Rating Average - please ensure that Rating_Avg matches the average of the star counts',
-                });
-            }
-        }
     }
 
     let starCounts = [
@@ -128,12 +99,40 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
                 !Number.isInteger(starCounts[i]))
         ) {
             if (i > 0) {
-                response.status(400).send({
+                return response.status(400).send({
                     message: `Invalid ${i} star count - please ensure that the ${i} star count is a non-negative integer`,
                 });
             } else {
-                response.status(400).send({
+                return response.status(400).send({
                     message: `Invalid Rating count - please ensure that the rating count is a non-negative integer equal to the sum of all star counts`,
+                });
+            }
+        }
+    }
+
+    if (Rating_Avg !== undefined) {
+        if (
+            typeof Rating_Avg !== 'number' ||
+            Rating_Avg < 1 ||
+            Rating_Avg > 5
+        ) {
+            return response.status(400).send({
+                message:
+                    'Invalid Rating Average - please ensure that Rating_Avg is a valid number between 1 and 5',
+            });
+        } else {
+            const calculatedAvg =
+                (One_Star_Count * 1 +
+                    Two_Star_Count * 2 +
+                    Three_Star_Count * 3 +
+                    Four_Star_Count * 4 +
+                    Five_Star_Count * 5) /
+                Rating_Count;
+
+            if (Math.abs(Rating_Avg - calculatedAvg) > 0.01) {
+                return response.status(400).send({
+                    message:
+                        'Invalid Rating Average - please ensure that Rating_Avg matches the average of the star counts',
                 });
             }
         }
@@ -146,21 +145,27 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
             0
         );
         if (Rating_Count !== calculatedCount) {
-            response.status(400).send({
+            return response.status(400).send({
                 message:
                     'Invalid Rating count - please ensure that the rating count is a non-negative integer equal to the sum of all star counts',
             });
         }
     }
 
-    if (Image_URL && !/^https?:\/\/\S+\.\S+$/.test(Image_URL)) {
-        response.status(400).send({
+    if (
+        Image_URL &&
+        !/^(https?:\/\/)[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(Image_URL)
+    ) {
+        return response.status(400).send({
             message: 'Invalid Image URL - please ensure that the URL is valid',
         });
     }
 
-    if (Image_Small_URL && !/^https?:\/\/\S+\.\S+$/.test(Image_Small_URL)) {
-        response.status(400).send({
+    if (
+        Image_Small_URL &&
+        !/^(https?:\/\/)[\w-]+(\.[\w-]+)+[/#?]?.*$/.test(Image_Small_URL)
+    ) {
+        return response.status(400).send({
             message:
                 'Invalid Image Small URL - please ensure that the URL is valid',
         });
@@ -172,7 +177,7 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
             Publication_Year < 1 ||
             Publication_Year > new Date().getFullYear())
     ) {
-        response.status(400).send({
+        return response.status(400).send({
             message:
                 'Invalid Publication Year - please ensure the year is a valid positive integer less than or equal to the current year',
         });
@@ -187,7 +192,7 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
 
         if (isbnResult.rows.length > 0) {
             await client.query('ROLLBACK');
-            response.status(400).send({
+            return response.status(400).send({
                 message:
                     'ISBN already exists in the database - please use an ISBN not already in the system',
             });
@@ -205,7 +210,8 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
             Image_Small_URL,
         ];
         const bookResult = await client.query(insertBookQuery, bookValues);
-        const bookId = bookResult.rows[0].Book_ID;
+
+        const bookId = bookResult.rows[0].book_id;
 
         if (Authors) {
             const authorNames = Authors.split(',').map((author: string) =>
@@ -221,7 +227,7 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
 
                 let authorId: number;
                 if (authorResult.rows.length > 0) {
-                    authorId = authorResult.rows[0].Author_ID;
+                    authorId = authorResult.rows[0].author_id;
                 } else {
                     const insertAuthorQuery =
                         'INSERT INTO Authors (Name) VALUES ($1) RETURNING Author_ID';
@@ -229,9 +235,8 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
                         insertAuthorQuery,
                         [authorName]
                     );
-                    authorId = insertAuthorResult.rows[0].Author_ID;
+                    authorId = insertAuthorResult.rows[0].author_id;
                 }
-
                 const insertBookAuthorQuery =
                     'INSERT INTO Book_Author (Book_ID, Author_ID) VALUES ($1, $2)';
                 await client.query(insertBookAuthorQuery, [bookId, authorId]);
@@ -260,13 +265,12 @@ createRouter.post('/addBook', async (request: Request, response: Response) => {
 
         await client.query('COMMIT');
 
-        response.status(201).send({
-            message: 'Book successfully created',
+        return response.status(201).send({
+            message: 'Book successfully created ',
         });
     } catch (error) {
         await client.query('ROLLBACK');
-        //console.error('Database error:', error);
-        response.status(500).send({
+        return response.status(500).send({
             message: 'Server error - contact support',
         });
     } finally {

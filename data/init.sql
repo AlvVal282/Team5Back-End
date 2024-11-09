@@ -84,3 +84,6 @@ FROM '/docker-entrypoint-initdb.d/book_author.csv' DELIMITER ',' CSV HEADER;
 
 COPY Book_Ratings(Book_ID, Rating_1_Star, Rating_2_Star, Rating_3_Star, Rating_4_Star, Rating_5_Star)
 FROM '/docker-entrypoint-initdb.d/book_ratings.csv' DELIMITER ',' CSV HEADER;
+
+SELECT setval('books_book_id_seq', (SELECT MAX(book_id) FROM Books));
+SELECT setval('authors_author_id_seq', (SELECT MAX(author_id) FROM Authors));

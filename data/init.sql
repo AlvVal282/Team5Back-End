@@ -40,8 +40,9 @@ CREATE TABLE Account_Credential (
     Account_ID INT NOT NULL,
     Salted_Hash VARCHAR(255) NOT NULL,
     Salt VARCHAR(255),
-    FOREIGN KEY(Account_ID) REFERENCES Account(Account_ID)
+    CONSTRAINT account_credential_account_id_fkey FOREIGN KEY (Account_ID) REFERENCES account(Account_ID) ON DELETE CASCADE
 );
+
 
 -- Authors Table 
 CREATE TABLE Authors (

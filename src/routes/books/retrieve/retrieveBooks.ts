@@ -55,7 +55,7 @@ const format = (resultRow): IBook => ({
 /**
  * @api {get} /retrieveBooks Retrieve all books with pagination
  * @apiName GetAllBooks
- * @apiGroup retrieve
+ * @apiGroup retrieve 
  * 
  * @apiUse JWT
  * 

@@ -91,7 +91,7 @@ const format = (resultRow): IBook => ({
  *
  * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid (13 digits)."
  * @apiError (404: ISBN Not Found) {string} message "ISBN Not Found."
- * @apiError (500: Server Error) {string} message "Server error - unable to retrieve book by ISBN."
+ * 
  */
 retrieveISBNRouter.get(
     '/retrieveISBN',

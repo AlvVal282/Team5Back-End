@@ -5,7 +5,7 @@ import {
     validationFunctions,
 } from '../../core/utilities';
 
-const isAccountProvided = validationFunctions.isAuthorOrYearProvided;
+const isAccountProvided = validationFunctions.isNumberProvided;
 
 const deleteAccountRouter: Router = express.Router();
 
@@ -19,21 +19,21 @@ const deleteAccountRouter: Router = express.Router();
  * 
  * @apiParam {String} id The unique ID of the account to delete
  *
- * @apiSuccess (Success 200) {String} messageSuccess "Account successfully deleted."
+ * @apiSuccess (Success 200) {String} messageSuccess "Account successfully deleted"
  *
- * @apiError (404: User Not Found) {String} messageNotFound "User not found. Ensure you are logged in with the correct account."
- * @apiError (400: Invalid Request) {String} messageFailure "Invalid request. Please ensure all required fields are provided."
+ * @apiError (404: User Not Found) {String} messageNotFound "User not found. Ensure you are logged in with the correct account"
+ * @apiError (400: Invalid Request) {String} messageFailure "Invalid request. Please ensure all required fields are provided"
  *
  */
 
 deleteAccountRouter.delete(
-    '/account',
+    '/account/:id',
     (request: Request, response: Response, next: NextFunction) => {
         if (isAccountProvided(request.params.id)) {
             next();
         } else {
             response.status(400).send({
-                messageFailure: 'Invalid request. Please ensure all required fields are provided.'
+                messageFailure: 'Invalid request. Please ensure all required fields are provided'
             });
         }
     },
@@ -45,15 +45,16 @@ deleteAccountRouter.delete(
             .then((result) => {
                 if (result.rowCount === 0) {
                     response.status(404).send({
-                        messageNotFound: 'User not found. Ensure you are logged in with the correct account.'
+                        messageNotFound: 'User not found. Ensure you are logged in with the correct account'
                     });
                 } else{
                     response.status(200).send({
-                        messageSuccess: 'Account successfully deleted.'
+                        messageSuccess: 'Account successfully deleted'
                     });
                 }
             })
             .catch((error) => {
+                console.error('Database Error:', error); 
                 response.status(500).send({
                     message: 'An error occurred while trying to delete associations',
                     error: error.message

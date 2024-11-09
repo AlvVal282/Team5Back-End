@@ -188,7 +188,7 @@ retrieveAuthorRouter.get(
             const values = [author, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            response.status(200).json({
+            response.status(200).send({
                 books: rows.map(format),
                 pagination: {
                     totalRecords,
@@ -207,4 +207,3 @@ retrieveAuthorRouter.get(
 );
 
 export { retrieveAuthorRouter };
-

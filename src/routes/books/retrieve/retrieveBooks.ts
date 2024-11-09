@@ -79,7 +79,6 @@ const format = (resultRow): IBook => ({
  * @apiSuccess {Number} pagination.limit Number of entries returned per page.
  * @apiSuccess {Number} pagination.offset Offset used for the current query.
  * @apiSuccess {Number|null} pagination.nextPage Offset value to retrieve the next set of entries, or `null` if no further pages exist.
- * 
  */
 retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Response) => {
     // Set default values for limit and offset
@@ -125,7 +124,7 @@ retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Res
         const bookValues = [limit, offset];
         const { rows } = await pool.query(bookQuery, bookValues);
 
-        response.status(200).json({
+        response.status(200).send({
             books: rows.map(format),
             pagination: {
                 totalRecords,
@@ -143,3 +142,4 @@ retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Res
 });
 
 export { retrieveBooksRouter };
+

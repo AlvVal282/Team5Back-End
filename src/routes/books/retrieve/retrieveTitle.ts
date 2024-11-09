@@ -47,12 +47,6 @@ const format = (resultRow): IBook => ({
     },
 });
 
-/**
- * Middleware to validate the title parameter.
- * Ensures the title parameter is provided as a non-empty string.
- * Sends a 400 error if validation fails.
- */
-// Middleware to validate title parameter
 function mwValidTitleParam(request: Request, response: Response, next: NextFunction) {
     const { title } = request.query;
 
@@ -65,11 +59,6 @@ function mwValidTitleParam(request: Request, response: Response, next: NextFunct
     next();
 }
 
-
-/**
- * Middleware to validate limit and offset parameters.
- * Ensures they are non-negative integers, and defaults them if invalid.
- */
 function mwValidPaginationParams(request: Request, response: Response, next: NextFunction) {
     let limit = Number(request.query.limit);
     let offset = Number(request.query.offset);

@@ -49,63 +49,6 @@ const format = (resultRow): IBook => ({
 });
 
 /**
- * Middleware to validate year range parameters.
- * Ensures startYear and endYear are valid, non-negative numbers, and in the correct order.
- */
-function mwValidYearParams(request: Request, response: Response, next: NextFunction) {
-    const startYear = parseInt(request.query.startYear as string, 10);
-    const endYear = parseInt(request.query.endYear as string, 10);
-
-    if (!request.query.startYear || !request.query.endYear) {
-        return response.status(400).send({
-            message: 'Missing required parameters: startYear and endYear',
-        });
-    }
-
-    if (isNaN(startYear) || isNaN(endYear)) {
-        return response.status(400).send({
-            message: 'Invalid parameters: startYear and endYear must be numbers',
-        });
-    }
-
-    if (startYear < 0 || endYear < 0) {
-        return response.status(400).send({
-            message: 'Invalid parameters: startYear and endYear cannot be negative',
-        });
-    }
-
-    if (startYear > endYear) {
-        return response.status(400).send({
-            message: 'Invalid range: startYear cannot be greater than endYear',
-        });
-    }
-
-    next();
-}
-
-/**
- * Middleware to validate limit and offset parameters.
- * Sets defaults if values are invalid or not provided.
- */
-function mwValidPaginationParams(request: Request, response: Response, next: NextFunction) {
-    let limit = Number(request.query.limit);
-    let offset = Number(request.query.offset);
-
-    if (isNaN(limit) || limit <= 0) {
-        limit = 10;
-    }
-
-    if (isNaN(offset) || offset < 0) {
-        offset = 0;
-    }
-
-    request.query.limit = limit.toString();
-    request.query.offset = offset.toString();
-
-    next();
-}
-
-/**
  * @api {get} /books/year Retrieve Books by Publication Year Range
  * @apiName GetBooksByYear
  * @apiGroup Books
@@ -146,6 +89,55 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiError (400: Invalid Range) {String} message "Invalid range: startYear cannot be greater than endYear".
  * @apiError (404: Not Found) {String} message "No books found within the specified publication year range."
  */
+function mwValidYearParams(request: Request, response: Response, next: NextFunction) {
+    const startYear = parseInt(request.query.startYear as string, 10);
+    const endYear = parseInt(request.query.endYear as string, 10);
+
+    if (!request.query.startYear || !request.query.endYear) {
+        return response.status(400).send({
+            message: 'Missing required parameters: startYear and endYear',
+        });
+    }
+
+    if (isNaN(startYear) || isNaN(endYear)) {
+        return response.status(400).send({
+            message: 'Invalid parameters: startYear and endYear must be numbers',
+        });
+    }
+
+    if (startYear < 0 || endYear < 0) {
+        return response.status(400).send({
+            message: 'Invalid parameters: startYear and endYear cannot be negative',
+        });
+    }
+
+    if (startYear > endYear) {
+        return response.status(400).send({
+            message: 'Invalid range: startYear cannot be greater than endYear',
+        });
+    }
+
+    next();
+}
+
+function mwValidPaginationParams(request: Request, response: Response, next: NextFunction) {
+    let limit = Number(request.query.limit);
+    let offset = Number(request.query.offset);
+
+    if (isNaN(limit) || limit <= 0) {
+        limit = 10;
+    }
+
+    if (isNaN(offset) || offset < 0) {
+        offset = 0;
+    }
+
+    request.query.limit = limit.toString();
+    request.query.offset = offset.toString();
+
+    next();
+}
+
 retrieveYearRouter.get(
     '/retrieveYear',
     mwValidYearParams,
@@ -211,7 +203,6 @@ retrieveYearRouter.get(
             const values = [startYear, endYear, limit, offset];
             const { rows } = await pool.query(theQuery, values);
 
-            // Send response with books and pagination metadata
             response.status(200).send({
                 books: rows.map(format),
                 pagination: {
@@ -231,3 +222,4 @@ retrieveYearRouter.get(
 );
 
 export { retrieveYearRouter };
+

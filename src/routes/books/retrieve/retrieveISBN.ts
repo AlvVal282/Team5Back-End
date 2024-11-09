@@ -1,7 +1,7 @@
 import express, { Request, Response, Router, NextFunction } from 'express';
 import { pool, validationFunctions } from '../../../core/utilities';
 
-const isISBNProvided = validationFunctions. isValidISBN13;
+const isISBNProvided = validationFunctions.isValidISBN13;
 
 const retrieveISBNRouter: Router = express.Router();
 
@@ -81,7 +81,7 @@ const format = (resultRow): IBook => ({
  * @apiSuccess {Number} pagination.totalRecords Total number of books matching the ISBN.
  * @apiSuccess {Number} pagination.limit Number of entries returned per page.
  * @apiSuccess {Number} pagination.offset Offset used for the current query.
- * @apiSuccess {Number|null} pagination.nextPage Offset value to retrieve the next set of entries, or `null` if no further pages exist.
+ * @apiSuccess {Number|null} pagination.nextPage Offset value to retrieve the next set of entries, or null if no further pages exist.
  * 
  * @apiError (400: Invalid ISBN) {string} message "Invalid or missing ISBN - please ensure the ISBN parameter is provided and valid (13 digits)."
  * @apiError (404: ISBN Not Found) {string} message "ISBN Not Found."
@@ -151,7 +151,7 @@ retrieveISBNRouter.get(
                 const values = [isbn, limit, offset];
                 const { rows } = await pool.query(theQuery, values);
 
-                response.status(200).json({
+                response.status(200).send({
                     books: rows.map(format),
                     pagination: {
                         totalRecords,
@@ -171,3 +171,4 @@ retrieveISBNRouter.get(
 );
 
 export { retrieveISBNRouter };
+

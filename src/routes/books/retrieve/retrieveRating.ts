@@ -47,11 +47,6 @@ const format = (resultRow): IBook => ({
     },
 });
 
-/**
- * Middleware to validate rating query parameters.
- * Ensures minRating and maxRating are provided, are numbers, and are within the range 1 to 5.
- * Sends a specific 400 error for missing or invalid values.
- */
 function mwValidRatingParams(
     request: Request,
     response: Response,
@@ -89,7 +84,6 @@ function mwValidRatingParams(
 
     next();
 }
-
 
 /**
  * @api {get} /books/rating Retrieve Books by Rating
@@ -210,5 +204,3 @@ retrieveRatingRouter.get(
 );
 
 export { retrieveRatingRouter };
-
-

@@ -13,6 +13,15 @@ CREATE TABLE Account_Role (
     Role_Name VARCHAR(50) NOT NULL
 );
 
+-- Insert predefined roles into Account_Role table
+INSERT INTO Account_Role (Role_Name)
+VALUES
+    ('Admin'),
+    ('Manager'),
+    ('Developer'),
+    ('Account User'),
+    ('Anonymous User');
+
 -- Accounts Table
 CREATE TABLE Account (
     Account_ID SERIAL PRIMARY KEY,
@@ -43,7 +52,7 @@ CREATE TABLE Authors (
 -- Books Table
 CREATE TABLE Books (
     Book_ID SERIAL PRIMARY KEY,
-    ISBN13 BIGINT UNIQUE,
+    ISBN13 BIGINT UNIQUE NOT NULL,
     Publication_Year INT,
     Title TEXT NOT NULL,
     Rating_Avg FLOAT,
@@ -84,3 +93,6 @@ FROM '/docker-entrypoint-initdb.d/book_author.csv' DELIMITER ',' CSV HEADER;
 
 COPY Book_Ratings(Book_ID, Rating_1_Star, Rating_2_Star, Rating_3_Star, Rating_4_Star, Rating_5_Star)
 FROM '/docker-entrypoint-initdb.d/book_ratings.csv' DELIMITER ',' CSV HEADER;
+
+SELECT setval('books_book_id_seq', (SELECT MAX(book_id) FROM Books));
+SELECT setval('authors_author_id_seq', (SELECT MAX(author_id) FROM Authors));

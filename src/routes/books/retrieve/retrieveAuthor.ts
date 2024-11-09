@@ -52,16 +52,10 @@ const format = (resultRow): IBook => ({
  */
 function mwValidAuthorParam(request: Request, response: Response, next: NextFunction) {
     const { author } = request.query;
-
-    if (!author) {
-        return response.status(400).send({
-            message: 'Missing required parameter: author',
-        });
-    }
-    
+  
     if (!validationFunctions.isStringProvided(author as string)) {
-        return response.status(400).send({
-            message: 'Invalid parameter: author must be a non-empty string',
+        response.status(400).send({
+            message: 'Invalid or missing author - please ensure that param is entered and is valid'
         });
     }
 
@@ -94,39 +88,38 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiName GetBooksByAuthor
  * @apiGroup Books
  * 
- * @apiDescription Retrieve a list of books filtered by an author's name. This endpoint supports partial matching, allowing flexible searches by either a full or partial author name.
+ * @apiDescription Retrieve a list of books filtered by author name. Allows partial matching on the author's name for flexibility.
  * 
- * @apiQuery (Query Parameters) {String} author The partial or full name of the author to search for. **Required.**
- * @apiQuery (Query Parameters) {Number} [limit=10] The maximum number of book entries to return in the response. **Optional; defaults to 10.**
- * @apiQuery (Query Parameters) {Number} [offset=0] The number of book entries to skip from the beginning of the result set. **Optional; defaults to 0.**
+ * @apiQuery {String} author Partial or full name of the author to search for **Required**
+ * @apiQuery {number} [limit=10] limit The number of entry objects to return. **Optional.**
+ * @apiQuery {number} [offset=10] offset The number to offset the lookup of entry objects to return. **Optional.**
  * 
- * @apiSuccess {Object[]} books List of books that match the search criteria. Each book object contains the following:
- * @apiSuccess {Number} books.isbn13 The ISBN-13 identifier of the book.
- * @apiSuccess {String} books.author The name(s) of the book's author(s), separated by commas if multiple.
- * @apiSuccess {Number} books.publication The publication year of the book.
- * @apiSuccess {String} books.title The title of the book.
- * @apiSuccess {Object} books.ratings Rating details for the book.
- * @apiSuccess {Number} books.ratings.average The average rating of the book.
- * @apiSuccess {Number} books.ratings.count The total number of ratings received.
- * @apiSuccess {Number} books.ratings.rating_1 The number of 1-star ratings.
- * @apiSuccess {Number} books.ratings.rating_2 The number of 2-star ratings.
- * @apiSuccess {Number} books.ratings.rating_3 The number of 3-star ratings.
- * @apiSuccess {Number} books.ratings.rating_4 The number of 4-star ratings.
- * @apiSuccess {Number} books.ratings.rating_5 The number of 5-star ratings.
- * @apiSuccess {Object} books.icons Book cover image URLs.
- * @apiSuccess {String} books.icons.large URL for the large cover image of the book.
- * @apiSuccess {String} books.icons.small URL for the small cover image of the book.
+ * @apiSuccess {Object[]} books List of books that match the provided author name.
+ * @apiSuccess (Success 200) {Number} books.isbn13 Unique ISBN-13 identifier of the book.
+ * @apiSuccess (Success 200) {String} books.author Comma-separated list of authors of the book.
+ * @apiSuccess (Success 200) {Number} books.publication Publication year of the book.
+ * @apiSuccess (Success 200) {String} books.title Title of the book.
+ * @apiSuccess (Success 200) {Object} books.ratings Rating details of the book.
+ * @apiSuccess (Success 200) {Number} books.ratings.average Average rating score.
+ * @apiSuccess (Success 200) {Number} books.ratings.count Total number of ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_1 Count of 1-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_2 Count of 2-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_3 Count of 3-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_4 Count of 4-star ratings.
+ * @apiSuccess (Success 200) {Number} books.ratings.rating_5 Count of 5-star ratings.
+ * @apiSuccess (Success 200) {Object} books.icons URLs to book cover images.
+ * @apiSuccess (Success 200) {String} books.icons.large URL to the large version of the book cover image.
+ * @apiSuccess (Success 200) {String} books.icons.small URL to the small version of the book cover image.
  * 
- * @apiSuccess {Object} pagination Pagination metadata for the response.
- * @apiSuccess {Number} pagination.totalRecords Total number of books matching the search criteria.
- * @apiSuccess {Number} pagination.limit The limit parameter used in the request or defaulted to 10.
- * @apiSuccess {Number} pagination.offset The offset parameter used in the request or defaulted to 0.
- * @apiSuccess {Number} [pagination.nextPage] Offset value to retrieve the next set of entries, if available. If no more pages are available, this will be `null`.
+ * @apiSuccess {Object} pagination Pagination metadata for the response
+ * @apiSuccess {number} pagination.totalRecords Total number of matching books
+ * @apiSuccess {number} pagination.limit Number of entries returned per page
+ * @apiSuccess {number} pagination.offset Offset used for the current query
+ * @apiSuccess {number} pagination.nextPage Offset value to retrieve the next set of entries
  * 
- * @apiError (400 Bad Request) {String} message "Missing required parameter: author" - This error is returned if the `author` query parameter is not provided.
- * @apiError (400 Bad Request) {String} message "Invalid parameter: author must be a non-empty string" - This error is returned if the `author` parameter is not a valid, non-empty string.
+ * @apiError (400: Invalid Author) {String} message "Invalid or missing author - please ensure that param is entered and is valid"
+ * @apiError (404: Author Not Found) {String} message "Author Not Found"
  */
-
 retrieveAuthorRouter.get(
     '/retrieveAuthor',
     mwValidAuthorParam,
@@ -148,42 +141,49 @@ retrieveAuthorRouter.get(
             const countResult = await pool.query(countQuery, [author]);
             const totalRecords = parseInt(countResult.rows[0].totalRecords, 10);
 
+            // If no records found, send a 404 response
+            if (totalRecords === 0) {
+                return response.status(404).send({
+                    message: 'Author Not Found',
+                });
+            }
+
             // Fetch paginated books matching the author
             const theQuery = `
-    SELECT 
-        Books.isbn13,
-        Books.publication_year,
-        Books.title,
-        Books.rating_avg,
-        Books.rating_count,
-        COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
-        COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
-        COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
-        COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
-        COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
-        Books.image_url,
-        Books.image_small_url,
-        STRING_AGG(Authors.Name, ', ') AS authors
-    FROM Books
-    JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
-    JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
-    LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
-    WHERE Authors.Name ILIKE '%' || $1 || '%'
-    GROUP BY 
-        Books.isbn13, 
-        Books.publication_year, 
-        Books.title, 
-        Books.rating_avg, 
-        Books.rating_count, 
-        Books.image_url, 
-        Books.image_small_url,
-        Book_Ratings.rating_1_star,
-        Book_Ratings.rating_2_star,
-        Book_Ratings.rating_3_star,
-        Book_Ratings.rating_4_star,
-        Book_Ratings.rating_5_star
-    LIMIT $2 OFFSET $3
-`;
+                SELECT 
+                    Books.isbn13,
+                    Books.publication_year,
+                    Books.title,
+                    Books.rating_avg,
+                    Books.rating_count,
+                    COALESCE(Book_Ratings.rating_1_star, 0) AS rating_1_star,
+                    COALESCE(Book_Ratings.rating_2_star, 0) AS rating_2_star,
+                    COALESCE(Book_Ratings.rating_3_star, 0) AS rating_3_star,
+                    COALESCE(Book_Ratings.rating_4_star, 0) AS rating_4_star,
+                    COALESCE(Book_Ratings.rating_5_star, 0) AS rating_5_star,
+                    Books.image_url,
+                    Books.image_small_url,
+                    STRING_AGG(Authors.Name, ', ') AS authors
+                FROM Books
+                JOIN Book_Author ON Books.Book_ID = Book_Author.Book_ID
+                JOIN Authors ON Authors.Author_ID = Book_Author.Author_ID
+                LEFT JOIN Book_Ratings ON Books.Book_ID = Book_Ratings.Book_ID
+                WHERE Authors.Name ILIKE '%' || $1 || '%'
+                GROUP BY 
+                    Books.isbn13, 
+                    Books.publication_year, 
+                    Books.title, 
+                    Books.rating_avg, 
+                    Books.rating_count, 
+                    Books.image_url, 
+                    Books.image_small_url,
+                    Book_Ratings.rating_1_star,
+                    Book_Ratings.rating_2_star,
+                    Book_Ratings.rating_3_star,
+                    Book_Ratings.rating_4_star,
+                    Book_Ratings.rating_5_star
+                LIMIT $2 OFFSET $3
+            `;
 
             const values = [author, limit, offset];
             const { rows } = await pool.query(theQuery, values);
@@ -198,9 +198,9 @@ retrieveAuthorRouter.get(
                 },
             });
         } catch (error) {
-            console.error('DB Query error on retrieve by author', error);
+            //console.error('DB Query error on retrieve by author', error);
             response.status(500).send({
-                message: 'Server error - contact support',
+                message: 'DB error while trying to retrieve a book by Author',
             });
         }
     }

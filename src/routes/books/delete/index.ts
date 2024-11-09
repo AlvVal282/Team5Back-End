@@ -5,9 +5,8 @@ import { deleteYearRouter } from './deleteYear';
 
 const deleteRoutes: Router = express.Router();
 
-deleteRoutes.use('/delete', deleteBookRouter);
-deleteRoutes.use('/delete', deleteAuthorRouter);
-deleteRoutes.use('/delete', deleteYearRouter);
+deleteRoutes.use(deleteBookRouter);
+deleteRoutes.use(deleteAuthorRouter);
+deleteRoutes.use(deleteYearRouter);
 
 export { deleteRoutes };
-

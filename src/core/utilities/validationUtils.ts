@@ -4,7 +4,7 @@
  * @param {any} candidate the value to check
  * @returns true if the parameter is a String0, false otherwise
  */
-function isString(candidate: any): candidate is string {
+function isString(candidate): candidate is string {
     return typeof candidate === 'string';
 }
 
@@ -14,7 +14,7 @@ function isString(candidate: any): candidate is string {
  * @param {any} candidate the value to check
  * @returns true if the parameter is a String with a length greater than 0, false otherwise
  */
-function isStringProvided(candidate: any): boolean {
+function isStringProvided(candidate): boolean {
     return isString(candidate) && candidate.length > 0;
 }
 
@@ -24,7 +24,7 @@ function isStringProvided(candidate: any): boolean {
  * @param {any} candidate the value to check
  * @returns true if the parameter is a number, false otherwise
  */
-function isNumberProvided(candidate: any): boolean {
+function isNumberProvided(candidate): boolean {
     return (
         isNumber(candidate) ||
         (candidate != null &&
@@ -38,8 +38,17 @@ function isNumberProvided(candidate: any): boolean {
  * @param x data value to check the type of
  * @returns true if the type of x is a number, false otherise
  */
-function isNumber(x: any): x is number {
+function isNumber(x): x is number {
     return typeof x === 'number';
+}
+/**
+ * 
+ * @param str a value to check
+ * @returns true if the type of str only contains alphabetical characters or spaces, false otherwise
+ */
+function isAlphabetical(str: string): boolean {
+    const alphabeticalRegex = /^[a-zA-Z\s]+$/;
+    return alphabeticalRegex.test(str);
 }
 /**
  * Checks the parameter to see if it can be converted into a number and if so, greater than -1.
@@ -64,8 +73,7 @@ function isAuthorOrYearProvided(candidate: string): boolean {
  * @returns true if the parameter is a number and is a valid ISBN number
  */
 function isValidISBN13(isbn: String): boolean {
-    if (isbn.length === 13) return true;
-    return false;
+    return isbn.length === 13;
 }
 
 
@@ -128,7 +136,8 @@ const validationFunctions = {
     isValidPhone,
     isValidRole,
     isAuthorOrYearProvided,
-    isValidISBN13
+    isValidISBN13,
+    isAlphabetical
 };
 
 export { validationFunctions };

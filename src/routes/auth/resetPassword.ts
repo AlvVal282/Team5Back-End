@@ -20,7 +20,7 @@ const key = {
 
 /**
  * @api {post} /reset Reset Password
- * @apiDescription Allows a user to reset their password by providing their current password and a new password. The new password must meet specific complexity requirements for security.
+ * @apiDescription Allows a user (registered and signed in) to reset their password by providing their current password and a new password. The new password must meet specific complexity requirements for security.
  *
  * @apiName ResetPassword
  * @apiGroup Auth
@@ -37,11 +37,10 @@ const key = {
  *
  * @apiSuccess (200 OK) {String} message "Password successfully reset." - Indicates that the password has been reset successfully.
  *
- * @apiError (400 Bad Request) {String} message "Missing required information" - Returned if any of the required fields are missing.
- * @apiError (400 Bad Request) {String} message "Invalid or missing password - please adhere to the password rules shown." - Returned if the `newPassword` does not meet the specified complexity requirements.
+ * @apiError (400 Missing Information) {String} message "Missing required information" - Returned if email, currentPassword, or newPassword is not provided.
+ * @apiError (400 Password Mismatch) {String} message "Invalid or missing password - please adhere to the password rules shown." - Returned if the `newPassword` does not meet the specified complexity requirements.
  * @apiError (401 Unauthorized) {String} message "Old password is incorrect - please ensure password is correctly typed." - Returned if the provided `currentPassword` does not match the stored password.
  * @apiError (404 Not Found) {String} message "No account found with this email." - Returned if there is no account associated with the provided `email`.
- * @apiError (500 Internal Server Error) {String} message "An error occurred during password reset. Please try again later." - Returned if a server error occurs.
  */
 resetPasswordRouter.post(
     '/resetPassword',

@@ -1,8 +1,8 @@
 {
-    "name": "TCSS 460 backend-project",
+    "name": "460, BackEnd, Team 5",
     "version": "0.1.0",
-    "description": "API documentation for Team 5 project.",
-    "title": "TCSS 460 backend-project",
+    "description": "API documentation for Team 5 Backend project.",
+    "title": "Team 5 Backend project",
     "url": "localhost:4000",
     "order": [
         "PostMessage",

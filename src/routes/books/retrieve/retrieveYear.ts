@@ -4,7 +4,6 @@ import { pool, validationFunctions } from '../../../core/utilities';
 
 const retrieveYearRouter: Router = express.Router();
 
-// Define interfaces for type consistency
 interface IRatings {
     average: number;
     count: number;
@@ -29,7 +28,6 @@ interface IBook {
     icons: IUrlIcon;
 }
 
-// Updated format function to match specified IBook structure
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -114,10 +112,10 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  *
  * @apiDescription Retrieve a list of books published within a specific year range, optionally paginated.
  *
- * @apiQuery (Query Parameters) {Number} startYear The starting year for the publication range (required).
- * @apiQuery (Query Parameters) {Number} endYear The ending year for the publication range (required).
- * @apiQuery (Query Parameters) {Number} [limit=10] Number of entries to return per page (optional, defaults to 10).
- * @apiQuery (Query Parameters) {Number} [offset=0] Number of entries to skip (optional, defaults to 0).
+ * @apiQuery (Query Parameters) {Number} startYear The starting year for the publication range. **Required**
+ * @apiQuery (Query Parameters) {Number} endYear The ending year for the publication range.  **Required**
+ * @apiQuery (Query Parameters) {Number} [limit=10] Number of entries to return per page. **Otional**
+ * @apiQuery (Query Parameters) {Number} [offset=0] Number of entries to skip. **Otional**
  *
  * @apiSuccess (Success 200) {Object[]} books List of books published within the specified range.
  * @apiSuccess (Success 200) {Number} books.isbn13 The unique ISBN-13 identifier of the book.
@@ -145,9 +143,8 @@ function mwValidPaginationParams(request: Request, response: Response, next: Nex
  * @apiError (400: Missing Parameters) {String} message "Missing required parameters: startYear and endYear".
  * @apiError (400: Invalid Parameters) {String} message "Invalid parameters: startYear and endYear must be numbers".
  * @apiError (400: Invalid Range Order) {String} message "Invalid parameters: startYear and endYear cannot be negative".
- * @apiError (400: Invalid Range Order) {String} message "Invalid range: startYear cannot be greater than endYear".
+ * @apiError (400: Invalid Range) {String} message "Invalid range: startYear cannot be greater than endYear".
  * @apiError (404: Not Found) {String} message "No books found within the specified publication year range."
- * @apiError (500: Database Error) {String} message "Server error - contact support".
  */
 retrieveYearRouter.get(
     '/retrieveYear',

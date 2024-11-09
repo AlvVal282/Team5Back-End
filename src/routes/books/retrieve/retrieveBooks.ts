@@ -3,7 +3,6 @@ import { pool } from '../../../core/utilities';
 
 const retrieveBooksRouter: Router = express.Router();
 
-// Define interfaces for consistent response structure
 interface IRatings {
     average: number;
     count: number;
@@ -28,7 +27,6 @@ interface IBook {
     icons: IUrlIcon;
 }
 
-// Format function to structure each book object
 const format = (resultRow): IBook => ({
     isbn13: resultRow.isbn13,
     author: resultRow.authors,
@@ -56,11 +54,31 @@ const format = (resultRow): IBook => ({
  * 
  * @apiDescription Retrieve a list of all books with optional pagination.
  * 
- * @apiQuery (Query Parameters) {number} limit The number of books to return per page (default is 10).
- * @apiQuery (Query Parameters) {number} offset The offset for pagination (default is 0).
+ * @apiQuery {number} [limit=10] limit The number of books to return per page.**Optional.**
+ * @apiQuery {number} [offset=0] offset The offset for pagination.**Optional.**
  * 
- * @apiSuccess {Object[]} books List of books in the specified range.
+ * @apiSuccess {Object[]} books List of books matching the specified ISBN.
+ * @apiSuccess {number} books.isbn13 Book's ISBN number.
+ * @apiSuccess {string} books.author Book author(s).
+ * @apiSuccess {number} books.publication Publication year.
+ * @apiSuccess {string} books.title Book title.
+ * @apiSuccess {Object} books.ratings Ratings structure.
+ * @apiSuccess {number} books.ratings.average Average rating.
+ * @apiSuccess {number} books.ratings.count Rating count.
+ * @apiSuccess {number} books.ratings.rating_1 Rating count for 1 star.
+ * @apiSuccess {number} books.ratings.rating_2 Rating count for 2 stars.
+ * @apiSuccess {number} books.ratings.rating_3 Rating count for 3 stars.
+ * @apiSuccess {number} books.ratings.rating_4 Rating count for 4 stars.
+ * @apiSuccess {number} books.ratings.rating_5 Rating count for 5 stars.
+ * @apiSuccess {Object} books.icons Icon structure.
+ * @apiSuccess {string} books.icons.large URL for large image.
+ * @apiSuccess {string} books.icons.small URL for small image.
+ *
  * @apiSuccess {Object} pagination Pagination metadata for the response.
+ * @apiSuccess {Number} pagination.totalRecords Total number of books matching the ISBN.
+ * @apiSuccess {Number} pagination.limit Number of entries returned per page.
+ * @apiSuccess {Number} pagination.offset Offset used for the current query.
+ * @apiSuccess {Number|null} pagination.nextPage Offset value to retrieve the next set of entries, or `null` if no further pages exist.
  * 
  */
 retrieveBooksRouter.get('/retrieveBooks', async (request: Request, response: Response) => {

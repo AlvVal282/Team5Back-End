@@ -55,7 +55,7 @@ const emailMiddlewareCheck = (
     } else {
         response.status(400).send({
             message:
-                'Invalid or missing email  - please refer to documentation',
+                'Invalid or missing email - please include @ symbol and end with a proper domain (e.g., user@example.com)',
         });
     }
 };
@@ -87,8 +87,12 @@ const emailMiddlewareCheck = (
  *      - "5" - Anonymous User
  * @apiBody {String} phone The user's phone number, which must be exactly 10 numerical digits.
  *
- * @apiSuccess (Success 201) {String} accessToken A newly created JSON Web Token (JWT) for the user, valid for 14 days.
- * @apiSuccess (Success 201) {Number} id The unique user ID for the newly registered user.
+ * @apiSuccess {String} accessToken JSON Web Token that grants access to the system, valid for 14 days.
+ * @apiSuccess {Object} a user object
+ * @apiSuccess {String} user.name the first name associated with username
+ * @apiSuccess {String} user.email The email associated with username
+ * @apiSuccess {String} user.role The role associated with username 
+ * @apiSuccess {String} user.id The internal user id associated with username
  *
  * @apiError (400: Missing Parameters) {String} message "Missing required information" - Returned if firstname, lastname, or username is missing.
  * @apiError (400: Invalid Email) {String} message "Invalid or missing email - please include '@' symbol and end with a proper domain (e.g., user@example.com)" - Returned if the email format is invalid.
@@ -123,7 +127,7 @@ registerRouter.post(
         } else {
             response.status(400).send({
                 message:
-                    'Invalid or missing phone number  - please refer to documentation',
+                    'please only include numbers (e.g., 1234567890)',
             });
             return;
         }
@@ -134,7 +138,7 @@ registerRouter.post(
         } else {
             response.status(400).send({
                 message:
-                    'Invalid or missing password  - please refer to documentation',
+                    'Invalid or missing password - please adhere to the password rules shown',
             });
         }
     },
@@ -144,7 +148,7 @@ registerRouter.post(
         } else {
             response.status(400).send({
                 message:
-                    'Invalid or missing role  - please refer to documentation',
+                    'Invalid or missing role - please select a role for your account',
             });
         }
     },
@@ -212,7 +216,12 @@ registerRouter.post(
                 //We successfully added the user!
                 response.status(201).send({
                     accessToken,
-                    id: request.id,
+                    user: {
+                        email: request.body.email,
+                        name: request.body.firstname,
+                        role: request.body.role,
+                        id: 1
+                    }
                 });
             })
             .catch((error) => {

@@ -38,7 +38,11 @@ const key = {
  * @apiBody {String} password The user's password. **Required.**
  *
  * @apiSuccess {String} accessToken JSON Web Token that grants access to the system, valid for 14 days.
- * @apiSuccess {Number} id The unique user ID of the authenticated user.
+ * @apiSuccess {Object} a user object
+ * @apiSuccess {String} user.name the first name associated with username
+ * @apiSuccess {String} user.email The email associated with username
+ * @apiSuccess {String} user.role The role associated with username 
+ * @apiSuccess {String} user.id The internal user id associated with username
  *
  * @apiError (400 Missing Information) {String} message "Missing required information" - Returned if the `email` or `password` fields are missing.
  * @apiError (400 Bad Request) {String} message "Malformed Authorization Header" - Returned if the authorization header is incorrectly formatted.
@@ -108,7 +112,12 @@ signinRouter.post(
                     //package and send the results
                     response.json({
                         accessToken,
-                        id: result.rows[0].account_id,
+                        user: {
+                            email: result.rows[0].email,
+                            name: result.rows[0].firstname,
+                            role: result.rows[0].account_role,
+                            id: result.rows[0].account_id
+                        }
                     });
                 } else {
                     //credentials dod not match
